@@ -2,6 +2,10 @@
 
 require_once '../vendor/autoload.php';
 
+// Loging
+$logger = new Logger('linebot');
+$logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
+
 //POST
 $input = file_get_contents('php://input');
 $json = json_decode($input);
@@ -15,7 +19,10 @@ if ("message" == $event->type) {
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event->message->text);
     } else {
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("?");
+	$logger->info('type is not text');
     }
+} else {
+$logger->info('type is not message');
 }
 
 $response = $bot->replyMessage($event->replyToken, $textMessageBuilder);
