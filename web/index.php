@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 //POST
 $input = file_get_contents('php://input');
