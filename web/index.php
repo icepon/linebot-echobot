@@ -2,6 +2,10 @@
 
 require_once '../vendor/autoload.php';
 
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
+
 // Loging
 $logger = new Logger('linebot');
 $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
