@@ -20,9 +20,13 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => "e8726b9bfd344a12c189f
 
 if ("message" == $event->type) {      
     if ("text" == $event->message->type) {
-        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event->message->text);
+	if ($event->message->text=="?") {
+		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ข้อความช่วยเหลือ");
+	} else {
+		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("พิมพ์ ? เพื่อขอความช่วยเหลือ");
+	}
     } else {
-        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("พิมพ์ hello นะ");
+        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("พิมพ์ ? เพื่อขอความช่วยเหลือ");
 	$logger->info('message type is not text');
     }
 } else {
