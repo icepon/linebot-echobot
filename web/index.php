@@ -27,8 +27,7 @@ if ("message" == $event->type) {
 		}
     } else {
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("พิมพ์ ? เพื่อขอความช่วยเหลือ");
-		$logger->info('message type is not text');
-		syslog(LOG_EMERG, print_r($event->message, true));
+		$logger->info('message type is not text -> ' + $event->message->type);
     }
 } else {
 	$logger->info('event type is not message');
