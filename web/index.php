@@ -6,4 +6,18 @@ require_once '../vendor/autoload.php';
 $input = file_get_contents('php://input');
 $json = json_decode($input);
 
-print_r($json);
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('rHESonstdV3FniND+25WHjgb+mTxTOeikt7zCGV9h0LgBFzCprU8IQwrXpgreO2TGyewjB87Imwmyz/RbxqF2N/i7mA+gMnmaS2cTF5GKLozTwE25XEHvRiaCtL74zveIKzb/UVfbaU4poxxB3WcrQdB04t89/1O/w1cDnyilFU=');
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => 'e8726b9bfd344a12c189f4fc6512da8a']);
+
+if ("message" == $event->type) {      
+    if ("text" == $event->message->type) {
+        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event->message->text);
+    } else {
+        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("?");
+    }
+}
+
+$response = $bot->replyMessage($event->replyToken, $textMessageBuilder);
+syslog(LOG_EMERG, print_r($event->replyToken, true));
+syslog(LOG_EMERG, print_r($response, true));
+return;
