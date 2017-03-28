@@ -20,17 +20,17 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => "e8726b9bfd344a12c189f
 
 if ("message" == $event->type) {      
     if ("text" == $event->message->type) {
-	if ($event->message->text=="?") {
-		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ข้อความช่วยเหลือ");
-	} else {
-		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("พิมพ์ ? เพื่อขอความช่วยเหลือ");
-	}
+		if ($event->message->text=="?") {
+			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ข้อความช่วยเหลือ");
+		} else {
+			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("พิมพ์ ? เพื่อขอความช่วยเหลือ");
+		}
     } else {
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("พิมพ์ ? เพื่อขอความช่วยเหลือ");
-	$logger->info('message type is not text');
+		$logger->info('message type is not text');
     }
 } else {
-$logger->info('event type is not message');
+	$logger->info('event type is not message');
 }
 
 $response = $bot->replyMessage($event->replyToken, $textMessageBuilder);
