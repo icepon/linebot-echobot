@@ -30,7 +30,6 @@ $logger->info('event type is not message');
 }
 
 $response = $bot->replyMessage($event->replyToken, $textMessageBuilder);
-$logger->info($response->getRawBody());
 syslog(LOG_EMERG, print_r($event->replyToken, true));
 syslog(LOG_EMERG, print_r($response, true));
 return;
