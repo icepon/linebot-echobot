@@ -23,7 +23,7 @@ if ("message" == $event->type) {
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event->message->text);
     } else {
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("?");
-	$logger->info('type is not text');
+	$logger->info($event->message->type);
     }
 } else {
 $logger->info('type is not message');
