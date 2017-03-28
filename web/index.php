@@ -22,14 +22,15 @@ if ("message" == $event->type) {
     if ("text" == $event->message->type) {
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event->message->text);
     } else {
-        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("?");
-	$logger->info($event->message->type);
+        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("พิมพ์ hello นะ");
+	$logger->info('message type is not text');
     }
 } else {
-$logger->info('type is not message');
+$logger->info('event type is not message');
 }
 
 $response = $bot->replyMessage($event->replyToken, $textMessageBuilder);
+$logger->info($response->getRawBody());
 syslog(LOG_EMERG, print_r($event->replyToken, true));
 syslog(LOG_EMERG, print_r($response, true));
 return;
