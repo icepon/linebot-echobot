@@ -14,6 +14,7 @@ $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
 $input = file_get_contents('php://input');
 $json = json_decode($input);
 $event = $json->events[0];
+$logger->info(print_r($event, true));
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient("rHESonstdV3FniND+25WHjgb+mTxTOeikt7zCGV9h0LgBFzCprU8IQwrXpgreO2TGyewjB87Imwmyz/RbxqF2N/i7mA+gMnmaS2cTF5GKLozTwE25XEHvRiaCtL74zveIKzb/UVfbaU4poxxB3WcrQdB04t89/1O/w1cDnyilFU=");
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => "e8726b9bfd344a12c189f4fc6512da8a"]);
@@ -67,7 +68,7 @@ if ("message" == $event->type) {
     }
 } else if("postback"==$event->type) {
 	$logger->info('postback recieve');
-}else {
+} else {
 	$logger->info('event type is not message');
 }
 
