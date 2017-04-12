@@ -65,8 +65,8 @@ if ("message" == $event->type) {
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(":)");
 		$logger->info('message type is ' . $event->message->type);
     }
-} else if ($event->type=="postback") {
-
+} else if("postback"==$event->type) {
+	$logger->info('postback recieve');
 }else {
 	$logger->info('event type is not message');
 }
