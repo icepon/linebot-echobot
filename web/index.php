@@ -20,7 +20,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => "e8726b9bfd344a12c189f
 
 if ("message" == $event->type) {      
     if ("text" == $event->message->type) {
-		$message_text=$event->message->text;
+		$message_text=strtolower(trim($event->message->text));
 		switch ($message_text) {
 			case "text" : 
 				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("text message");
@@ -65,7 +65,9 @@ if ("message" == $event->type) {
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(":)");
 		$logger->info('message type is ' . $event->message->type);
     }
-} else {
+} else if ($event->type=="postback") {
+
+}else {
 	$logger->info('event type is not message');
 }
 
