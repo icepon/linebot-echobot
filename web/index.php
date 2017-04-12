@@ -14,11 +14,11 @@ $bot = new \LINE\LINEBot (
    ['ChannelSecret' => "e8726b9bfd344a12c189f4fc6512da8a"]
  );
 
-$signature = $_SERVER["HTTP_". \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
+$signature = $_SERVER["HTTP_".\LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 $body = file_get_contents("php://input");
 try {
 	$events = $bot->parseEventRequest($body, $signature);
-	$$logger->info("x");
+	$logger->info(var_dump($events));
 
 } catch (Exception $e) {
 	var_dump($e);
