@@ -72,7 +72,7 @@ foreach ($events as $event) {
  
 		}
 		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
-		$response = $bot->replyMessage($event->getReplyToken(), $textMessageBuilder);
+		$response = $bot->replyMessage($event->getReplyToken(), $outputText);
   }
 
   
