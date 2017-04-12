@@ -18,8 +18,20 @@ $signature = $_SERVER["HTTP_".\LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE]
 $body = file_get_contents("php://input");
 try {
 	$events = $bot->parseEventRequest($body, $signature);
-	$logger->info(var_dump($events));
-
+	foreach ($events as $event) {
+		if (!($event instanceof MessageEvent)) {
+			$logger->info('Non message event has come');
+			continue;
+		}
+		if (!($event instanceof TextMessage)) {
+			$logger->info('Non text message has come');
+			continue;
+		}
+		$replyText = $event->getText();
+		$logger->info('Reply text: ' . $replyText);
+		$resp = $bot->replyText($event->getReplyToken(), $replyText);
+		$logger->info($resp->getHTTPStatus() . ': ' . $resp->getRawBody());
+	}
 } catch (Exception $e) {
-	var_dump($e);
+	$logger->info($e->getMessage());
 } 
