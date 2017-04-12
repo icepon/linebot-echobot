@@ -1,4 +1,11 @@
-// Loging
+<?php
+
+require_once '../vendor/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
+
 $logger = new Logger('linebot');
 $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
 
@@ -11,7 +18,16 @@ $signature = $_SERVER["HTTP_". \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE
 $body = file_get_contents("php://input");
 try {
 	$events = $bot->parseEventRequest($body, $signature);
-} catch (Exception $e) {
-   var_dump($ e); 
-} 
 
+	$message_events = [];
+	foreach ($events as $event) {
+    	if (!($event instanceof MessageEvent) && !($event instanceof PostbackEvent)) {
+        	continue;
+    	}
+    	$message_events[] = $event;
+		var_dump($message_events);
+	}
+
+} catch (Exception $e) {
+	var_dump($e);
+} 
