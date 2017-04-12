@@ -25,7 +25,7 @@ try {
         	continue;
     	}
     	$message_events[] = $event;
-		$logger->info(var_dump($message_events));
+		$logger->info(print_r($event, true));
 	}
 
 } catch (Exception $e) {
