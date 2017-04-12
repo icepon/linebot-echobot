@@ -58,6 +58,10 @@ foreach ($events as $event) {
  				$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("button text", "description", $img_url, $actions);
  				$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
 				break;
+			case "image" :
+				$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
+ 				$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+				break;	
 			case "confirm" :
 				$actions = array (
    					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("yes", "ans=y"),
@@ -71,7 +75,7 @@ foreach ($events as $event) {
 				break;
  
 		}
-		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+		
 		$response = $bot->replyMessage($event->getReplyToken(), $outputText);
   }
 
