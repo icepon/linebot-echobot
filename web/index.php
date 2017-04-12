@@ -28,16 +28,16 @@ try {
 foreach ($events as $event) {
   if (!($event instanceof \LINE\LINEBot\Event\MessageEvent)) {
     error_log('Non message event has come');
-    continue;
+    //continue;
   }
   if (!($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
     error_log('Non text message has come');
-    continue;
+    //continue;
   }
 
   if (($event instanceof \LINE\LINEBot\Event\PostbackEvent)) {
     error_log('Postback message has come');
-    continue;
+   // continue;
   }
 
   
