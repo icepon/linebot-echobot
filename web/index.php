@@ -58,6 +58,21 @@ foreach ($events as $event) {
  				$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("button text", "description", $img_url, $actions);
  				$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
 				break;
+			case "carousel" :
+				$columns = array();
+				$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
+				for($i=0;$i<5;$i++) {
+					$actions = array(
+						new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("Button 1","Button 1"),
+						new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Goto Website","http://www.google.com")
+					);
+					$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Title", "description", $img_url , $actions);
+					$columns[] = $column;
+				}
+				$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+				$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Carousel Demo", $carousel);
+
+				break;	
 			case "image" :
 				$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
  				$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
