@@ -36,7 +36,7 @@ foreach ($events as $event) {
   }
 
   if (($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
-    $logger->info('Text message has come');
+    $logger->info($event->getText());
     continue;
   }
 
