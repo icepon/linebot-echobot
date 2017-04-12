@@ -70,6 +70,6 @@ if ("message" == $event->type) {
 }
 
 $response = $bot->replyMessage($event->replyToken, $textMessageBuilder);
-$logger->info($event->replyToken);
-$logger->info($response);
+$logger->info(print_r($event->replyToken, true));
+$logger->info(print_r($response, true));
 return;
