@@ -23,10 +23,10 @@ if ("message" == $event->type) {
 		$message_text=$event->message->text;
 		switch ($message_text) {
 			case "text" : 
-				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ข้อความเปล่าๆ");
+				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("text message");
 				break;
 			case "location" :
-				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\LocationMessageBuilder("ริชแมนชั่น", "Chaeng Wattana Rd, Amphoe Pak Kret, Chang Wat Nonthaburi 11120", 13.901257, 100.546360);
+				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\LocationMessageBuilder("Eiffel Tower", "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France", 48.858328, 2.294750);
 				break;
 			case "button" :
 				$actions = array (
