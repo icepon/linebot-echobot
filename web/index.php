@@ -21,7 +21,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => "e8726b9bfd344a12c189f
 if ("message" == $event->type) {      
     if ("text" == $event->message->type) {
 		$message_text=$event->message->text;
-		switch $message_text {
+		switch ($message_text) {
 			case "text" : 
 				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ข้อความเปล่าๆ");
 				break;
@@ -54,7 +54,7 @@ if ("message" == $event->type) {
 				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("demo command: text, location, button, confirm to test message template");	
 				break;
  
-		}
+		};
 /*		if ($event->message->text=="t1") {
 			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ข้อความช่วยเหลือ");
 		} else {
