@@ -35,8 +35,8 @@ if ("message" == $event->type) {
    					// URL type action
    					New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Google", "http://www.google.com"),
    					// The following two are interactive actions
-   					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("next page", "page = 3"),
-   					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Previous", "page = 1")
+   					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("next page", "page=3"),
+   					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Previous", "page=1")
  				);
 				$img_url = "image URL, must be https (image is not required)";
  				$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("button text", "description", $img_url, $actions);
@@ -44,17 +44,17 @@ if ("message" == $event->type) {
 				break;
 			case "confirm" :
 				$actions = array (
-   					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("yes", "ans = y"),
-   					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("no", "ans = N")
+   					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("yes", "ans=y"),
+   					New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("no", "ans=N")
  				);
  				$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("problem", $actions);
- 				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $ button);
+ 				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
 				 break;
 			default :
 				$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("demo command: text, location, button, confirm to test message template");	
 				break;
  
-		};
+		}
 /*		if ($event->message->text=="t1") {
 			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ข้อความช่วยเหลือ");
 		} else {
