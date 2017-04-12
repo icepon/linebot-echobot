@@ -71,7 +71,7 @@ foreach ($events as $event) {
 				break;
  
 		}
-		$bot->replyTextMessage($bot, $event->getReplyToken(), $outputText);
+		$response = $bot->replyMessage($event->getReplyToken(), $outputText);
   }
 
   
