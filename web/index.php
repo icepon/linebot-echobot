@@ -18,15 +18,7 @@ $signature = $_SERVER["HTTP_". \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE
 $body = file_get_contents("php://input");
 try {
 	$events = $bot->parseEventRequest($body, $signature);
-
-	$message_events = [];
-	foreach ($events as $event) {
-    	if (!($event instanceof MessageEvent) && !($event instanceof PostbackEvent)) {
-        	continue;
-    	}
-    	$message_events[] = $event;
-		//$logger->info(print_r($event, true));
-	}
+	$$logger->info("x");
 
 } catch (Exception $e) {
 	var_dump($e);
