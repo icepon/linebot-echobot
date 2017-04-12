@@ -6,7 +6,7 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\FirePHPHandler;
 
-$logger = new Logger('linebot');
+$logger = new Logger('LineBot');
 $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('rHESonstdV3FniND+25WHjgb+mTxTOeikt7zCGV9h0LgBFzCprU8IQwrXpgreO2TGyewjB87Imwmyz/RbxqF2N/i7mA+gMnmaS2cTF5GKLozTwE25XEHvRiaCtL74zveIKzb/UVfbaU4poxxB3WcrQdB04t89/1O/w1cDnyilFU=');
@@ -35,6 +35,13 @@ foreach ($events as $event) {
     continue;
   }
 
+  if (($event instanceof \LINE\LINEBot\Event\PostbackEvent)) {
+    error_log('Postback message has come');
+    continue;
+  }
+
+  
+  // Message Event = TextMessage
   if (($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
 		$messageText=strtolower(trim($event->getText()));
 		switch ($messageText) {
@@ -90,7 +97,6 @@ foreach ($events as $event) {
 				break;
  
 		}
-		
 		$response = $bot->replyMessage($event->getReplyToken(), $outputText);
   }
 
