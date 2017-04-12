@@ -14,24 +14,16 @@ $bot = new \LINE\LINEBot (
    ['ChannelSecret' => "e8726b9bfd344a12c189f4fc6512da8a"]
  );
 
-$signature = $_SERVER["HTTP_".\LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
-$body = file_get_contents("php://input");
+$signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 try {
-	$events = $bot->parseEventRequest($body, $signature);
-	foreach ($events as $event) {
-		if (!($event instanceof MessageEvent)) {
-			$logger->info('Non message event has come');
-			continue;
-		}
-		if (!($event instanceof TextMessage)) {
-			$logger->info('Non text message has come');
-			continue;
-		}
-		$replyText = $event->getText();
-		$logger->info('Reply text: ' . $replyText);
-		$resp = $bot->replyText($event->getReplyToken(), $replyText);
-		$logger->info($resp->getHTTPStatus() . ': ' . $resp->getRawBody());
-	}
-} catch (Exception $e) {
-	$logger->info($e->getMessage());
-} 
+  $events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
+} catch(\LINE\LINEBot\Exception\InvalidSignatureException $e) {
+  error_log('parseEventRequest failed. InvalidSignatureException => '.var_export($e, true));
+} catch(\LINE\LINEBot\Exception\UnknownEventTypeException $e) {
+  error_log('parseEventRequest failed. UnknownEventTypeException => '.var_export($e, true));
+} catch(\LINE\LINEBot\Exception\UnknownMessageTypeException $e) {
+  error_log('parseEventRequest failed. UnknownMessageTypeException => '.var_export($e, true));
+} catch(\LINE\LINEBot\Exception\InvalidEventRequestException $e) {
+  error_log('parseEventRequest failed. InvalidEventRequestException => '.var_export($e, true));
+}
+
