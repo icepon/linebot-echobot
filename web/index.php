@@ -1,6 +1,7 @@
 <?php
 
 require_once '../vendor/autoload.php';
+include 'config.php';
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
