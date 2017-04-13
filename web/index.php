@@ -44,29 +44,11 @@ foreach ($events as $event) {
   // Message Event = LocationMessage
   if  ($event instanceof LINE\LINEBot\Event\MessageEvent\LocationMessage) {
 	  error_log("location -> ".$event->getLatitude().",".$event->getLongitude());
-	  
-	  //$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("find data in location...");
- 
-	  //$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("found...");
-	  //$bot->replyMessage($event->getReplyToken(), $outputText);
-
-	  /*	$outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
-			for($i=0;$i<5;$i++) {
-				$_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("message ".$i);
-				$outputText->add($_msg);
-			}*/
-
+	
 	  // get location nearby data
 	  $result=getFanLocationNearby($event->getLatitude(), $event->getLongitude());
 	  
 	  if ($result!=null) {
-		/*$outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
-		while($row = mysqli_fetch_array($result)){		
-			$_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("message ".$row['entity_id']);
-			$outputText->add($_msg);
-      	}*/
-		
-
 		$columns = array();
 		$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
 		while($row = mysqli_fetch_array($result)){
@@ -82,11 +64,6 @@ foreach ($events as $event) {
 		$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Location Nearby", $carousel);
 		$bot->replyMessage($event->getReplyToken(), $outputText);
 	  }
-
-	
-
-	  
-
 
   }
   
