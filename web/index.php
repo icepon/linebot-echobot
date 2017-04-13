@@ -72,7 +72,7 @@ foreach ($events as $event) {
 		while($row = mysqli_fetch_array($result)){
 			$actions = array(
 				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Chat","http://www.google.com"),
-				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Map","http://www.google.com")
+				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Map","http://maps.google.com/?ll=".$row['field_location_lat'].",".$row['field_location_lng'])
 			);
 			$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("name ".$row['entity_id'], "description ".$row['entity_id'], $img_url , $actions);
 			$columns[] = $column;
