@@ -41,7 +41,7 @@ foreach ($events as $event) {
    // continue;
   }
 
-  // Location Event
+  // Message Event = LocationMessage
   if  ($event instanceof LINE\LINEBot\Event\MessageEvent\LocationMessage) {
 	  error_log("location -> ".$event->getLatitude().",".$event->getLongitude());
 	  
@@ -50,20 +50,39 @@ foreach ($events as $event) {
 	  //$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("found...");
 	  //$bot->replyMessage($event->getReplyToken(), $outputText);
 
-	  $result=getFanLocationNearby($event->getLatitude(), $event->getLongitude());
-	  
-	  if ($result!=null) {
-		$outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
-		while($row = mysqli_fetch_array($result)){		
-			$_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("message ".$row['entity_id']);
-			$outputText->add($_msg);
-      	}
-		$bot->replyMessage($event->getReplyToken(), $outputText);
-		/*	$outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+	  /*	$outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
 			for($i=0;$i<5;$i++) {
 				$_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("message ".$i);
 				$outputText->add($_msg);
 			}*/
+
+	  // get location nearby data
+	  $result=getFanLocationNearby($event->getLatitude(), $event->getLongitude());
+	  
+	  if ($result!=null) {
+		/*$outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+		while($row = mysqli_fetch_array($result)){		
+			$_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("message ".$row['entity_id']);
+			$outputText->add($_msg);
+      	}*/
+		
+
+		$columns = array();
+		$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
+		while($row = mysqli_fetch_array($result)){
+			$actions = array(
+				new LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("x","xs"),
+				new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("View Profile","action=carousel&button=".$i),
+				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Chat","http://www.google.com"),
+				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Map","http://www.google.com")
+			);
+			$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Title", "description", $img_url , $actions);
+			$columns[] = $column;
+		}
+		$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+		$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Carousel Demo", $carousel);
+
+		$bot->replyMessage($event->getReplyToken(), $outputText);
 	  }
 
 	
@@ -125,7 +144,7 @@ foreach ($events as $event) {
  				$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
 				 break;
 			default :
-				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("demo command: text, location, button, confirm to test message template");	
+				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("type: text, location, button, confirm or share your location to test message template");	
 				break;
  
 		}
