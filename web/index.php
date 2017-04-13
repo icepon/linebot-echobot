@@ -71,8 +71,9 @@ foreach ($events as $event) {
 		$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
 		while($row = mysqli_fetch_array($result)){
 			$actions = array(
-				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Chat","http://www.google.com"),
-				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Map","http://maps.google.com/?ll=".$row['field_location_lat'].",".$row['field_location_lng'])
+				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Profile","https://fanfinfin.com/user/".$row['entity_id']),
+				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Chat","http://line.me/ti/p/~@hsg0716r"),
+				new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Map","action=getLocation&lat=".$row['field_location_lat']."&lng=".$row['field_location_lng'])
 			);
 			$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("name ".$row['entity_id'], "description ".$row['entity_id'], $img_url , $actions);
 			$columns[] = $column;
