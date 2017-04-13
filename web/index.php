@@ -71,7 +71,6 @@ foreach ($events as $event) {
 		$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
 		while($row = mysqli_fetch_array($result)){
 			$actions = array(
-				new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("View Profile","action=carousel&button="),
 				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Chat","http://www.google.com"),
 				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Map","http://www.google.com")
 			);
