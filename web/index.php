@@ -43,7 +43,7 @@ foreach ($events as $event) {
 
   // Location Event
   if  ($event instanceof LINE\LINEBot\Event\MessageEvent\LocationMessage) {
-	  $logger->loginfo("location -> ".$event->getLatitude().",".$event->getLongitude());
+	  error_log("location -> ".$event->getLatitude().",".$event->getLongitude());
 	  
 	  $outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("find data in location...");
 	  $bot->replyMessage($event->getReplyToken(), $outputText);
@@ -52,7 +52,7 @@ foreach ($events as $event) {
 	  $bot->replyMessage($event->getReplyToken(), $outputText);
 
 	  $result=getFanLocationNearby($event->getLatitude(), $event->getLongitude());
-	  
+
 
   }
   
