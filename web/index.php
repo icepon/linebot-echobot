@@ -50,15 +50,25 @@ foreach ($events as $event) {
 	  //$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("found...");
 	  //$bot->replyMessage($event->getReplyToken(), $outputText);
 
-	  $outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
-	  for($i=0;$i<5;$i++) {
-  			$_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("message ".$i);
-  			$outputText->add($_msg);
+	  $result=getFanLocationNearby($event->getLatitude(), $event->getLongitude());
+	  
+	  if ($result!=null) {
+		$outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+		while($row = mysqli_fetch_array($result)){		
+			$_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("message ".$row['entity_id']);
+			$outputText->add($_msg);
+      	}
+		$bot->replyMessage($event->getReplyToken(), $outputText);
+		/*	$outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+			for($i=0;$i<5;$i++) {
+				$_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("message ".$i);
+				$outputText->add($_msg);
+			}*/
 	  }
 
-	  $bot->replyMessage($event->getReplyToken(), $outputText);
+	
 
-	  $result=getFanLocationNearby($event->getLatitude(), $event->getLongitude());
+	  
 
 
   }
