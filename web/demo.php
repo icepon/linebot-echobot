@@ -40,6 +40,10 @@ foreach ($events as $event) {
    // continue;
   }
 
+  // Location Event
+  if  ($event instanceof LINE\LINEBot\Event\MessageEvent\LocationMessage) {
+	  error_log("location -> ".$event->getLatitude().",".$event->getLongitude());
+  }
   
   // Message Event = TextMessage
   if (($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
