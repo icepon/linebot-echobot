@@ -45,10 +45,17 @@ foreach ($events as $event) {
   if  ($event instanceof LINE\LINEBot\Event\MessageEvent\LocationMessage) {
 	  error_log("location -> ".$event->getLatitude().",".$event->getLongitude());
 	  
-	  $outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("find data in location...");
-	  $bot->replyMessage($event->getReplyToken(), $outputText);
-	  
-	  $outputText = new \LINE\LINEBot\MessageBuilder\LocationMessageBuilder($event->getTitle(),$event->getAddress(), $event->getLatitude(), $event->getLongitude());
+	  //$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("find data in location...");
+ 
+	  //$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("found...");
+	  //$bot->replyMessage($event->getReplyToken(), $outputText);
+
+	  $outputText = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+	  for($i=0;$i<5;$i++) {
+  			$_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("message ".$i);
+  			$outputText->add($_msg);
+	  }
+
 	  $bot->replyMessage($event->getReplyToken(), $outputText);
 
 	  $result=getFanLocationNearby($event->getLatitude(), $event->getLongitude());
