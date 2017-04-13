@@ -71,11 +71,11 @@ foreach ($events as $event) {
 		$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
 		while($row = mysqli_fetch_array($result)){
 			$actions = array(
-				new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("View Profile".$row['entity_id'],"action=carousel&button="),
+				new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("View Profile","action=carousel&button="),
 				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Chat","http://www.google.com"),
 				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Map","http://www.google.com")
 			);
-			$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Title", "description", $img_url , $actions);
+			$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("name ".$row['entity_id'], "description ".$row['entity_id'], $img_url , $actions);
 			$columns[] = $column;
 		}
 		$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
