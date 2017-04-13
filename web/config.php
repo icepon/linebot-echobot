@@ -26,9 +26,9 @@ function getFanLocationNearby($lat,$lon){
 }
 
 function db_query_result($sql){
-  global $link;
+  global $conn;
   //echo "<pre>".$sql."</pre>";
-  if($result = mysqli_query($link, $sql)){
+  if($result = mysqli_query($conn, $sql)){
     if(mysqli_num_rows($result) > 0){
       // return result
       return $result;
