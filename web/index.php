@@ -27,7 +27,7 @@ try {
   error_log('parseEventRequest failed. InvalidEventRequestException => '.var_export($e, true));
 }
 echo "1.2";
-echo "3.4";
+
 /*foreach ($events as $event) {
 	echo "3";
 	//echo $events;
@@ -73,10 +73,11 @@ echo "3.4";
 	  }
 
   }
-  echo "2.1";
+
 	
   // Message Event = TextMessage
   if (($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
+	  echo "2.1";
 		$messageText=strtolower(trim($event->getText()));
 	  echo "2.2";
 	  echo $messageText;
