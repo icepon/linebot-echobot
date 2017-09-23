@@ -73,6 +73,7 @@ foreach ($events as $event) {
 		switch ($messageText) {
 			case "text" : 
 				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("text message");
+				echo "2";
 				break;
 			case "location" :
 				$outputText = new \LINE\LINEBot\MessageBuilder\LocationMessageBuilder("Eiffel Tower", "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France", 48.858328, 2.294750);
@@ -123,6 +124,7 @@ foreach ($events as $event) {
 				break;
  
 		}
+	  	echo "1";
 		$response = $bot->replyMessage($event->getReplyToken(), $outputText);
   }
 
