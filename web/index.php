@@ -28,6 +28,8 @@ try {
 }
 echo "1.2";
 foreach ($events as $event) {
+	echo "3";
+	//echo $events;
   if (!($event instanceof \LINE\LINEBot\Event\MessageEvent)) {
 	  echo "3.1";
     error_log('Non message event has come');
