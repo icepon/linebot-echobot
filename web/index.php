@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
 			$response = $bot->replyMessage($replyToken, $outputText);
 			//$response = $bot->replyText($replyToken, "hello!");
-			
+			/*
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
@@ -70,7 +70,7 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 
-			echo $result . "\r\n";
+			echo $result . "\r\n";*/
 		}
 	}
 }
