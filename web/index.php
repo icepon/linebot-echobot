@@ -11,7 +11,7 @@ $replyToken = $event['replyToken'];
 $response = $bot->replyText($replyToken, "hello!");
 echo "1.3";
 */
-
+$kin = array("โรงอาหาร","เป็ด","เต๊นท์","ราเมง","กินคลีน","ไม่กิน ลดความอ้วน");
 
 $access_token = 'AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3B31gVTyIwIMhyO4g1XWptfVyFJ7kmUGdDrfB4Pd/UspZp0iIMrLeVq+YJIV0ZY0arNIDv4eVmwLOCm2yns5ezewdB04t89/1O/w1cDnyilFU=';
 
@@ -30,6 +30,33 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			//Start here **
+			
+			if ($text == "สวัสดี"){
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("สวัสดีจ้าาาา");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "ทำไรอยู่") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ไม่บอก อิอิ");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "ไอซ์") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จ๋าาาาาาา");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "กินไรดี") {
+			$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			//#NB1
+			else if ($text == "nb1") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Google", "http://www.google.com")
+			);
+			$b_description = "คุณพงศธร T123456789 MEMO 31/01/61";	
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
+			$response = $bot->replyMessage($replyToken, $outputText);	}
+			else {
+			$messages = [ 'type'=>'text','text'=>"อิอิ"];
+			}
+			/*
 			$actions = array (
 				// general message action
 				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("button 1", "text 1"),
@@ -44,6 +71,7 @@ if (!is_null($events['events'])) {
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder("button text", "description",null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
 			$response = $bot->replyMessage($replyToken, $outputText);
+			*/
 			//$response = $bot->replyText($replyToken, "hello!");
 			/*
 			// Build message to reply back
