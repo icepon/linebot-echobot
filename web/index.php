@@ -27,21 +27,24 @@ try {
   error_log('parseEventRequest failed. InvalidEventRequestException => '.var_export($e, true));
 }
 echo "1.2";
-/*foreach ($events as $event) {
+foreach ($events as $event) {
   if (!($event instanceof \LINE\LINEBot\Event\MessageEvent)) {
+	  echo "3.1";
     error_log('Non message event has come');
     //continue;
   }
   if (!($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
+	  echo "3.2";
     error_log('Non text message has come');
     //continue;
   }
 
   if (($event instanceof \LINE\LINEBot\Event\PostbackEvent)) {
+	  echo "3.3";
     error_log('Postback message has come');
    // continue;
   }
-*/
+echo "3.4";
   // Message Event = LocationMessage
   if  ($event instanceof LINE\LINEBot\Event\MessageEvent\LocationMessage) {
 	  error_log("location -> ".$event->getLatitude().",".$event->getLongitude());
