@@ -66,10 +66,13 @@ foreach ($events as $event) {
 	  }
 
   }
-  
+  echo "2.1";
+	
   // Message Event = TextMessage
   if (($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
 		$messageText=strtolower(trim($event->getText()));
+	  echo "2.2";
+	  echo $messageText;
 		switch ($messageText) {
 			case "text" : 
 				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("text message");
