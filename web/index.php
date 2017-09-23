@@ -12,7 +12,7 @@ $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV["LINEBOT_ACCESS_TOKEN"]);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV["LINEBOT_CHANNEL_SECRET"]]);
-
+echo "1.1";
 $signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 try {
   $events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
@@ -25,7 +25,7 @@ try {
 } catch(\LINE\LINEBot\Exception\InvalidEventRequestException $e) {
   error_log('parseEventRequest failed. InvalidEventRequestException => '.var_export($e, true));
 }
-
+echo "1.2";
 foreach ($events as $event) {
   if (!($event instanceof \LINE\LINEBot\Event\MessageEvent)) {
     error_log('Non message event has come');
