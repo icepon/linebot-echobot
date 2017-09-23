@@ -56,9 +56,9 @@ if (!is_null($events['events'])) {
 			//bill1
 			else if ($text == "bill1") {
 			$actions = array (
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Barcodeจ่ายเงิน", "https://awa.aia.co.th/login/"),
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อ", "https://awa.aia.co.th/login/"),
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า ✆", "https://awa.aia.co.th/login/")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Barcode จ่ายเงิน", "https://awa.aia.co.th/login/"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://awa.aia.co.th/login/"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า 📞", "https://awa.aia.co.th/login/")
 			);
 			$b_description = "กรุณาแจ้ง คุณพงศธร T123456789 ครบกำหนด 31/01/61 จำนวน 50,000 บาท";	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
