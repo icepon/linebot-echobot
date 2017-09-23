@@ -47,11 +47,11 @@ if (!is_null($events['events'])) {
 			//#NB1
 			else if ($text == "nb1") {
 			$actions = array (
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Google", "http://www.google.com")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ตรวจสอบข้อมูล", "https://awa.aia.co.th/login/")
 			);
 			$b_description = "คุณพงศธร T123456789 MEMO 31/01/61";	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("this message to use the phone to look to the Oh", $button);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			else {
 			$messages = [ 'type'=>'text','text'=>"อิอิ"];
