@@ -26,53 +26,10 @@ try {
 } catch(\LINE\LINEBot\Exception\InvalidEventRequestException $e) {
   error_log('parseEventRequest failed. InvalidEventRequestException => '.var_export($e, true));
 }
-echo "1.2";
 
-/*foreach ($events as $event) {
-	echo "3";
-	//echo $events;
-  if (!($event instanceof \LINE\LINEBot\Event\MessageEvent)) {
-	  echo "3.1";
-    error_log('Non message event has come');
-    //continue;
-  }
-  if (!($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
-	  echo "3.2";
-    error_log('Non text message has come');
-    //continue;
-  }
 
-  if (($event instanceof \LINE\LINEBot\Event\PostbackEvent)) {
-	  echo "3.3";
-    error_log('Postback message has come');
-   // continue;
-  }*/
 
-  // Message Event = LocationMessage
-  if  ($event instanceof LINE\LINEBot\Event\MessageEvent\LocationMessage) {
-	  error_log("location -> ".$event->getLatitude().",".$event->getLongitude());
-	
-	  // get location nearby data
-	  $result=getFanLocationNearby($event->getLatitude(), $event->getLongitude());
-	  
-	  if ($result!=null) {
-		$columns = array();
-		$img_url = "https://cdn.shopify.com/s/files/1/0379/7669/products/sampleset2_1024x1024.JPG?v=1458740363";
-		while($row = mysqli_fetch_array($result)){
-			$actions = array(
-				new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Profile","action=getLocation&lat=".$row['entity_id']),
-				new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("Chat","http://line.me/ti/p/~@hsg0716r"),
-				new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Map","action=getLocation&lat=".$row['field_location_lat']."&lng=".$row['field_location_lng'])
-			);
-			$column = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("name ".$row['entity_id'], "description ".$row['entity_id'], $img_url , $actions);
-			$columns[] = $column;
-		}
-		$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
-		$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Location Nearby", $carousel);
-		$bot->replyMessage($event->getReplyToken(), $outputText);
-	  }
-
-  }
+ 
 
 	
   // Message Event = TextMessage
