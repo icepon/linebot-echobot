@@ -14,6 +14,7 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV["LINEBOT_ACCESS_
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV["LINEBOT_CHANNEL_SECRET"]]);
 echo "1.1";
 $signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
+
 try {
   $events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
 } catch(\LINE\LINEBot\Exception\InvalidSignatureException $e) {
@@ -26,7 +27,7 @@ try {
   error_log('parseEventRequest failed. InvalidEventRequestException => '.var_export($e, true));
 }
 echo "1.2";
-foreach ($events as $event) {
+/*foreach ($events as $event) {
   if (!($event instanceof \LINE\LINEBot\Event\MessageEvent)) {
     error_log('Non message event has come');
     //continue;
@@ -40,7 +41,7 @@ foreach ($events as $event) {
     error_log('Postback message has come');
    // continue;
   }
-
+*/
   // Message Event = LocationMessage
   if  ($event instanceof LINE\LINEBot\Event\MessageEvent\LocationMessage) {
 	  error_log("location -> ".$event->getLatitude().",".$event->getLongitude());
