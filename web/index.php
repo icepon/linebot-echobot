@@ -17,7 +17,7 @@ $response = $bot->replyText($replyToken, "hello!");
 echo "1.3";
 */
 $kin = array("โรงอาหาร","เป็ด","เต๊นท์","ราเมง","กินคลีน","ไม่กิน ลดความอ้วน");
-
+$rand_kin = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]];
 $access_token = 'AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3B31gVTyIwIMhyO4g1XWptfVyFJ7kmUGdDrfB4Pd/UspZp0iIMrLeVq+YJIV0ZY0arNIDv4eVmwLOCm2yns5ezewdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -46,15 +46,15 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จ๋าาาาาาา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "กินไรดี") {
-			$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
+			//$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
 			//$response = $bot->replyMessage($replyToken, $outputText); 
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน"),
 				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ไม่กิน", "ไม่กิน")
 			);
-			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, "test",null,  $actions);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("test", $button);
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $rand_kin,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($rand_kin, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
 			else if ($text == "กิน") {
@@ -62,15 +62,15 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "ไม่กิน") {
 			
-			$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
+			//$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
 			//$response = $bot->replyMessage($replyToken, $outputText); 
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน"),
 				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ไม่กิน", "ไม่กิน")
 			);
-			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $messages,null,  $actions);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($messages, $button);
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $rand_kin,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($rand_kin, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
 			//#NB1
