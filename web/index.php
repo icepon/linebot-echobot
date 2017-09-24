@@ -47,8 +47,33 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "กินไรดี") {
 			$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
+			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
+			//$response = $bot->replyMessage($replyToken, $outputText); 
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("กิน", "กิน"),
+				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ไม่กิน", "ไม่กิน")
+				);
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder($messages, $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($messages, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); 
+			}
+			else if ($text == "กิน") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จัดไป");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "ไม่กิน") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เอาใหม่ละกัน");	
+			$response = $bot->replyMessage($replyToken, $outputText);
+			$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
+			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
+			//$response = $bot->replyMessage($replyToken, $outputText); 
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("กิน", "กิน"),
+				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ไม่กิน", "ไม่กิน")
+				);
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder($messages, $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($messages, $button);
+			$response = $bot->replyMessage($replyToken, $outputText);
+			}
 			//#NB1
 			else if ($text == "nb1") {
 			$actions = array (
