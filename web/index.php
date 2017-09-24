@@ -50,8 +50,8 @@ if (!is_null($events['events'])) {
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
 			//$response = $bot->replyMessage($replyToken, $outputText); 
 			$actions = array (
-				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน"),
-				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ไม่กิน", "ไม่กิน")
+				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน")
+				//New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ไม่กิน", "ไม่กิน")
 			);
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $messages,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($messages, $button);
@@ -66,8 +66,8 @@ if (!is_null($events['events'])) {
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
 			//$response = $bot->replyMessage($replyToken, $outputText); 
 			$actions = array (
-				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน"),
-				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ไม่กิน", "ไม่กิน")
+				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน")
+				//New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ไม่กิน", "ไม่กิน")
 			);
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $messages,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($messages, $button);
