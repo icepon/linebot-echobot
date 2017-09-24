@@ -67,8 +67,8 @@ if (!is_null($events['events'])) {
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
 			//$response = $bot->replyMessage($replyToken, $outputText); 
 			$actions = array (
-				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน"),
-				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ไม่กิน", "ไม่กิน")
+				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("t", "t"),
+				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("t", "t")
 				);
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder($messages,null,null, $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($messages, $button);
