@@ -50,12 +50,12 @@ if (!is_null($events['events'])) {
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
 			//$response = $bot->replyMessage($replyToken, $outputText); 
 			$actions = array (
-				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("กิน", "กิน"),
-				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ไม่กิน", "ไม่กิน")
-				);
-			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder($messages,null,null, $actions);
+				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน"),
+				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ไม่กิน", "ไม่กิน")
+			);
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $messages,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($messages, $button);
-			$response = $bot->replyMessage($replyToken, $outputText); 
+			$response = $bot->replyMessage($replyToken, $outputText);
 			}
 			else if ($text == "กิน") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จัดไป");	
@@ -66,11 +66,11 @@ if (!is_null($events['events'])) {
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
 			//$response = $bot->replyMessage($replyToken, $outputText); 
 			$actions = array (
-				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน")
+				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("กิน", "กิน"),
+				New \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder("ไม่กิน", "ไม่กิน")
 			);
-			$b_description = "คุณพงศธร T123456789 MEMO 31/01/61";	
-			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $messages,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($messages, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
 			//#NB1
