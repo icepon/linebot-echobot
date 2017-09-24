@@ -45,6 +45,10 @@ if (!is_null($events['events'])) {
 			else if ($text == "ไอซ์") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จ๋าาาาาาา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "กินไรดี2") {
+			$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
+			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "กินไรดี") {
 			$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
