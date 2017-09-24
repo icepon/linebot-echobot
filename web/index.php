@@ -63,15 +63,15 @@ if (!is_null($events['events'])) {
 			else if ($text == "ไม่กิน") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เอาใหม่ละกัน");	
 			$response = $bot->replyMessage($replyToken, $outputText);
-			$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
+			//$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($messages);	
 			//$response = $bot->replyMessage($replyToken, $outputText); 
 			$actions = array (
-				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("กิน", "กิน"),
-				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ไม่กิน", "ไม่กิน")
-				);
-			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder($messages,null,null, $actions);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($messages, $button);
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ตรวจสอบข้อมูล", "https://awa.aia.co.th/login/")
+			);
+			$b_description = "คุณพงศธร T123456789 MEMO 31/01/61";	
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
 			//#NB1
