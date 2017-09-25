@@ -24,7 +24,7 @@ if (strtolower($m_type) == "bill1") {
 			$b_description = "กรุณาแจ้ง คุณพงศธร T123456789 ครบกำหนด 31/01/61 จำนวน 50,000 บาท";	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
-			$response = $bot->replyMessage($replyToken, $outputText);	}
+			$response = $bot->pushMessage($_GET["userId"], $outputText);	}
 else if (strtolower($m_type) == "nb1") {
   $actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ตรวจสอบข้อมูล", "https://awa.aia.co.th/login/")
@@ -32,7 +32,7 @@ else if (strtolower($m_type) == "nb1") {
 			$b_description = "คุณพงศธร T123456789 MEMO 31/01/61";	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
-			$response = $bot->replyMessage($replyToken, $outputText);
+			$response = $bot->pushMessage($_GET["userId"], $outputText);
 }
 else
 {
