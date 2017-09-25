@@ -36,5 +36,6 @@ else if (strtolower($m_type) == "nb1") {
 }
 else
 {
-  
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
+$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 }
