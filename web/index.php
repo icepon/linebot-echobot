@@ -53,6 +53,15 @@ if (!is_null($events['events'])) {
 			else if ($text == "ทำไรอยู่") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ไม่บอก อิอิ");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "แนน") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("แนนสวย");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "555") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("หัวเราะพ่อง");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "เครียด") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เครียดมาเล่นกับเรา");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "เก็บ") {
 			$user_id =$event['source']['userId'];
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($user_id);	
@@ -95,7 +104,7 @@ if (!is_null($events['events'])) {
 			//#NB1
 			else if (strtolower($text) == "nb1") {
 			$actions = array (
-				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ตรวจสอบข้อมูล", "https://awa.aia.co.th/login/")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ตรวจสอบข้อมูล", "https://awa.aia.co.th/login/")
 			);
 			$b_description = "คุณพงศธร T123456789 MEMO 31/01/61";	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
