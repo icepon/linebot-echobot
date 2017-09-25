@@ -57,10 +57,10 @@ if (!is_null($events['events'])) {
 			else if(strpos( $text , "แนน" ) !== false){
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("แนนสวย");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
-			else if ($text == "555") {
+			else if(strpos( $text , "555" ) !== false){
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("หัวเราะพ่อง");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
-			else if ($text == "เครียด") {
+			else if(strpos( $text , "เครียด" ) !== false){
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เครียดมาเล่นกับเรา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "เก็บ") {
