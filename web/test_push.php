@@ -34,6 +34,12 @@ else if (strtolower($m_type) == "nb1") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
 			$response = $bot->pushMessage($_GET["userId"], $outputText);
 }
+else if (strtolower($m_type) == "img")
+{
+	$img_url = "https://img.wongnai.com/p/s/2016/06/29/81e4c5272de045c1a68834aea8ba9ee0.jpg";
+	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+	$response = $bot->pushMessage($_GET["userId"], $outputText);
+}
 else
 {
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
