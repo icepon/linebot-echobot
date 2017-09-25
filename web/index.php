@@ -53,6 +53,10 @@ if (!is_null($events['events'])) {
 			else if ($text == "ทำไรอยู่") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ไม่บอก อิอิ");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "เก็บ") {
+			$user_id =$event['userId'];
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($user_id);	
+			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "ไอซ์") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จ๋าาาาาาา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
