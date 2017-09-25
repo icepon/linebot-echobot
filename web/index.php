@@ -54,7 +54,7 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ไม่บอก อิอิ");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "เก็บ") {
-			$user_id =$event['userId'];
+			$user_id =$event['source']['userId'];
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($user_id);	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "ไอซ์") {
