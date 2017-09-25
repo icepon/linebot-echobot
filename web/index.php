@@ -92,9 +92,9 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			else if (strtolower($text) == "nb2") {
-			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $nb2,null,  null);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($nb2, $button);
-			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($nb2);	
+			//$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $nb2,null,  null);
+			//$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($nb2, $button);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($nb2);	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if (strtolower($text) == "nb3") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($nb3);	
