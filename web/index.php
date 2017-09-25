@@ -53,7 +53,8 @@ if (!is_null($events['events'])) {
 			else if ($text == "ทำไรอยู่") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ไม่บอก อิอิ");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
-			else if ($text == "แนน") {
+			//else if ($text == "แนน") {
+			else if(strpos( $text , "แนน" ) !== false){
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("แนนสวย");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "555") {
