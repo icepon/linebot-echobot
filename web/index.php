@@ -152,7 +152,7 @@ if (!is_null($events['events'])) {
 			);
 			$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/Screen%20Shot%202560-09-25%20at%2011.26.48%20PM.png";
 			//$b_description = "กรุณาแจ้ง คุณพงศธร T123456789 ครบกำหนด 31/01/61 จำนวน 50,000 บาท";	
-			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, "",$img_url,  $actions);
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, " ",$img_url,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("test", $button);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			else if (strtolower($text) == "bill2") {
