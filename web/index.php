@@ -26,7 +26,7 @@ $nb2 = "❎ กรมธรรม์ใหม่ ❎\n\nคุณพงศธร
 $nb3 = "✅ กรมธรรม์ใหม่ ✅\n\nคุณพงศธร ทับทิมไทย T123456789 อนุมัติเบื้องต้น 31/01/60 เบี้ยรวม 1,000,000.00 บาท ขณะนี้รอจดหมายตอบรับ Counter Offer จากลูกค้า";
 $nb4 = "✅ กรมธรรม์ใหม่ ✅\n\nคุณพงศธร ทับทิมไทย T123456789 อนุมัติ 31/01/60 เบี้ยรวม 10,000.00 บาท";
 //Billing
-$bill2 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ ครบกำหนด 12/01/60 จำนวน 10,000฿ หรือ 12,000฿ พร้อมข้อเสนอเพิ่มเติม";
+$bill2 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ ครบกำหนด 12/01/60 จำนวน 10,000 บ. หรือ 12,000 บ. พร้อมข้อเสนอเพิ่มเติม";
 $bill3 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ จำนวน 10,000 บ. กธ.อาจขาด 10/02/60";
 $bill4 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ จำนวน 10,000 บ. หรือ 12,000 บ. พร้อมข้อเสนอเพิ่มเติม กธ.อาจขาด 10/02/60";
 
@@ -61,7 +61,7 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("แนนสวย");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if(strpos( $text , "555" ) !== false){
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("หัวเราะพ่อง");	
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("5555555555");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if(strpos( $text , "เครียด" ) !== false){
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เครียดมาเล่นกับเรา");	
