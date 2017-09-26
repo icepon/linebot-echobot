@@ -165,7 +165,7 @@ if (!is_null($events['events'])) {
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า ✆", "tel:1581")
 			  );
 			  $b_description1 = "เตือนการชำระเบี้ย    คุณพงศธร T123456789 ครบกำหนด 31/01/61 จำนวนเงิน 10,000 บาท";
-			  $column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $b_description1,null,  $actions);
+			  $column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $b_description1,null,  $action1);
 			  
 			  array_push($columns,$column1);	
 			$actions2 = array(
@@ -174,7 +174,7 @@ if (!is_null($events['events'])) {
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า ✆", "tel:1581")
 			  );
 			  $b_description2 = "จำนวนเงินพร้อมข้อเสนอความคุ้มครอง 12,000 บาท";
-			  $column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $b_description2,null,  $actions);
+			  $column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $b_description2,null,  $action2);
 			  array_push($columns,$column2);	
 			
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
