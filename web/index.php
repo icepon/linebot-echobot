@@ -12,13 +12,7 @@ new media_line_me.LineButton({'pc':false,'lang':'en','type':'a'});
 </script>
 </span>";
 
-function String2Hex($string){
-    $hex='';
-    for ($i=0; $i < strlen($string); $i++){
-        $hex .= dechex(ord($string[$i]));
-    }
-    return $hex;
-}
+
 
 /*echo "1.2";
 $replyToken = $event['replyToken'];
@@ -43,11 +37,14 @@ $bill5 = "💡 เตือนการชำระเบี้ย 💡\n\nค�
 $con1 = "❗ กรมธรรม์ขยายเวลา ❗\n\nคุณธวัชชัย จงรักดี T123456789 มีสถานะเป็นขยายเวลา (ETI)  สิ้นสุดความคุ้มครอง 12/02/2561 กรุณาแจ้งลูกค้าชำระเบี้ยเพื่อต่ออายุ";
 $con3 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณธวัชชัย จงรักดี T123456789 ยังไม่ได้ชำระเบี้ยฯ เกินกำหนดแล้ว 52 วัน กรุณาแจ้งลูกค้าชำระเบี้ยฯ";
 $con2 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณธวัชชัย จงรักดี T123456789 ยังไม่ได้ชำระเบี้ยฯ เกินกำหนดแล้ว 45 วัน กรุณาแจ้งลูกค้าชำระเบี้ยฯ";
-$con2_f = String2Hex("คุณธวัชชัย จงรักดี T123456789 ยังไม่ได้ชำระเบี้ยฯ เกินกำหนดแล้ว 45 วัน กรุณาชำระเบี้ยฯ");
-$con4 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ ครบกำหนด 12/01/60 จำนวน 10,000 บ. หรือ 12,000 บ. พร้อมข้อเสนอเพิ่มเติม";
-$con5 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ จำนวน 10,000 บ. กธ.อาจขาด 10/02/60";
+$con4 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณธวัชชัย จงรักดี T123456789 ยังไม่ได้ชำระเบี้ยฯ เกินกำหนดแล้ว 60 วัน กรุณาแจ้งลูกค้าชำระเบี้ยฯ";
+$con5 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณธวัชชัย จงรักดี T123456789 ยังไม่ได้ชำระเบี้ยฯ หากชำระภายใน 12/02/2561 ไม่ต้องส่งหนังสือรับรองสุขภาพ (สงวนสิทธิ์หากมีประวัติ)";
+//Claim
+$cl1 = "✅ การเรียกร้องสินไหม ✅\n\nคุณธวัชชัย จงรักดี บริษัทฯได้รับเรื่องการเรียกร้องสินไหมแล้ว อยู่ระหว่างการพิจารณา 12/01/60";
+$cl2 = "💡 การเรียกร้องสินไหม 💡\n\nคุณธวัชชัย จงรักดี บริษัทฯได้ขอเอกสารเพิ่มเติมจากโรงพยาบาล... เพื่อประกอบการพิจารณาสินไหม";
+$cl3 = "❗ การเรียกร้องสินไหม ❗\n\nคุณธวัชชัย จงรักดี บริษัทฯปฏิเสธการจ่ายสินไหม เพราะไม่อยู่ในเงื่อนไข";
+$cl4 = "✅ การเรียกร้องสินไหม ✅\n\nคุณธวัชชัย จงรักดี บริษัทฯอนุมัติการจ่ายสินไหม จำนวน 2,000 บาท (เต็มจำนวน/บางส่วน)";
 
-echo $con2_f;
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -261,6 +258,43 @@ if (!is_null($events['events'])) {
 			);	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $con5,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($con5, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			//Claim
+			else if (strtolower($text) == "cl1") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายพิจารณาสินไหม", "tel:1581")
+				);	
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $cl1,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($cl1, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if (strtolower($text) == "cl2") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายพิจารณาสินไหม", "tel:1581")
+				);	
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $cl2,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($cl2, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if (strtolower($text) == "cl3") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายพิจารณาสินไหม", "tel:1581")
+				);
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $cl3,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($cl3, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if (strtolower($text) == "cl4") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายพิจารณาสินไหม", "tel:1581")
+				);
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $cl4,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($cl4, $button);
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else {
 			$messages = [ 'type'=>'text','text'=>"อิอิ"];
