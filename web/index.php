@@ -46,7 +46,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			//Start here **
-			echo "<script>console.log( $text );</script>";
+			echo "<script>console.log(<?= json_encode($text); ?>);</script>";
 			if ($text == "สวัสดี"){
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("สวัสดีจ้าาาา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
