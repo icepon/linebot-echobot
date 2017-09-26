@@ -30,6 +30,8 @@ $bill2 = "คุณพงศธร T123456789 ข้อเสนอเพิ่�
 $bill3 = "กรุณาแจ้ง คุณพงศธร T123456789 ชำระเบี้ย 500,000 บ. ภายใน 12/02/60";
 $bill4 = "คุณพงศธร T123456789 ข้อเสนอเพิ่มความคุ้มครองในปีต่ออายุกรมธรรม์";
 
+$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['message']['text']);	
+$response = $bot->replyMessage($replyToken, $outputText);
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -46,8 +48,6 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			//Start here **
-			echo("<script>console.log('test');</script>");
-			echo("<script>console.log('PHP: ".$text."');</script>");
 			if ($text == "สวัสดี"){
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("สวัสดีจ้าาาา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
