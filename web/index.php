@@ -107,7 +107,7 @@ if (!is_null($events['events'])) {
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ตรวจสอบข้อมูล", "https://awa.aia.co.th/login/")
 			);
-			$b_description = "คุณพงศธร T123456789 MEMO 31/01/61";	
+			$b_description = "<b>คุณพงศธร</b> T123456789 MEMO 31/01/61";	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
