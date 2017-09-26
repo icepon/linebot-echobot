@@ -48,7 +48,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);	
-			$response = $bot->replyMessage($replyToken, $outputText); }
+			$response = $bot->replyMessage($replyToken, $outputText); 
 			
 			//Start here **
 			if ($text == "สวัสดี"){
