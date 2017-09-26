@@ -29,6 +29,13 @@ $nb4 = "✅ กรมธรรม์ใหม่ ✅\n\nคุณพงศธร
 $bill2 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ ครบกำหนด 12/01/60 จำนวน 10,000 บ. หรือ 12,000 บ. พร้อมข้อเสนอเพิ่มเติม";
 $bill3 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ จำนวน 10,000 บ. กธ.อาจขาด 10/02/60";
 $bill4 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ จำนวน 10,000 บ. หรือ 12,000 บ. พร้อมข้อเสนอเพิ่มเติม กธ.อาจขาด 10/02/60";
+$bill5 = "💡 เตือนการชำระเบี้ย 💡\n\nคุณพงศธร ทับทิมไทย T123456789 คุ้มครองอุบัติเหตุ ใกล้ถึงกำหนดชำระ 12/02/60 กรุณาแจ้งเตือนลูกค้าให้ชำระเบี้ยเพื่อต่ออายุ";
+//Conservation
+$con1 = "❗ กรมธรรม์ขยายเวลา ❗\n\nคุณธวัชชัย จงรักดี T123456789 มีสถานะเป็นขยายเวลา (ETI)  สิ้นสุดความคุ้มครอง 12/02/2561 กรุณาแจ้งลูกค้าชำระเบี้ยเพื่อต่ออายุ";
+$con2 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ จำนวน 10,000 บ. กธ.อาจขาด 10/02/60";
+$con3 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ จำนวน 10,000 บ. หรือ 12,000 บ. พร้อมข้อเสนอเพิ่มเติม กธ.อาจขาด 10/02/60";
+$con4 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ ครบกำหนด 12/01/60 จำนวน 10,000 บ. หรือ 12,000 บ. พร้อมข้อเสนอเพิ่มเติม";
+$con5 = "❗ เตือนการชำระเบี้ย ❗\n\nคุณพงศธร ทับทิมไทย T123456789 ยังไม่ได้ชำระเบี้ยฯ จำนวน 10,000 บ. กธ.อาจขาด 10/02/60";
 
 
 
@@ -198,6 +205,52 @@ if (!is_null($events['events'])) {
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $bill4,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($bill4, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
+			//Conservation
+			else if (strtolower($text) == "con1") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามเบี้ย+เงื่อนไข", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรแจ้งลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%98%E0%B8%A7%E0%B8%B1%E0%B8%8A%E0%B8%8A%E0%B8%B1%E0%B8%A2+%E0%B8%88%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%B5+T123456789+%E0%B8%A1%E0%B8%B5%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%82%E0%B8%A2%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2+%28ETI%29++%E0%B8%AA%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B8%E0%B8%94%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B8%E0%B9%89%E0%B8%A1%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%87+12%2F02%2F2561+%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%93%E0%B8%B2%E0%B9%81%E0%B8%88%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%AD%E0%B8%B2%E0%B8%A2%E0%B8%B8")
+			);	
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $con1,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($con1, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if (strtolower($text) == "con2") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามเบี้ย+เงื่อนไข", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรแจ้งลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%9E%E0%B8%87%E0%B8%A8%E0%B8%98%E0%B8%A3+%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%97%E0%B8%A2+T123456789+%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%AF+%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99+10%2C000+%E0%B8%9A.+%E0%B8%81%E0%B8%98.%E0%B8%AD%E0%B8%B2%E0%B8%88%E0%B8%82%E0%B8%B2%E0%B8%94+10%2F02%2F60")
+			);	
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $con2,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($con2, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if (strtolower($text) == "con3") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามเบี้ย+เงื่อนไข", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรแจ้งลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%9E%E0%B8%87%E0%B8%A8%E0%B8%98%E0%B8%A3+%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%97%E0%B8%A2+T123456789+%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%AF+%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99+10%2C000+%E0%B8%9A.+%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD+12%2C000+%E0%B8%9A.+%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%AA%E0%B8%99%E0%B8%AD%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1+%E0%B8%81%E0%B8%98.%E0%B8%AD%E0%B8%B2%E0%B8%88%E0%B8%82%E0%B8%B2%E0%B8%94+10%2F02%2F60")
+			);	
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $con3,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($con3, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if (strtolower($text) == "con4") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามเบี้ย+เงื่อนไข", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรแจ้งลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%9E%E0%B8%87%E0%B8%A8%E0%B8%98%E0%B8%A3+%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%97%E0%B8%A2+T123456789+%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%AF+%E0%B8%84%E0%B8%A3%E0%B8%9A%E0%B8%81%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%94+12%2F01%2F60+%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99+10%2C000+%E0%B8%9A.+%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD+12%2C000+%E0%B8%9A.+%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%AA%E0%B8%99%E0%B8%AD%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1")
+			);	
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $con4,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($con4, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if (strtolower($text) == "con5") {
+			$actions = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามเบี้ย+เงื่อนไข", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรแจ้งลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%9E%E0%B8%87%E0%B8%A8%E0%B8%98%E0%B8%A3+%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%97%E0%B8%A2+T123456789+%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%AF+%E0%B8%88%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99+10%2C000+%E0%B8%9A.+%E0%B8%81%E0%B8%98.%E0%B8%AD%E0%B8%B2%E0%B8%88%E0%B8%82%E0%B8%B2%E0%B8%94+10%2F02%2F60")
+			);	
+			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $con5,null,  $actions);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($con5, $button);
+			$response = $bot->replyMessage($replyToken, $outputText); }
 			else {
 			$messages = [ 'type'=>'text','text'=>"อิอิ"];
 			}
