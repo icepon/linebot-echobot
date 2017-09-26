@@ -22,9 +22,9 @@ $access_token = 'AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3
 
 //Mesage to be send
 //NB
-$nb2 = "คุณพงศธร ทับทิมไทย T123456789 ปฏิเสธการรับประกัน ทุนประกัน 10,000,000 บาท เมื่อ 31/01/60 เพราะขาดเอกสาร/สิ่งที่ขอเกี่ยวกับสุขภาพ";
-$nb3 = "คุณพงศธร ทับทิมไทย T123456789 อนุมัติเบื้องต้น 31/01/60 เบี้ยรวม 1,000,000.00 บาท ขณะนี้รอจดหมายตอบรับ Counter Offer จากลูกค้า";
-$nb4 = "คุณพงศธร ทับทิมไทย T123456789 อนุมัติ 31/01/60 เบี้ยรวม 10,000.00 บาท";
+$nb2 = "กรมธรรม์ใหม่\n\nคุณพงศธร ทับทิมไทย T123456789 ปฏิเสธการรับประกัน ทุนประกัน 10,000,000 บาท เมื่อ 31/01/60 เพราะขาดเอกสาร/สิ่งที่ขอเกี่ยวกับสุขภาพ";
+$nb3 = "กรมธรรม์ใหม่\n\nคุณพงศธร ทับทิมไทย T123456789 อนุมัติเบื้องต้น 31/01/60 เบี้ยรวม 1,000,000.00 บาท ขณะนี้รอจดหมายตอบรับ Counter Offer จากลูกค้า";
+$nb4 = "กรมธรรม์ใหม่\n\nคุณพงศธร ทับทิมไทย T123456789 อนุมัติ 31/01/60 เบี้ยรวม 10,000.00 บาท";
 //Billing
 $bill2 = "คุณพงศธร T123456789 ข้อเสนอเพิ่มความคุ้มครองในปีต่ออายุกรมธรรม์";
 $bill3 = "กรุณาแจ้ง คุณพงศธร T123456789 ชำระเบี้ย 500,000 บ. ภายใน 12/02/60";
@@ -108,7 +108,7 @@ if (!is_null($events['events'])) {
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อบริษัท", "tel:1581"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B9%8C%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88+%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%9E%E0%B8%87%E0%B8%A8%E0%B8%98%E0%B8%A3+%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%97%E0%B8%A2+T123456789+%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD+31%2F01%2F60")
 			);
-			$b_description = "กรมธรรม์ใหม่ \n\nคุณพงศธร ทับทิมไทย T123456789 ขอเอกสารเพิ่มเติมเมื่อ 31/01/60";	
+			$b_description = "กรมธรรม์ใหม่\n\nคุณพงศธร ทับทิมไทย T123456789 ขอเอกสารเพิ่มเติมเมื่อ 31/01/60";	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
