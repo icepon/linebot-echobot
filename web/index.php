@@ -106,6 +106,9 @@ if (!is_null($events['events'])) {
 			else if ($text == "กิน") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จัดไป");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "ขอหวย2ตัว") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(rand(00,99));	
+			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "ไม่กิน") {
 			
 			//$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
