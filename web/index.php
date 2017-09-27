@@ -109,6 +109,18 @@ if (!is_null($events['events'])) {
 			else if ($text == "ขอหวย2ตัว") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(rand(00,99));	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "ขอหวย3ตัว") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(rand(000,999));	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "ขอรางวัลที่หนึ่ง") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(rand(000000,999999));	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "หวยกิน") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("สม");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "สาธุ") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เจริญพร");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "ไม่กิน") {
 			
 			//$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
