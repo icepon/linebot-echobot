@@ -112,7 +112,7 @@ if (!is_null($events['events'])) {
 			else if ($text == "ขอหวย3ตัว") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(rand(000,999));	
 			$response = $bot->replyMessage($replyToken, $outputText); }
-			else if ($text == "ขอรางวัลที่หนึ่ง") {
+			else if(strpos( $text , "ขอรางวัลที่" ) !== false){
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(rand(000000,999999));	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "หวยกิน") {
