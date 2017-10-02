@@ -118,6 +118,12 @@ if (!is_null($events['events'])) {
 			else if ($text == "หวยกิน") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("สม");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if(strpos( $text , "เอ๋สวย" ) !== false){
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เอ๋สวยมาก");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if(strpos( $text , "เอ๋" ) !== false){
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เอ๋สวย");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "สาธุ") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เจริญพร");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
