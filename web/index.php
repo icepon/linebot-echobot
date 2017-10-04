@@ -254,6 +254,9 @@ if (!is_null($events['events'])) {
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $apl,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($apl, $button);
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if (strtolower($text) == "apl2") {
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("กธ.T123456789 คุณธวัชชัย จงรักดี กำหนดชำระเบี้ยวันที่ 12/01/61 และมีสถานะกู้ชำระอัตโนมัติ เพื่อความคุ้มครองที่ต่อเนื่อง กรุณาติดต่อลูกค้าเพื่อชำระเบี้ย และ/หรือ ชำระคืนเงินกู้อัตโนมัติ สอบถามยอดชำระ 02-3538888");	
+			$response = $bot->replyMessage($replyToken, $outputText);  }
 			else if (strtolower($text) == "con1") {
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามเบี้ย+เงื่อนไข", "tel:1581"),
