@@ -13,13 +13,11 @@ echo  $_GET["m_text"];
 //Image builder
 function LoadJpeg($imgname)
 {
-    /*
+    
     $im = @imagecreatefromjpeg($imgname);
 
    
-    if(!$im)
-    {
-        
+    
         $im  = imagecreatetruecolor(150, 30);
         $bgc = imagecolorallocate($im, 255, 255, 255);
         $tc  = imagecolorallocate($im, 0, 0, 0);
@@ -28,8 +26,8 @@ function LoadJpeg($imgname)
 
         
         imagestring($im, 1, 5, 5, 'Error loading ' . $imgname, $tc);
-    }
-*/
+  
+
     return $imgname;
 }
 
