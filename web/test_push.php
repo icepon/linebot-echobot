@@ -10,6 +10,31 @@ echo  $_GET["userId"];
 echo  $_GET["m_type"];
 echo  $_GET["m_text"];
 
+//Image builder
+function LoadJpeg($imgname)
+{
+    /* Attempt to open */
+    $im = @imagecreatefromjpeg($imgname);
+
+    /* See if it failed */
+    if(!$im)
+    {
+        /* Create a black image */
+        $im  = imagecreatetruecolor(150, 30);
+        $bgc = imagecolorallocate($im, 255, 255, 255);
+        $tc  = imagecolorallocate($im, 0, 0, 0);
+
+        imagefilledrectangle($im, 0, 0, 150, 30, $bgc);
+
+        /* Output an error message */
+        imagestring($im, 1, 5, 5, 'Error loading ' . $imgname, $tc);
+    }
+
+    return $im;
+}
+
+
+
 //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
 //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 
@@ -37,7 +62,8 @@ else if (strtolower($m_type) == "nb1") {
 else if (strtolower($m_type) == "img")
 {
 	$img_url = "https://img.wongnai.com/p/s/2016/06/29/81e4c5272de045c1a68834aea8ba9ee0.jpg";
-	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+	$imgg = LoadJpeg($img_url);
+	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
 	$response = $bot->pushMessage($_GET["userId"], $outputText);
 }
 else
