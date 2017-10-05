@@ -128,6 +128,13 @@ if (!is_null($events['events'])) {
 			else if ($text == "สาธุ") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เจริญพร");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "ชวนเพื่อนสมัคร") {
+			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("มาสมัครกันเถอะ");
+			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+			$img_url = "https://img.wongnai.com/p/s/2016/06/29/81e4c5272de045c1a68834aea8ba9ee0.jpg";
+			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("มาสมัครกันเถอะ"))
+				->add(new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url));
+			$response = $bot->replyMessage($replyToken, $multipleMessageBuilder); }
 			else if ($text == "ไม่กิน") {
 			
 			//$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
