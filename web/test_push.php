@@ -14,7 +14,7 @@ echo  $_GET["m_text"];
 function LoadJpeg($imgname)
 {
     
-    $im = @imagecreatefromjpeg($imgname);
+    $im = imagecreatefromjpeg($imgname);
 
    
     
