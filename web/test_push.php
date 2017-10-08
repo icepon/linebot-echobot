@@ -14,8 +14,8 @@ echo  $_GET["m_text"];
 function LoadJpeg($imgname)
 {
     $im = imagecreatefromjpeg($imgname);
-   $black = ImageColorAllocate($im, 0, 0, 0); 
-   ImageString($im, 5, 15, 5, "testtttttttt", $black);
+   //$black = ImageColorAllocate($im, 0, 0, 0); 
+   //ImageString($im, 5, 15, 5, "testtttttttt", $black);
 	
     return imagejpeg($im);
 }
