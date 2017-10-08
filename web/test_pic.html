@@ -23,8 +23,8 @@ function LoadJpeg($imgname)
 
 header('Content-Type: image/jpeg');
 $img_url = "https://img.wongnai.com/p/s/2016/06/29/81e4c5272de045c1a68834aea8ba9ee0.jpg";
-$img = LoadJpeg($img_url);
+//$img = LoadJpeg($img_url);
 
-imagejpeg($img);
-imagedestroy($img);
+imagejpeg($img_url);
+imagedestroy($img_url);
 ?>
