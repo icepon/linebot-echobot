@@ -49,8 +49,8 @@ else if (strtolower($m_type) == "nb1") {
 else if (strtolower($m_type) == "img")
 {
 	$img_url = "https://img.wongnai.com/p/s/2016/06/29/81e4c5272de045c1a68834aea8ba9ee0.jpg";
-	$imgg = LoadJpeg($img_url);
-	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
+	//$imgg = LoadJpeg($img_url);
+	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
 	$response = $bot->pushMessage($_GET["userId"], $outputText);
 }
 else
