@@ -13,11 +13,11 @@ echo  $_GET["m_text"];
 //Image builder
 function LoadJpeg($imgname)
 {
-    $im = imagecreatefromjpeg($imgname);
+    //$im = imagecreatefromjpeg($imgname);
    //$black = ImageColorAllocate($im, 0, 0, 0); 
    //ImageString($im, 5, 15, 5, "testtttttttt", $black);
 	
-    return imagejpeg($im);
+    return imagejpeg($imgname);
 }
 
 
