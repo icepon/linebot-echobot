@@ -53,10 +53,16 @@ else if (strtolower($m_type) == "img")
 	
 	//test img map
 	$actionArray = array();
-        array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder(
-            '55555',
+        array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
+            'tel:1581',
             // Button is 100px on 700px image. So 149px on base size(1040px)
             new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(84, 445, 369, 130)));
+	
+	array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
+            'https://lineit.line.me/share/ui?url=%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2',
+            // Button is 100px on 700px image. So 149px on base size(1040px)
+            new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(575, 446, 364, 130)));
+	
         $imagemapMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder (
           $img_url, // prevent cache
           "จ่ายเงิน",
