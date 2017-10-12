@@ -52,25 +52,23 @@ else if (strtolower($m_type) == "img")
 	//$imgg = LoadJpeg($img_url);
 	
 	//test img map
-	$imagemapUriActionBuilder = new \LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
-            'https://google.co.th/',
-            new \LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0,0,560,120)
+	$actionArray = array();
+        array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder(
+            'Button Pushed!',
+            // Button is 100px on 700px image. So 149px on base size(1040px)
+            new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 149, 149)));
+        $imagemapMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder (
+          $img_url, // prevent cache
+          "代替テキスト",
+          new LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(1040, 1040),
+          $actionArray
         );
-
-$ImageMapMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder(
-    $img_url,
-    'Text to be displayed',
-    $baseSizeBuilder,
-    [
-        $imagemapUriActionBuilder
-    ]
-);
 	
 	
 	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
 	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
 	//$response = $bot->pushMessage($_GET["userId"], $outputText);
-	$response = $bot->pushMessage($_GET["userId"], $ImageMapMessageBuilder);
+	$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
 } 
 else
 {
