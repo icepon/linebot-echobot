@@ -48,18 +48,18 @@ else if (strtolower($m_type) == "nb1") {
 }
 else if (strtolower($m_type) == "img")
 {
-	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank.png?_ignored=";
+	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
 	//$imgg = LoadJpeg($img_url);
 	
 	//test img map
 	$actionArray = array();
         array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapMessageActionBuilder(
-            'Button Pushed!',
+            '55555',
             // Button is 100px on 700px image. So 149px on base size(1040px)
-            new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 149, 149)));
+            new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(84, 445, 369, 130)));
         $imagemapMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder (
           $img_url, // prevent cache
-          "กรมธรรม์ใหม่",
+          "จ่ายเงิน",
           new LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(600, 1040),
           $actionArray
         );
