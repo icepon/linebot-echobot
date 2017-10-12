@@ -49,8 +49,9 @@ else if (strtolower($m_type) == "nb1") {
 else if (strtolower($m_type) == "img")
 {
 	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/port.PNG";
-	//$imgg = LoadJpeg($img_url);
-	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+	$imgg = LoadJpeg($img_url);
+	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
 	$response = $bot->pushMessage($_GET["userId"], $outputText);
 }
 else
