@@ -60,7 +60,7 @@ else if (strtolower($m_type) == "img")
         $imagemapMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder (
           $img_url, // prevent cache
           "กรมธรรม์ใหม่",
-          new LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(800, 1040),
+          new LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(730, 1040),
           $actionArray
         );
 	
