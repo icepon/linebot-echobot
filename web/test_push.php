@@ -48,12 +48,30 @@ else if (strtolower($m_type) == "nb1") {
 }
 else if (strtolower($m_type) == "img")
 {
-	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/port.PNG";
-	$imgg = LoadJpeg($img_url);
+	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/port.PNG?_ignored=";
+	//$imgg = LoadJpeg($img_url);
+	
+	//test img map
+	$imagemapUriActionBuilder = new \LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
+            'https://google.co.th/',
+            new \LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0,0,560,120)
+        );
+
+$ImageMapMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder(
+    $img_url,
+    'Text to be displayed',
+    $baseSizeBuilder,
+    [
+        $imagemapUriActionBuilder
+    ]
+);
+	
+	
 	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
-	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
-	$response = $bot->pushMessage($_GET["userId"], $outputText);
-}
+	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
+	//$response = $bot->pushMessage($_GET["userId"], $outputText);
+	$response = $bot->pushMessage($_GET["userId"], $ImageMapMessageBuilder);
+} 
 else
 {
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
