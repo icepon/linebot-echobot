@@ -48,7 +48,7 @@ else if (strtolower($m_type) == "nb1") {
 }
 else if (strtolower($m_type) == "img")
 {
-	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/port.PNG?_ignored=";
+	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/Capture.PNG?_ignored=";
 	//$imgg = LoadJpeg($img_url);
 	
 	//test img map
@@ -59,7 +59,7 @@ else if (strtolower($m_type) == "img")
             new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 149, 149)));
         $imagemapMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder (
           $img_url, // prevent cache
-          "代替テキスト",
+          "กรมธรรม์ใหม่",
           new LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(1040, 1040),
           $actionArray
         );
