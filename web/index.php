@@ -238,8 +238,8 @@ if (!is_null($events['events'])) {
   			
 			$columns = array();	
 				
-				$columns->add($column1)
-				->add($column2);
+			$columns[] = $column1;
+				$columns[] = $column2;
 				
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);	
 			
