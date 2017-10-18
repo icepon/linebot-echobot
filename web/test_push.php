@@ -13,6 +13,7 @@ echo  $_GET["m_text"];
 //Image builder
 function LoadJpeg()
 {
+	echo 'A1';
    $imgPath = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
     $image = imagecreatefromjpeg($imgPath);
     $color = imagecolorallocate($image, 255, 255, 255);
@@ -20,6 +21,7 @@ function LoadJpeg()
     $fontSize = 3;
     $x = 115;
     $y = 185;
+	echo 'A2';
     imagestring($image, $fontSize, $x, $y, $string, $color);
 	// A few settings
 $image = imagejpeg($image);
