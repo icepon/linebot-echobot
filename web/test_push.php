@@ -15,7 +15,7 @@ function LoadJpeg()
 {
 	echo 'A1';
    $imgPath = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
-    $image = imagecreatefromjpeg($imgPath);
+    $image = imagecreatefrompng($imgPath);
     $color = imagecolorallocate($image, 255, 255, 255);
     $string = "http://recentsolutions.net";
     $fontSize = 3;
@@ -24,7 +24,7 @@ function LoadJpeg()
 	echo 'A2';
     imagestring($image, $fontSize, $x, $y, $string, $color);
 	// A few settings
-$image = imagejpeg($image);
+$image = imagepng($image);
 
 // Read image path, convert to base64 encoding
 $imageData = base64_encode(file_get_contents($image));
