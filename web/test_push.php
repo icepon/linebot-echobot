@@ -11,13 +11,17 @@ echo  $_GET["m_type"];
 echo  $_GET["m_text"];
 
 //Image builder
-function LoadJpeg($imgname)
+function LoadJpeg()
 {
-    $im = imagecreatefromjpeg($imgname);
-   //$black = ImageColorAllocate($im, 0, 0, 0); 
-   //ImageString($im, 5, 15, 5, "testtttttttt", $black);
-	
-    return imagejpeg($im);
+   $imgPath = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
+    $image = imagecreatefromjpeg($imgPath);
+    $color = imagecolorallocate($image, 255, 255, 255);
+    $string = "http://recentsolutions.net";
+    $fontSize = 3;
+    $x = 115;
+    $y = 185;
+    imagestring($image, $fontSize, $x, $y, $string, $color);
+    return imagejpeg($image);
 }
 
 
@@ -48,8 +52,9 @@ else if (strtolower($m_type) == "nb1") {
 }
 else if (strtolower($m_type) == "img")
 {
-	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
-	//$imgg = LoadJpeg($img_url);
+	//$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
+	
+	$img_url = LoadJpeg();
 	
 	//test img map
 	$actionArray = array();
