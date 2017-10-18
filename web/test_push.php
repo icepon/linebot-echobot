@@ -21,7 +21,15 @@ function LoadJpeg()
     $x = 115;
     $y = 185;
     imagestring($image, $fontSize, $x, $y, $string, $color);
-    return imagejpeg($image);
+	// A few settings
+$image = imagejpeg($image);
+
+// Read image path, convert to base64 encoding
+$imageData = base64_encode(file_get_contents($image));
+
+// Format the image SRC:  data:{mime};base64,{data};
+$src = 'data: '.mime_content_type($image).';base64,'.$imageData;
+    return src;
 }
 
 
