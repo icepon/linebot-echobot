@@ -236,9 +236,13 @@ if (!is_null($events['events'])) {
 			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Title", "description", $img_url , $action1);
   			$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Title", "description", $img_url , $action2);
   			
-			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder();	
-			$carousel->add($column1)
+			$columns = array();	
+				
+				$columns->add($column1)
 				->add($column2);
+				
+			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);	
+			
 				
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($bill2, $carousel);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
