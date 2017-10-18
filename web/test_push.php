@@ -62,9 +62,9 @@ else if (strtolower($m_type) == "nb1") {
 }
 else if (strtolower($m_type) == "img")
 {
-	//$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
+	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
 	
-	$img_url = LoadJpeg();
+	//$img_url = LoadJpeg();
 	echo $img_url;
 	//test img map
 	$actionArray = array();
