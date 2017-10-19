@@ -358,11 +358,11 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($con5, $button);
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			//Claim
-			else if (strtolower($text) == "claim1") {
+			else if (strtolower($text) == "cl1") {
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายพิจารณาสินไหม", "tel:1581")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายสินไหม", "tel:1581")
 				);	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $cl1,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($cl1, $button);
@@ -371,7 +371,7 @@ if (!is_null($events['events'])) {
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายพิจารณาสินไหม", "tel:1581")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายสินไหม", "tel:1581")
 				);	
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $cl2,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($cl2, $button);
@@ -380,7 +380,7 @@ if (!is_null($events['events'])) {
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายพิจารณาสินไหม", "tel:1581")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายสินไหม", "tel:1581")
 				);
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $cl3,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($cl3, $button);
@@ -389,7 +389,7 @@ if (!is_null($events['events'])) {
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายพิจารณาสินไหม", "tel:1581")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายสินไหม", "tel:1581")
 				);
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $cl4,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($cl4, $button);
