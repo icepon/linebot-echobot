@@ -358,7 +358,7 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($con5, $button);
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			//Claim
-			else if (strtolower($text) == "cl1") {
+			else if (strtolower($text) == "claim1") {
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
