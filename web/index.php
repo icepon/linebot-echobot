@@ -26,6 +26,10 @@ $access_token = 'AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3
 //Mesage to be send
 //NB
 $nb2 = "❎ กรมธรรม์ใหม่ ❎\n\nคุณพงศธร ทับทิมไทย\nT123456789\nปฏิเสธการรับประกัน ทุนประกัน 10,000,000 บาท เมื่อ 31/01/60 เพราะขาดเอกสาร/สิ่งที่ขอเกี่ยวกับสุขภาพ";
+$nb2n = "❎ แจ้งเตือนกรมธรรม์ใหม่ ❎\n •สถานะ: ปฏิเสธ\n •วันที่: 31/01/60\n •ชื่อ-นามสกุล:คุณพงศธร ทับทิมไทย\n •กธ.T123456789";
+$nb2d = "❎ ปฏิเสธ ❎\n\n เนื่องจาก:\n •ขาดเอกสาร/สิ่งที่ขอเกี่ยวกับสุขภาพ";
+
+
 $nb3 = "✅ กรมธรรม์ใหม่ ✅\n\nคุณพงศธร ทับทิมไทย\nT123456789\nอนุมัติเบื้องต้น 31/01/60 เบี้ยรวม 1,000,000.00 บาท ขณะนี้รอจดหมายตอบรับ Counter Offer จากลูกค้า";
 $nb4 = "✅ กรมธรรม์ใหม่ ✅\n\nคุณพงศธร ทับทิมไทย\nT123456789\nอนุมัติ 31/01/60 เบี้ยรวม 10,000.00 บาท";
 //Billing
@@ -185,6 +189,31 @@ if (!is_null($events['events'])) {
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $nb2,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($nb2, $button);
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			
+			//New template
+			else if (strtolower($text) == "nb2n") {
+			
+			
+			$action1 = array (
+				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อบริษัท", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B9%8C%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88+%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%9E%E0%B8%87%E0%B8%A8%E0%B8%98%E0%B8%A3+%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%97%E0%B8%A2+T123456789+%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD+31%2F01%2F60")
+			);
+			$action2 = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อบริษัท", "tel:1581")
+			);
+			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $nb2n,null, $action1);
+  			$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $nb2d,null, $action2);
+  			
+			$columns = array();	
+				
+			$columns[] = $column1;
+			$columns[] = $column2;
+				
+			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+					
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
+			$response = $bot->replyMessage($replyToken, $outputText);	}
+			
 			else if (strtolower($text) == "nb3") {
 			$actions = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามรายละเอียด", "tel:1581"),
