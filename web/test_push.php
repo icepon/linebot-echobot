@@ -81,7 +81,7 @@ else if (strtolower($m_type) == "nb4i") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($replyToken, $outputText);	}
+			$response = $bot->pushMessage($_GET["userId"], $outputText);	}
 else if (strtolower($m_type) == "img")
 {
 	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
