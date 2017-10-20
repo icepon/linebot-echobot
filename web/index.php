@@ -218,8 +218,8 @@ if (!is_null($events['events'])) {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nb2.PNG";
 			$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/more.PNG";	
 			
-			$nb21 = "T123456789";
-			$nb22 = "คุณพงศธร ทับทิมไทย";
+			$nb21 = "กธ. T123456789";
+			$nb22 = "คุณ พงศธร ทับทิมไทย\n วันที่ 31/10/2561";
 			$nb23 = "เนื่องจาก";
 			$nb24 = "ขาดเอกสาร / สิ่งที่ขอ (เกี่ยวกับสุขภาพ)";
 			$action1 = array (
