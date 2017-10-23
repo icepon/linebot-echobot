@@ -762,7 +762,7 @@ if (!is_null($events['events'])) {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim4.PNG";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
-			$nb21 = "กธ. T123456789";
+			$nb21 = "กธ. T123456789 จำนวน 20,000 บาท";
 			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
 			
 			$action1 = array (
