@@ -734,7 +734,7 @@ if (!is_null($events['events'])) {
 			
 			else if (strtolower($text) == "cl3i") {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim3.PNG";
-			$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
+			$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/more.PNG";	
 			
 			$nb21 = "กธ. T123456789";
 			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
