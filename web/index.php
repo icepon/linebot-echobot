@@ -405,7 +405,7 @@ if (!is_null($events['events'])) {
 			
 			else if (strtolower($text) == "bill2i") {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/bill.PNG";
-			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/po.PNG";
+			$imgurl2  = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/po.PNG";
 			
 			$nb21 = "กธ.T123456789 จำนวนเบี้ย 1,000,000 บาท";
 			$nb22 = "คุณ พงศธร ทับทิมไทย\nกำหนดชำระ 31/10/2561";
@@ -418,6 +418,12 @@ if (!is_null($events['events'])) {
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("บาร์โค้ดเพื่อชำระเบี้ยฯ", "http://iaia-uat.aia.co.th/pay?p=T690321979&a=8197890&d=020714")
 			);
 			
+			$action2 = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%e0%b8%84%e0%b8%b8%e0%b8%93%e0%b8%9e%e0%b8%87%e0%b8%a8%e0%b8%98%e0%b8%a3+T123456789+%e0%b8%84%e0%b8%a3%e0%b8%9a%e0%b8%81%e0%b8%b3%e0%b8%ab%e0%b8%99%e0%b8%94+31%2f01%2f61+%e0%b8%88%e0%b8%b3%e0%b8%99%e0%b8%a7%e0%b8%99+50%2c000+%e0%b8%9a%e0%b8%b2%e0%b8%97+http%3A%2F%2Fiaia-uat.aia.co.th%2Fpay%3Fp%3dT690321979%26a%3d8197890%26d%3d020714"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ข้อมูลเพิ่มติม", "https://awa.aia.co.th/login/"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("บาร์โค้ดเพื่อชำระเบี้ยฯ", "http://iaia-uat.aia.co.th/pay?p=T690321979&a=8197890&d=020714")
+			);
+				
 			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
   			$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb23, $nb24,$imgurl2, $action2);
   			
