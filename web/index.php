@@ -518,16 +518,44 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($con1, $button);
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			
-			//ETI carousel
+			//ETI
 			else if (strtolower($text) == "eti") {
-			//$eti1 = "❗ กรมธรรม์ขยายเวลา ❗\n • ธวัชชัย จงรักดี\n • T123456789\n • สิ้นสุดความคุ้มครอง 12 ก.พ. 2561\n  กรุณาแจ้งลูกค้าชำระเบี้ยเพื่อต่ออายุ";
-			$eti1 = "❗ กรมธรรม์ขยายเวลา ❗\n • ธวัชชัย จงรักดี\n • T123456789\n • สิ้นสุดความคุ้มครอง\n  12 ก.พ. 2561\nกรุณาแจ้งลูกค้าชำระเบี้ยเพื่อต่ออายุ";
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/eti.PNG";	
 			
-			$eti2 = "❗ กรมธรรม์ขยายเวลา ❗\n • สมหวัง ลดโลกร้อน\n • T123456789\n • สิ้นสุดความคุ้มครอง\n  12 ก.พ. 2561\nกรุณาแจ้งลูกค้าชำระเบี้ยเพื่อต่ออายุ";
-			$eti3 = "❗ กรมธรรม์ขยายเวลา ❗\n • พงศธร ทับทิมไทย\n • T123456789\n • สิ้นสุดความคุ้มครอง\n  12 ก.พ. 2561\nกรุณาแจ้งลูกค้าชำระเบี้ยเพื่อต่ออายุ";
-			$eti4 = "❗ กรมธรรม์ขยายเวลา ❗\n • ชื่อยาวยาว นามสกุลยาวอีก\n • T123456789\n • สิ้นสุดความคุ้มครอง\n  12 ก.พ. 2561\nกรุณาแจ้งลูกค้าชำระเบี้ยเพื่อต่ออายุ";
-			$eti5 = "   เพิ่มเติม📋\n\n มีอีก 3 รายการ\n\n ตรวจสอบข้อมูล เพื่อดูรายการทั้งหมด";
-
+			$nb21 = "กธ. T123456789";
+			$nb22 = "คุณ พงศธร ทับทิมไทย\nสิ้นสุดความคุ้มครอง 31/10/2561";
+			$action1 = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรแจ้งลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%98%E0%B8%A7%E0%B8%B1%E0%B8%8A%E0%B8%8A%E0%B8%B1%E0%B8%A2+%E0%B8%88%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%B5+T123456789+%E0%B8%A1%E0%B8%B5%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%82%E0%B8%A2%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2+%28ETI%29++%E0%B8%AA%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B8%E0%B8%94%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B8%E0%B9%89%E0%B8%A1%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%87+12%2F02%2F2561+%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%93%E0%B8%B2%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%AD%E0%B8%B2%E0%B8%A2%E0%B8%B8")
+				,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามเบี้ย+เงื่อนไข", "tel:023528888")
+			);
+			
+			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
+  			$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
+  			$column3 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
+  			
+			$columns = array();	
+				
+			$columns[] = $column1;
+			$columns[] = $column2;
+			$columns[] = $column3;
+				
+			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+					
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("กรมธรรม์ขยายเวลา", $carousel);
+			$response = $bot->replyMessage($replyToken, $outputText);	}
+			
+			//Lapse carousel
+			else if (strtolower($text) == "lap") {
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/lap1.PNG";
+			$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/lap2.PNG";
+			$imgurl3 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/lap3.PNG";
+			$imgurl4 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/lap4.PNG";
+			$imgurl5  = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/more.PNG";
+			
+			$nb21 = "กธ. T123456789";
+			$nb22 = "คุณ พงศธร ทับทิมไทย";
+				
 			$action1 = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรแจ้งลูกค้า", "tel:1581"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%98%E0%B8%A7%E0%B8%B1%E0%B8%8A%E0%B8%8A%E0%B8%B1%E0%B8%A2+%E0%B8%88%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%B5+T123456789+%E0%B8%A1%E0%B8%B5%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%82%E0%B8%A2%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2+%28ETI%29++%E0%B8%AA%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B8%E0%B8%94%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B8%E0%B9%89%E0%B8%A1%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%87+12%2F02%2F2561+%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%93%E0%B8%B2%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%AD%E0%B8%B2%E0%B8%A2%E0%B8%B8")
@@ -553,11 +581,11 @@ if (!is_null($events['events'])) {
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อบริษัท", "tel:1581")
 				,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามเบี้ย+เงื่อนไข", "tel:023528888")
 			);
-			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $eti1,null, $action1);
-  			$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $eti2,null, $action2);
-  			$column3 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $eti3,null, $action3);
-  			$column4 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $eti4,null, $action4);
-			$column5 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $eti5,null, $action5);
+			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
+  			$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl2, $action2);
+  			$column3 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl3, $action3);
+  			$column4 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl4, $action4);
+			$column5 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl5, $action5);
   				
 			$columns = array();	
 				
@@ -570,7 +598,7 @@ if (!is_null($events['events'])) {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);	
 			
 				
-			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("กรมธรรม์ขยายเวลา", $carousel);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("เตือนการชำระเบี้ย", $carousel);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			
 			else if (strtolower($text) == "con2") {
