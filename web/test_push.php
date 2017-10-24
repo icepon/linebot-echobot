@@ -104,7 +104,7 @@ else if (strtolower($m_type) == "img")
           $img_url, // prevent cache
           "จ่ายเงิน",
           new LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(600, 1040),
-          $actionArray
+          null
         );
 	
 	
