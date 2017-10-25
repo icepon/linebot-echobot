@@ -691,8 +691,7 @@ if (!is_null($events['events'])) {
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อลูกค้า", "tel:1581"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อฝ่ายสินไหม", "tel:1581")
 			);
-			$action2 = array();
-			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action2);
+			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
   			//$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb23, $nb24,$imgurl2, $action2);
   			
 			$columns = array();	
