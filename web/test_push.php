@@ -91,8 +91,8 @@ else if (strtolower($m_type) == "img")
 	//URI action
         array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
             'tel:1581',
-            //new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(84, 445, 369, 130)));
-		new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 0, 0)));
+            new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(84, 445, 369, 130)));
+		//new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 0, 0)));
 	//array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
             //'https://lineit.line.me/share/ui?url=%E0%B8%88%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2',
             //new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(575, 446, 364, 130)));
