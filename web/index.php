@@ -782,6 +782,33 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			
+			//Minor claim pending case
+			else if (strtolower($text) == "cl5i") {
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim2.PNG";
+			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
+			
+			$nb21 = "กธ. T123456789";
+			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
+			
+			$action1 = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อโรงพยาบาล", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อ Call center", "tel:1581")
+			);
+			
+			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
+  			//$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb23, $nb24,$imgurl2, $action2);
+  			
+			$columns = array();	
+				
+			$columns[] = $column1;
+			//$columns[] = $column2;
+				
+			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+					
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
+			$response = $bot->replyMessage($replyToken, $outputText);	}
+			
 			else {
 			$messages = [ 'type'=>'text','text'=>"อิอิ"];
 			}
