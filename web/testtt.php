@@ -5,7 +5,7 @@ $access_token = 'AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3
 $puserid = "Ub67a42c2b7fbb4a11e1962cd6f3e6036";
 $iuserid = "U9f0c0e8e2ad753d0067fd7c3f9ab644e";
 
-$m_type = $_POST['action'];
+$m_type = $_POST["action"];
 
 if (strtolower($m_type) == "inb_approve") {
      $imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nb4.PNG";	
