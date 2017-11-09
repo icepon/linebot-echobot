@@ -2,7 +2,7 @@
 require_once '../vendor/autoload.php';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3B31gVTyIwIMhyO4g1XWptfVyFJ7kmUGdDrfB4Pd/UspZp0iIMrLeVq+YJIV0ZY0arNIDv4eVmwLOCm2yns5ezewdB04t89/1O/w1cDnyilFU=');
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '1efe3c53bbd84320ce616b832c262094']);
-$1user = "Ub67a42c2b7fbb4a11e1962cd6f3e6036";
+$1_user = "Ub67a42c2b7fbb4a11e1962cd6f3e6036";
 $iceuser = "U9f0c0e8e2ad753d0067fd7c3f9ab644e";
 
 $access_token = 'AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3B31gVTyIwIMhyO4g1XWptfVyFJ7kmUGdDrfB4Pd/UspZp0iIMrLeVq+YJIV0ZY0arNIDv4eVmwLOCm2yns5ezewdB04t89/1O/w1cDnyilFU=';
@@ -146,7 +146,7 @@ else if (strtolower($m_type) == "1nb_memo") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($1user, $outputText);	
+			$response = $bot->replyMessage($1_user, $outputText);	
 }
 else if (strtolower($m_type) == "1nb_reject") {
   
@@ -175,7 +175,7 @@ else if (strtolower($m_type) == "1nb_reject") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($1user, $outputText);
+			$response = $bot->replyMessage($1_user, $outputText);
 }
 else if (strtolower($m_type) == "1nb_pending") {
   
@@ -204,7 +204,7 @@ else if (strtolower($m_type) == "1nb_pending") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($1user, $outputText);
+			$response = $bot->replyMessage($1_user, $outputText);
 }
 else if (strtolower($m_type) == "1nb_approve") {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nb4.PNG";	
@@ -227,7 +227,7 @@ else if (strtolower($m_type) == "1nb_approve") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->pushMessage($1user, $outputText);	}
+			$response = $bot->pushMessage($1_user, $outputText);	}
 else
 {
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($m_type);
