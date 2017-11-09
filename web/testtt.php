@@ -1,16 +1,12 @@
 <?php
 
 
-if (isset($_POST['action'])) {
-    switch ($_POST['action']) {
-        case '1nb_approve':
-            echo "1";
-            break;
-        case 'inb_approve':
-            echo "2";
-            break;
+if(isset($_POST['1nb_approve'])){
+     $message= "The insert function is called.";
     }
-}
+    if(isset($_POST['inb_approve'])){
+      $message="The select function is called.";
+    }
 
 function 1nb_approve() {
   echo "The insert function is called.";
