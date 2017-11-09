@@ -1,0 +1,23 @@
+<html>
+<body>
+
+$(document).ready(function(){
+    $('.button').click(function(){
+        var clickBtnValue = $(this).val();
+        var ajaxurl = 'fa.php',
+        data =  {'action': clickBtnValue};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert("ok");
+        });
+    });
+
+});
+
+<input type="submit" class="button" name="nb_approve" value="nb approve" />
+<input type="submit" class="button" name="nb_reject" value="nb reject" />
+
+</form>
+
+</body>
+</html>
