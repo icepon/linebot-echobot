@@ -2,7 +2,7 @@
 
 $m_type = $_POST['action'];
 
-if (strtolower($m_type) == "bill1") {
+if (strtolower($m_type) == "1nb_approve") {
      echo 'A';
 }
 
