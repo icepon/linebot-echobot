@@ -38,7 +38,7 @@ if (strtolower($m_type) == "inb_memo") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($iceuser, $outputText);	
+			$response = $bot->pushMessage($iceuser, $outputText);	
 }
 else if (strtolower($m_type) == "inb_reject") {
   
@@ -67,7 +67,7 @@ else if (strtolower($m_type) == "inb_reject") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($iceuser, $outputText);
+			$response = $bot->pushMessage($iceuser, $outputText);
 }
 else if (strtolower($m_type) == "inb_pending") {
   
@@ -96,7 +96,7 @@ else if (strtolower($m_type) == "inb_pending") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($iceuser, $outputText);
+			$response = $bot->pushMessage($iceuser, $outputText);
 }
 else if (strtolower($m_type) == "inb_approve") {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nb4.PNG";	
@@ -146,7 +146,7 @@ else if (strtolower($m_type) == "1nb_memo") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($prind, $outputText);	
+			$response = $bot->pushMessage($prind, $outputText);	
 }
 else if (strtolower($m_type) == "1nb_reject") {
   
@@ -175,7 +175,7 @@ else if (strtolower($m_type) == "1nb_reject") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($prind, $outputText);
+			$response = $bot->pushMessage($prind, $outputText);
 }
 else if (strtolower($m_type) == "1nb_pending") {
   
@@ -204,7 +204,7 @@ else if (strtolower($m_type) == "1nb_pending") {
 			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
-			$response = $bot->replyMessage($prind, $outputText);
+			$response = $bot->pushMessage($prind, $outputText);
 }
 else if (strtolower($m_type) == "1nb_approve") {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nb4.PNG";	
