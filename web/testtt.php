@@ -12,7 +12,7 @@ if (isset($_POST['action'])) {
             1nb_approve;
             break;
         case 'inb_approve':
-            1nb_approve();
+            inb_approve();
             break;
     }
 }
