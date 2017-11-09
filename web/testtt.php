@@ -120,7 +120,7 @@ else if (strtolower($m_type) == "inb_approve") {
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("แจ้งเตือนสถานะกรมธรรม์ใหม่", $carousel);
 			$response = $bot->pushMessage($iceuser, $outputText);	}
-if (strtolower($m_type) == "1nb_memo") {
+else if (strtolower($m_type) == "1nb_memo") {
 		$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nb1.PNG";
 			$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
