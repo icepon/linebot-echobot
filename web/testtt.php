@@ -1,6 +1,7 @@
 <?php
+echo  $_POST['action'];
 
-
+/*
 if(isset($_POST['1nb_approve'])){
      $message= "The insert function is called.";
     }
@@ -23,5 +24,5 @@ function inb_approve() {
 function 1nb_reject() {
     echo "The insert function is called.";
     exit;
-}
+}*/
 ?>
