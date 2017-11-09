@@ -1,5 +1,10 @@
 <?php
-echo  $_POST['action'];
+
+$m_type = $_POST['action'];
+
+if (strtolower($m_type) == "bill1") {
+     echo 'A';
+}
 
 /*
 if(isset($_POST['1nb_approve'])){
