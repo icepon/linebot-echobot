@@ -259,7 +259,7 @@ else if (strpos( $m_type , "billpa" ) !== false){
 	
 	$response = $bot->pushMessage($target, $outputText);
 }
-else if (strpos( $m_type , "bill" ) !== false){ 
+else if (strpos( $m_type , "billno" ) !== false){ 
 	if (strtolower($m_type) == "1bill") {
 		$target = $prind;
 	}
