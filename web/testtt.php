@@ -55,6 +55,6 @@ else if (strtolower($m_type) == "inb_approve") {
 
 else
 {
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Fail");
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($m_type);
 $response = $bot->pushMessage("U9f0c0e8e2ad753d0067fd7c3f9ab644e", $textMessageBuilder);
 }
