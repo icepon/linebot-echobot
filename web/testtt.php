@@ -4,10 +4,10 @@
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case '1nb_approve':
-            1nb_approve;
+            echo "1";
             break;
         case 'inb_approve':
-            inb_approve();
+            echo "2";
             break;
     }
 }
