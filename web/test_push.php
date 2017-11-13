@@ -93,9 +93,9 @@ else if (strtolower($m_type) == "img")
             'tel:1581',
             new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(84, 445, 369, 130)));
 		//new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 0, 0)));
-	array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
-            'fb:profile/laosice',
-            new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(575, 446, 364, 130)));
+	//array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
+            //'fb:profile/laosice',
+            //new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(575, 446, 364, 130)));
 	
 	
 	
