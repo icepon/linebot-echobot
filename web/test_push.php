@@ -115,7 +115,7 @@ else if (strtolower($m_type) == "img")
 else if (strtolower($m_type) == "img2")
 {
 	//$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
-	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/fa2.jpg?_ignored=";
+	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/fa3.jpg?_ignored=";
 	//Test use Imagemap URI action object array as null
 	$actionArray = array();
 	//URI action
