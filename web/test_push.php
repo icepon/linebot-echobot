@@ -85,6 +85,36 @@ else if (strtolower($m_type) == "nb4i") {
 else if (strtolower($m_type) == "img")
 {
 	//$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
+	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/fa1.jpg?_ignored=";
+	//Test use Imagemap URI action object array as null
+	$actionArray = array();
+	//URI action
+        //array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
+            //'fb://profile/laosice',
+            //new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(84, 445, 369, 130)));
+		//new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 0, 0)));
+	//array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
+            //'fb:profile/laosice',
+            //new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(575, 446, 364, 130)));
+	
+	
+	
+        $imagemapMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder (
+          $img_url, // prevent cache
+          "จ่ายเงิน",
+          new LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(1040, 1040),
+          $actionArray
+        );
+	
+	
+	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
+	//$response = $bot->pushMessage($_GET["userId"], $outputText);
+	$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
+} 
+else if (strtolower($m_type) == "img2")
+{
+	//$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
 	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/fa2.jpg?_ignored=";
 	//Test use Imagemap URI action object array as null
 	$actionArray = array();
