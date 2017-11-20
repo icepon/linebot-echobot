@@ -102,7 +102,7 @@ else if (strtolower($m_type) == "img")
         $imagemapMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder (
           $img_url, // prevent cache
           "จ่ายเงิน",
-          new LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(600, 1040),
+          new LINE\LINEBot\MessageBuilder\Imagemap\BaseSizeBuilder(1040, 1040),
           $actionArray
         );
 	
