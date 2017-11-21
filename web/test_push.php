@@ -91,7 +91,7 @@ else if (strtolower($m_type) == "img")
 	//URI action
         array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
             "http://google.co.th/",
-            new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(1040, 0, 1040, 1040)));
+            new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 0, 0)));
 		//new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 0, 0)));
 	//array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
             //'fb:profile/laosice',
