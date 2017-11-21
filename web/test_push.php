@@ -90,7 +90,7 @@ else if (strtolower($m_type) == "img")
 	$actionArray = array();
 	//URI action
         array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
-            'www.google.co.th',
+            "www.google.co.th",
             new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(1040, 0, 1040, 1040)));
 		//new LINE\LINEBot\ImagemapActionBuilder\AreaBuilder(0, 0, 0, 0)));
 	//array_push($actionArray, new LINE\LINEBot\ImagemapActionBuilder\ImagemapUriActionBuilder(
