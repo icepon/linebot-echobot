@@ -108,8 +108,10 @@ else if (strtolower($m_type) == "img")
 	
 	
 	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
-	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
-	//$response = $bot->pushMessage($_GET["userId"], $outputText);
+	//image
+	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
+	$response = $bot->pushMessage($_GET["userId"], $outputText);
+	//imagemap
 	$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
 } 
 else if (strtolower($m_type) == "img2")
