@@ -107,9 +107,9 @@ else if (strtolower($m_type) == "img")
         );
 	
 	
-	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+	
 	//image
-	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($imgg, $imgg);
+	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
 	$response = $bot->pushMessage($_GET["userId"], $outputText);
 	//imagemap
 	//$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
