@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ข้อมูลตัวแทน</title>
+
+  <link href="dls.css" rel="stylesheet">
+  <script src="js/charts/polar-spider-chart-dummy-data.js"></script>
+
+</head>
+
+<body>
+<div id="load"></div>	
+
+
+	
+
+<nav class="navbar navbar-default navbar-fixed logged-in navbar-fixed-slim navbar-offset-sm">
+  <!--<div class="navbar-slim"><div class="navbar-title-slim">AIA</div></div>-->
+  
+ <div class="navbar-one">
+  <div class="navbar-slim"><div class="navbar-title-slim">iMO Smart</div></div>
+ </div>
+ 
+</nav>
+
+
+
+   
+  
+
+
+
+
+<!-- policies overview -->
+<div class="container">
+
+  <div class="row margin-content">
+
+   
+
+    <div class="col-md-offset-2 col-md-8 col-xs-12">
+      <ul class="list-5">
+        <li>
+          <a href="#">
+            <div class="row no-margin no-padding">
+              <div class="col-xs-12 no-padding">
+                <div class="content">
+                  <div class="thumbnail">
+                    
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="dist/img/icons/icons.svg#accidentpro-prime1"></use>
+                      <image src="dist/img/icons/account.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+                    
+                  </div>
+                  <div class="title">
+				  
+                    <h5 class="title-text">123456789 (ตัวแทนหลัก)</h5>
+                    </div>
+                </div>
+              </div>
+              <div class="content">
+                <div class="glyph-r-arrow">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="dist/img/icons/icons.svg#arrow-2ndg"></use>
+                    <image  src="dist/img/icons/arrow.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="row no-margin no-padding">
+              <div class="col-xs-12 no-padding">
+                <div class="content">
+                  <div class="thumbnail">
+                    
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="dist/img/icons/icons.svg#accidentpro-prime1"></use>
+                      <image  src="dist/img/icons/agent.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+                    
+                  </div>
+                  <div class="title">
+				  
+                    <h5 class="title-text">922334570</h5>
+              </div>
+                </div>
+              </div>
+              <div class="content">
+                <div class="glyph-r-arrow">
+                  
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="dist/img/icons/icons.svg#arrow-2ndg"></use>
+                    <image  src="dist/img/icons/arrow.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href=""></image>
+                  
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <div class="row no-margin no-padding">
+              <div class="col-xs-12 no-padding">
+                <div class="content">
+                  
+                  <div class="title">
+				  
+                    <h5 class="title-text">+ เพิ่มข้อมูลตัวแทน</h5>
+              </div>
+                </div>
+              </div>
+              
+            </div>
+          </a>
+        </li>
+        
+        
+      </ul>
+    </div>
+<div id="help-support-modal" class="modal fade">
+	<div class="modal-dialog partial-screen-modal-dialog">
+	test
+	</div>
+	</div>
+	
+<div class="col-md-offset-2 col-md-8 col-xs-12">
+      <ul class="list-5 padding-top-4xl"/></div>
+    
+	<div class="col-md-offset-2 col-md-8 col-xs-12">
+      <ul class="list-5 padding-top-4xl">
+	
+	
+	
+
+  </div>
+	
+	</ul>
+    </div>
+	
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--
+
+<footer class="footer">
+
+
+  <div class="container bg-b7">
+    <div class="row">
+      <div class="col-xs-12 margin-bottom-l margin-bottom-sm-l"></div>
+      <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 text-center margin-bottom-l margin-bottom-sm-l">
+        <a href="" class="b5 bt5">Copyright © 2017, AIA Group Limited and its subsidiaries. All rights reserved.</a>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+-->
+
+<script src="js/highcharts.js"></script>
+<script src="js/highcharts-more.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/svg4everybody.js"></script>
+<script src="dist/js/main.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		svg4everybody();
+	});
+	
+	document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'complete') {
+      setTimeout(function(){
+          document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+      },1000);
+  }
+}
+	
+  jQuery(document).ready(function($){
+     // initialize popovers specific to this template
+     $('[data-toggle=popover]').popover({
+       container: 'body',
+       trigger: 'hover focus',
+       placement: 'bottom',
+       html: true,
+       content: function() {
+         return $('#' + $(this).data('id')).html();
+       }
+     });
+   });
+</script>
+
+</body>
+</html>
