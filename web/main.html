@@ -17,7 +17,7 @@
 
 
 
-	
+<div id="load"></div>	
 
 <nav class="navbar navbar-default navbar-fixed logged-in navbar-fixed-slim navbar-offset-sm">
   <!--<div class="navbar-slim"><div class="navbar-title-slim">AIA</div></div>-->
@@ -183,6 +183,17 @@
 <script src="js/svg4everybody.js"></script>
 <script src="dist/js/main.js"></script>
 <script type="text/javascript">
+	
+	document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'complete') {
+      setTimeout(function(){
+          document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+      },1000);
+  }
+}
+	
 	jQuery(document).ready(function($){
 		svg4everybody();
 	});
