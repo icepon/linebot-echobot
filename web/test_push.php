@@ -85,7 +85,7 @@ else if (strtolower($m_type) == "nb4i") {
 else if (strtolower($m_type) == "img")
 {
 	//$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
-	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/fa_rich2.jpg?_ignored=";
+	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/fa_image_240.jpg?_ignored=";
 	
 	//Test use Imagemap URI action object array as null
 	$actionArray = array();
@@ -110,10 +110,10 @@ else if (strtolower($m_type) == "img")
 	
 	
 	//image
-	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
-	//$response = $bot->pushMessage($_GET["userId"], $outputText);
+	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+	$response = $bot->pushMessage($_GET["userId"], $outputText);
 	//imagemap
-	$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
+	//$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
 } 
 else if (strtolower($m_type) == "img2")
 {
