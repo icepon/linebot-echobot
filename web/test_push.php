@@ -109,10 +109,10 @@ else if (strtolower($m_type) == "img")
 	
 	
 	//image
-	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
-	$response = $bot->pushMessage($_GET["userId"], $outputText);
+	//$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+	//$response = $bot->pushMessage($_GET["userId"], $outputText);
 	//imagemap
-	//$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
+	$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
 } 
 else if (strtolower($m_type) == "img2")
 {
