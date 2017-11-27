@@ -86,7 +86,7 @@ else if (strtolower($m_type) == "img")
 {
 	//$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/blank2.png?_ignored=";
 	$img_url = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/fa_image_240.jpg?_ignored=";
-	
+	$img_url2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/fa_image_240_2.jpg?_ignored=";
 	//Test use Imagemap URI action object array as null
 	$actionArray = array();
 	//URI action
@@ -110,7 +110,7 @@ else if (strtolower($m_type) == "img")
 	
 	
 	//image
-	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
+	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url2);
 	$response = $bot->pushMessage($_GET["userId"], $outputText);
 	//imagemap
 	//$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
