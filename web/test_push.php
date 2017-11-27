@@ -144,7 +144,8 @@ else if (strtolower($m_type) == "img3")
 	array_push($receiver,$_GET["userId"]);
 	//image
 	$outputText = new LINE\LINEBot\MessageBuilder\ImageMessageBuilder($img_url, $img_url);
-	$response = $bot->multicastMessage($receiver, $outputText);
+	//$response = $bot->multicastMessage($receiver, $outputText);
+	$bot->multicast($receiver, $outputText);
 	//imagemap
 	//$response = $bot->pushMessage($_GET["userId"], $imagemapMessageBuilder);
 } 
