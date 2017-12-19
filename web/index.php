@@ -12,7 +12,8 @@ new media_line_me.LineButton({'pc':false,'lang':'en','type':'a'});
 </script>
 </span>";
 
-
+set_time_limit(0);
+  sleep(30);
 
 /*echo "1.2";
 $replyToken = $event['replyToken'];
