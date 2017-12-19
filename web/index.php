@@ -94,7 +94,7 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($user_id);	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "ไอซ์") {
-				sleep(30);
+				sleep(20);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จ๋าาาาาาา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "กินไรดี2") {
