@@ -99,7 +99,7 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "userid") {
 				
-			$outputText = $event['source']['userId'];	
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['source']['userId']);	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "กินไรดี2") {
 			//$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
