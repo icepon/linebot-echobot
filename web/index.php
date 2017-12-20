@@ -94,8 +94,12 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($user_id);	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "ไอซ์") {
-				sleep(20);
+				
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จ๋าาาาาาา");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "userid") {
+				
+			$outputText = $event['userId'];	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "กินไรดี2") {
 			//$messages = [ 'type'=>'text','text'=>$kin[rand(0, count($kin) - 1)]]; 
