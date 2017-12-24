@@ -96,11 +96,9 @@ if (!is_null($events['events'])) {
     $result = trim( curl_exec( $ch ) );
     curl_close($ch);
     // Responce the result.
-    $decode = json_encode($result, true);
-    $escapers = array("\");
-    $replacements = array("");
-    $result2 = str_replace($escapers, $replacements, $decode);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($result2);	
+    $decode = json_decode($result, true);
+   
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($decode['intent']);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			//end watson
 			
