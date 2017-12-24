@@ -99,7 +99,7 @@ if (!is_null($events['events'])) {
 	$result2 =	json_encode($result, JSON_UNESCAPED_UNICODE);
     $decode = json_decode($result2, true);
    
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($result['output']['text']);	
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($decode['input']['text']);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			//end watson
 			
