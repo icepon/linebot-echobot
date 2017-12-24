@@ -1,5 +1,5 @@
 // Backend URL.
-var apiUrl = "URL of api.php";
+var apiUrl = "api.php";
 // Variable for the conversation state.
 var context = "";
 
