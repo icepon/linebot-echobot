@@ -30,5 +30,6 @@
     curl_close($ch);
 
     // Responce the result.
-    echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    //echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    echo $result['output'];
   }
