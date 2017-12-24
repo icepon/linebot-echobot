@@ -31,6 +31,6 @@
 
     // Responce the result.
     //$toreply = json_encode($result, JSON_UNESCAPED_UNICODE);
-    echo = $result['output']['text'];
+    echo = $result;
     
   }
