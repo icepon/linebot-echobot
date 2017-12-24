@@ -98,8 +98,9 @@ if (!is_null($events['events'])) {
     // Responce the result.
 	$result2 =	json_encode($result, JSON_UNESCAPED_UNICODE);
     $decode = json_decode($result2, true);
+		
    
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($decode);	
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($decode['intents']['intent']);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			//end watson
 			
