@@ -96,6 +96,7 @@ if (!is_null($events['events'])) {
     $result = trim( curl_exec( $ch ) );
     curl_close($ch);
     // Responce the result.
+	$result2 =	json_encode($result, JSON_UNESCAPED_UNICODE);
     $decode = json_decode($result, true);
    
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($decode['intent']);	
