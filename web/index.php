@@ -1,7 +1,7 @@
 <?php
 
 require_once '../vendor/autoload.php';
-
+include 'watson.php';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3B31gVTyIwIMhyO4g1XWptfVyFJ7kmUGdDrfB4Pd/UspZp0iIMrLeVq+YJIV0ZY0arNIDv4eVmwLOCm2yns5ezewdB04t89/1O/w1cDnyilFU=');
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '1efe3c53bbd84320ce616b832c262094']);
@@ -55,6 +55,10 @@ $cl4 = "✅ การเรียกร้องสินไหม ✅\n\nคุ
 //APL
 $apl = "❗ เตือนการชำระเบี้ย ❗\n\nคุณธวัชชัย T123456789 กำหนดชำระเบี้ย 12/01/61 และมีสถานะกู้ชำระอัตโนมัติ กรุณาติดต่อลูกค้าเพื่อชำระเบี้ย และ/หรือ เงินกู้อัตโนมัติ";
 
+//watson
+ $watson = new watson_api();
+ $watson->set_credentials('d295e811-1964-4e83-a0d9-67df9642bef9', 'hqmhc7ZbODqv');
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -71,36 +75,14 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			//watson
-			// Unique identifier of the workspace.
-    $workspace_id = '70f86286-7a9a-4c63-880f-7b0eaa774ce8';
-    // Release date of the API version in YYYY-MM-DD format.
-    $release_date = '2017-05-26';
-    // Username of a user for the service credentials.
-    $username = 'd295e811-1964-4e83-a0d9-67df9642bef9';
-    // Password of a user for the service credentials.
-    $password = 'hqmhc7ZbODqv';
-    // Make a request message for Watson API in json.
-    $data['input']['text'] = $text;
-    
-    $data['alternate_intents'] = false;
-    $json = json_encode($data, JSON_UNESCAPED_UNICODE);
-    // Post the json to the Watson API via cURL.
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_URL, 'https://watson-api-explorer.mybluemix.net/conversation/api/v1/workspaces/'.$workspace_id.'/message?version='.$release_date);
-    curl_setopt($ch, CURLOPT_USERPWD, $username.":".$password);
-    curl_setopt($ch, CURLOPT_POST, true );
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-    $result = trim( curl_exec( $ch ) );
-    curl_close($ch);
-    // Responce the result.
-	$result2 =	json_encode($result, JSON_UNESCAPED_UNICODE);
-    $decode = json_decode($result2, true);
+			
+      			$data_arr = $watson->send_watson_conv_request($text, '70f86286-7a9a-4c63-880f-7b0eaa774ce8');
+	    		$watson->set_context(json_encode($data_arr['context']));
+      
+			      
 		
    
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($decode);	
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			//end watson
 			
