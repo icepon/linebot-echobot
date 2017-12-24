@@ -97,7 +97,7 @@ if (!is_null($events['events'])) {
     curl_close($ch);
     // Responce the result.
     //echo json_encode($result, JSON_UNESCAPED_UNICODE);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(json_encode($result, JSON_UNESCAPED_UNICODE));	
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(JSON.parse($result).output.text);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			//end watson
 			
