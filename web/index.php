@@ -97,8 +97,8 @@ if (!is_null($events['events'])) {
     curl_close($ch);
     // Responce the result.
     $decode = json_encode($result, true);
-    $escapers = array("\\", "/", "\"", "\n", "\r", "\t", "\x08", "\x0c");
-    $replacements = array("\\\\", "\\/", "\\\"", "\\n", "\\r", "\\t", "\\f", "\\b");
+    $escapers = array("\");
+    $replacements = array("");
     $result2 = str_replace($escapers, $replacements, $decode);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($result2);	
 			$response = $bot->replyMessage($replyToken, $outputText);
