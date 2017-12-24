@@ -30,6 +30,7 @@
     curl_close($ch);
 
     // Responce the result.
-    echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    $toreply = json_encode($result, JSON_UNESCAPED_UNICODE);
+    echo = $toreply['output']['text'];
     
   }
