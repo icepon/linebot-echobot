@@ -82,7 +82,7 @@ if (!is_null($events['events'])) {
 			      
 		
    
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['intent']['confidence'][0]);	
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			//end watson
 			
