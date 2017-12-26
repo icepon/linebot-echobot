@@ -77,7 +77,7 @@ if (!is_null($events['events'])) {
 			//watson
 			
       			$data_arr = $watson->send_watson_conv_request($text, '70f86286-7a9a-4c63-880f-7b0eaa774ce8');
-	    		//$watson->set_context(json_encode($data_arr['context']));
+	    		$watson->set_context(json_encode($data_arr['context']));
       
 			      
 		
