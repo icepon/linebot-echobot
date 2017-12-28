@@ -67,8 +67,17 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
+		
+		//POST BACK EVENT
+		if ($event['type'] == 'postback'){
+			$replyToken = $event['replyToken'];
+			$data = $event['postback']['data'];
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Check policy : ".$data);	
+			$response = $bot->replyMessage($replyToken, $outputText);
+		}
+		
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+		else if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
