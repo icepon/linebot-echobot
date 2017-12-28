@@ -80,7 +80,7 @@ if (!is_null($events['events'])) {
 			}
 			else if(strpos( $data , "payamount" ) !== false){
 				$pol_no = substr($data,10);
-				$reply = "กรมธรรม์ ".$pol_no." 💰เบี้ยที่ต้องชำระ 4,500 บาท"
+				$reply = "กรมธรรม์ ".$pol_no." 💰เบี้ยที่ต้องชำระ 4,500 บาท";
 				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($memo);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
