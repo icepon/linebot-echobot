@@ -75,7 +75,7 @@ if (!is_null($events['events'])) {
 			
 			if(strpos( $data , "memocode" ) !== false){
 				$memo = "Memo 💡\n- ตรวจเลือด DBS\n- เอ็กซ์เรย์ไต (I.V.P.) โดยการฉีดสีพร้อมทั้งแนบใบอ่านผลมาด้วย\n- กรุณาตอบคำถามการเจ็บหน้าอก (กรณียังไม่บรรลุนิติภาวะ ต้องมีลายเซ็นของบิดา/มารดา หรือผู้ใช้อำนาจปกครอง)" ;
-				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Check policy : ".$memo);	
+				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($memo);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
 			
