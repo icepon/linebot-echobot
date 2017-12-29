@@ -37,7 +37,7 @@ class watson_api {
 		 );  
 	     curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 	     curl_setopt($curl, CURLOPT_USERPWD, $this->Watson_Credentials_User.":".$this->Watson_Credentials_Password);
-	     curl_setopt($curl, CURLOPT_URL, "https://gateway.watsonplatform.net/conversation/api/v1/workspaces/".$workspace."/message?version=2016-09-20");
+	     curl_setopt($curl, CURLOPT_URL, "https://gateway.watsonplatform.net/conversation/api/v1/workspaces/".$workspace."/message?version=2017-05-26");
 	     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	     $result = curl_exec($curl);
 	     if (curl_errno($curl)) {
