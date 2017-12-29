@@ -98,19 +98,19 @@ if (!is_null($events['events'])) {
 			
 			//watson
 			
-      			$data_arr = $watson->send_watson_conv_request($text, '70f86286-7a9a-4c63-880f-7b0eaa774ce8');
-	    		$watson->set_context(json_encode($data_arr['context']));
+      			//$data_arr = $watson->send_watson_conv_request($text, '70f86286-7a9a-4c63-880f-7b0eaa774ce8');
+	    		//$watson->set_context(json_encode($data_arr['context']));
       
 			      
 		
    
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);
+			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(json_encode($data_arr, JSON_UNESCAPED_UNICODE));
 			
 			//if ($data_arr['intent']['confidence'][0] < 0.5){
 				//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($unknown[array_rand($unknown)]);
 			//}
-			$response = $bot->replyMessage($replyToken, $outputText);
+			//$response = $bot->replyMessage($replyToken, $outputText);
 			//end watson
 			
 			//Start here **
