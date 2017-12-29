@@ -104,8 +104,8 @@ if (!is_null($events['events'])) {
 			      
 		
    
-			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(json_encode($data_arr, JSON_UNESCAPED_UNICODE));
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);
+			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(json_encode($data_arr, JSON_UNESCAPED_UNICODE));
 			
 			//if ($data_arr['intent']['confidence'][0] < 0.5){
 				//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($unknown[array_rand($unknown)]);
