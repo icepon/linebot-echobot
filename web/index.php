@@ -20,6 +20,7 @@ $response = $bot->replyText($replyToken, "hello!");
 echo "1.3";
 */
 $kin = array("โรงอาหาร","เป็ด","เต๊นท์","ราเมง","กินคลีน","ไม่กิน ลดความอ้วน");
+$unknown = array("ห้ะ","คือ?","ไม่เข้าใจ","คือราย");
 $rand_kin = $kin[array_rand($kin)];
 $access_token = 'AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3B31gVTyIwIMhyO4g1XWptfVyFJ7kmUGdDrfB4Pd/UspZp0iIMrLeVq+YJIV0ZY0arNIDv4eVmwLOCm2yns5ezewdB04t89/1O/w1cDnyilFU=';
 
@@ -105,6 +106,10 @@ if (!is_null($events['events'])) {
    
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(json_encode($data_arr, JSON_UNESCAPED_UNICODE));
+			
+			if ($data_arr['intent']['confidence'][0] < 0.5){
+				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($unknown[array_rand($unknown)]);
+			}
 			$response = $bot->replyMessage($replyToken, $outputText);
 			//end watson
 			
