@@ -12,7 +12,7 @@ echo  $_GET["m_text"];
 
 
 
-
+/*
 $m_type = $_GET["m_type"];
 
 if (strtolower($m_type) == "bill1") {
@@ -30,3 +30,4 @@ else
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
 $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 }
+*/
