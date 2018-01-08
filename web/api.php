@@ -1,7 +1,7 @@
 <?php
   if(isset($_POST['message'])){
     // Unique identifier of the workspace.
-    $workspace_id = '70f86286-7a9a-4c63-880f-7b0eaa774ce8';
+    $workspace_id = '8c6db2da-7c90-4d5e-8496-d0d0b8a82e11';
     // Release date of the API version in YYYY-MM-DD format.
     $release_date = '2017-05-26';
     // Username of a user for the service credentials.
