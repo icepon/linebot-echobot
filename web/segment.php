@@ -71,7 +71,20 @@ class Segment {
 
 	public function get_segment_array2($input_string) {
         $this->_input_string = $input_string;
-	return $input_string;
+	 $tmp_result = array();
+        foreach ($this->_segmented_result as $result_row) {
+            if (mb_strlen($result_row) > 10) {
+                $current_string_array = $this->_unicode_obj->uni_strsplit(trim($result_row));
+                $current_array_result = $this->_segment_by_dictionary($current_string_array);
+                foreach ($current_array_result as $current_result_row) {
+                    $tmp_result[] = trim($current_result_row);
+                }
+            } else {
+                $tmp_result[] = $result_row;
+            }
+        }
+        $this->_segmented_result = $tmp_result;
+        return $this->_segmented_result;
 	}
 	
     public function get_segment_array($input_string) {
