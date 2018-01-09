@@ -16,7 +16,7 @@ include 'segment.php'; //ตัดคำ
     $segment = new Segment();
     $result = $segment->get_segment_array2("test");
     $data['input']['text'] = implode(' ', $result);
-    $test = implode(' ', $result);
+    
     //$data['input']['text'] = $result;
     }
     else{
@@ -42,6 +42,5 @@ include 'segment.php'; //ตัดคำ
 
     // Responce the result.
     //$toreply = json_encode($result, JSON_UNESCAPED_UNICODE);
-    //echo json_encode($result, JSON_UNESCAPED_UNICODE);
-    echo json_encode($test);
+    echo json_encode($result, JSON_UNESCAPED_UNICODE);
   }
