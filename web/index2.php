@@ -2,7 +2,7 @@
 
 require_once '../vendor/autoload.php';
 include 'watson.php';
-
+include 'segment.php'; //ตัดคำ
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('faM/uDL/hhAcUUtJi5ZcbZ/mhlLVer58i1HucRdUuk1gsFHHlMTHekmW7Xtm1VABIYcSJWC7mkPYtJuNiYYP8xCjqd76X3+9Mpb8Uqc3uQ9we2+RykiD9l9HPyPTnF5UFP+RLYQaQGEFhGSrUaDCgwdB04t89/1O/w1cDnyilFU=');
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '54d2d282675abc08a1b75e726c7a5192']);
 echo "<span>
@@ -63,9 +63,15 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
+			//ตัดคำ
+			$segment = new Segment();
+    			$result = $segment->get_segment_array2($text);
+    			$text2 = implode(' ', $result);
+			
+			
 			//watson
 			
-      			$data_arr = $watson->send_watson_conv_request($text, '8c6db2da-7c90-4d5e-8496-d0d0b8a82e11');
+      			$data_arr = $watson->send_watson_conv_request($text2, '8c6db2da-7c90-4d5e-8496-d0d0b8a82e11');
 	    		$watson->set_context(json_encode($data_arr['context']));
       
 			      
