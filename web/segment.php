@@ -69,6 +69,11 @@ class Segment {
         return str_replace($dup_list_array, $dup_list_array_replace, $string);
     }
 
+	public function get_segment_array2($input_string) {
+        $this->_input_string = $input_string;
+	return $input_string;
+	}
+	
     public function get_segment_array($input_string) {
         $this->_input_string = $input_string;
 
