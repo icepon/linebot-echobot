@@ -15,8 +15,8 @@ include 'segment.php'; //ตัดคำ
     if (!empty( $_POST['message'])) {
     $segment = new Segment();
     $result = $segment->get_segment_array2("test");
-    //$data['input']['text'] = implode(' ', $result);
-    $data['input']['text'] = $result;
+    $data['input']['text'] = implode(' ', $result);
+    //$data['input']['text'] = $result;
     }
     else{
     $data['input']['text'] = $_POST['message'];
