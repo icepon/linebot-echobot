@@ -1,5 +1,7 @@
 <?php
+require_once '../vendor/autoload.php';
 include 'segment.php'; //ตัดคำ
+$segment = new Segment();
   if(isset($_POST['message'])){
     // Unique identifier of the workspace.
     $workspace_id = '8c6db2da-7c90-4d5e-8496-d0d0b8a82e11';
@@ -9,7 +11,7 @@ include 'segment.php'; //ตัดคำ
     $username = 'd295e811-1964-4e83-a0d9-67df9642bef9';
     // Password of a user for the service credentials.
     $password = 'hqmhc7ZbODqv';
-
+    
     // Make a request message for Watson API in json.
     //ตัดคำ
     $text_ =  $_POST['message'];
