@@ -1,4 +1,5 @@
 <?php
+include 'segment.php'; //ตัดคำ
   if(isset($_POST['message'])){
     // Unique identifier of the workspace.
     $workspace_id = '8c6db2da-7c90-4d5e-8496-d0d0b8a82e11';
@@ -10,7 +11,12 @@
     $password = 'hqmhc7ZbODqv';
 
     // Make a request message for Watson API in json.
-    $data['input']['text'] = $_POST['message'];
+    //ตัดคำ
+    $segment = new Segment();
+    $result = $segment->get_segment_array($_POST['message']);
+    $data['input']['text'] = implode(' ', $result);
+    
+    //$data['input']['text'] = $_POST['message'];
     if(isset($_POST['context']) && $_POST['context']){
       $data['context'] = json_decode($_POST['context'], JSON_UNESCAPED_UNICODE);
     }
