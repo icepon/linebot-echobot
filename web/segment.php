@@ -18,11 +18,11 @@ class Segment {
     
     function __construct() {
         if (!class_exists('Thchracter')) {
-        include('thcharacter.php');
+        include 'thcharacter.php';
 		}
 		
 		if (!class_exists('Unicode')) {
-        include('unicode.php');
+        include 'unicode.php';
 		}
 
 
