@@ -3,8 +3,8 @@
 require_once '../vendor/autoload.php';
 include 'watson.php';
 
-$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('b+X18LM7MI9l2fgwWm9z/Y1cPqRPvP8zqOcHdE4dgQRxcWWYg084kquxoshlg5JCX12eBoyy+ycOEF6299yOkajoKMO2F2GovYgK815HDuA5PVLqOzghQi0CuEGSBDLoVj+oeI+fLnnfBxsK+VDbdQdB04t89/1O/w1cDnyilFU=');
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '5b7ff1fb07b2b202ad8771278a07de69']);
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('faM/uDL/hhAcUUtJi5ZcbZ/mhlLVer58i1HucRdUuk1gsFHHlMTHekmW7Xtm1VABIYcSJWC7mkPYtJuNiYYP8xCjqd76X3+9Mpb8Uqc3uQ9we2+RykiD9l9HPyPTnF5UFP+RLYQaQGEFhGSrUaDCgwdB04t89/1O/w1cDnyilFU=');
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '54d2d282675abc08a1b75e726c7a5192']);
 echo "<span>
 <script type='text/javascript' src='//media.line.me/js/line-button.js?v=20140411' ></script>
 <script type='text/javascript'>
@@ -20,7 +20,7 @@ $response = $bot->replyText($replyToken, "hello!");
 echo "1.3";
 */
 
-$access_token = 'b+X18LM7MI9l2fgwWm9z/Y1cPqRPvP8zqOcHdE4dgQRxcWWYg084kquxoshlg5JCX12eBoyy+ycOEF6299yOkajoKMO2F2GovYgK815HDuA5PVLqOzghQi0CuEGSBDLoVj+oeI+fLnnfBxsK+VDbdQdB04t89/1O/w1cDnyilFU=';
+$access_token = 'faM/uDL/hhAcUUtJi5ZcbZ/mhlLVer58i1HucRdUuk1gsFHHlMTHekmW7Xtm1VABIYcSJWC7mkPYtJuNiYYP8xCjqd76X3+9Mpb8Uqc3uQ9we2+RykiD9l9HPyPTnF5UFP+RLYQaQGEFhGSrUaDCgwdB04t89/1O/w1cDnyilFU=';
 
 
 //watson
