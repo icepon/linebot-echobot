@@ -75,7 +75,7 @@ if (!is_null($events['events'])) {
 	    		//$watson->set_context(json_encode($data_arr['context']));
       
 			      
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text2);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($result);
    
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(json_encode($data_arr, JSON_UNESCAPED_UNICODE));
