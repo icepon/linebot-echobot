@@ -65,7 +65,7 @@ if (!is_null($events['events'])) {
 			
 			//ตัดคำ
 			$segment = new Segment();
-    			$result = $segment->get_segment_array2($text);
+    			$result = $segment->get_segment_array($text);
     			$text2 = implode(' ', $result);
 			
 			
