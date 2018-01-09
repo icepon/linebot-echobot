@@ -12,16 +12,10 @@ include 'segment.php'; //ตัดคำ
 
     // Make a request message for Watson API in json.
     //ตัดคำ
-    if (!empty( $_POST['message'])) {
-    $segment = new Segment();
-    $result = $segment->get_segment_array($_POST['message']);
-    $data['input']['text'] = implode(' ', $result);
     
-    //$data['input']['text'] = $result;
-    }
-    else{
+   
     $data['input']['text'] = $_POST['message'];
-    }
+   
     if(isset($_POST['context']) && $_POST['context']){
       $data['context'] = json_decode($_POST['context'], JSON_UNESCAPED_UNICODE);
     }
