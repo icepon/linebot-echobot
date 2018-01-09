@@ -71,13 +71,13 @@ if (!is_null($events['events'])) {
 			
 			//watson
 			
-      			//$data_arr = $watson->send_watson_conv_request($text2, '8c6db2da-7c90-4d5e-8496-d0d0b8a82e11');
-	    		//$watson->set_context(json_encode($data_arr['context']));
+      			$data_arr = $watson->send_watson_conv_request($text2, '8c6db2da-7c90-4d5e-8496-d0d0b8a82e11');
+	    		$watson->set_context(json_encode($data_arr['context']));
       
 			      
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text2);
+			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text2);
    
-			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($data_arr['output']['text'][0]);
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(json_encode($data_arr, JSON_UNESCAPED_UNICODE));
 			
 			//if ($data_arr['intent']['confidence'][0] < 0.5){
