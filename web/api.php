@@ -18,9 +18,9 @@ $segment = new Segment();
     if (!empty($text_)) {
     //$segment = new Segment();
     
-    //$result2 = $segment->get_segment_array("หิวข้าวจัง");
-    //$text2 = implode(' ', $result2);
-    $data['input']['text'] = "หิวข้าวจัง";
+    $result2 = $segment->get_segment_array($text_);
+    $text2 = implode(' ', $result2);
+    $data['input']['text'] = $text2;
     }
     else{
     $data['input']['text'] = $_POST['message'];
