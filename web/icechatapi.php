@@ -60,13 +60,9 @@ $request->setHeaders(array(
   'content-type' => 'application/json'
 ));
 
-try {
+
   $response = $request->send();
 
-  //echo $response->getBody();
-} catch (HttpException $ex) {
-  //echo $ex;
-}
     
     
     // Responce the result.
