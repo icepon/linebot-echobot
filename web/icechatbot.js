@@ -16,6 +16,8 @@ $(function(){
       chatbot($("input").val());
       // Display the message.
       $('#messages').append('<p>'+$("input").val()+'</p>');
+      //Keep log
+      keeplog($("input").val());
     }
   })
 })
@@ -51,4 +53,26 @@ function chatbot(message){
     // Display a error message.
     $('#messages').append('<p>A communication error occurred.</p>');
   });
+}
+
+
+function keeplog(message){
+var jsondata = {"field1": "xyz","field2": "abc"};
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://inventory-fac4.restdb.io/rest/motorbikes",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "x-apikey": "560bd47058e7ab1b2648f4e7",
+    "cache-control": "no-cache"
+  },
+  "processData": false,
+  "data": JSON.stringify(jsondata)
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 }
