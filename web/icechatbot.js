@@ -17,7 +17,7 @@ $(function(){
       // Display the message.
       $('#messages').append('<p>'+$("input").val()+'</p>');
       //Keep log
-      //keeplog($("input").val());
+      keeplog($("input").val());
     }
   })
 })
@@ -56,7 +56,7 @@ function chatbot(message){
 }
 
 
-function keeplog(message){
+function keeplog(message2){
 var jsondata = {"intent": "xyz"};
 var settings = {
   "async": true,
