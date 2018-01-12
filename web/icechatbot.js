@@ -17,7 +17,7 @@ $(function(){
       // Display the message.
       $('#messages').append('<p>'+$("input").val()+'</p>');
       //Keep log
-      keeplog($("input").val());
+      //keeplog($("input").val());
     }
   })
 })
