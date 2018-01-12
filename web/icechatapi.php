@@ -12,6 +12,14 @@ $segment = new Segment();
     // Password of a user for the service credentials.
     $password = 'hqmhc7ZbODqv';
     
+    
+
+    
+    
+    
+    
+    
+    
     // Make a request message for Watson API in json.
     //ตัดคำ
     $text_ =  $_POST['message'];
@@ -43,6 +51,26 @@ $segment = new Segment();
     $result = trim( curl_exec( $ch ) );
     curl_close($ch);
 
+    setUrl('https://icechatbot-a7be.restdb.io/rest/chatlog');
+    $request->setMethod(HTTP_METH_POST);
+
+    $request->setHeaders(array(
+      'cache-control' => 'no-cache',
+      'x-apikey' => '0125cd923825abe857eac7066f134b0b10cfb',
+      'content-type' => 'application/json'
+    ));
+
+    $request->setBody('{"converid":"123","intent":"abc"}');
+
+    try {
+      $response = $request->send();
+
+      echo $response->getBody();
+    } catch (HttpException $ex) {
+      echo $ex;
+    }
+    
+    
     // Responce the result.
     //$toreply = json_encode($result, JSON_UNESCAPED_UNICODE);
     echo json_encode($result, JSON_UNESCAPED_UNICODE);
