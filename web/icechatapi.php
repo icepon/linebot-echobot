@@ -53,18 +53,7 @@ $segment = new Segment();
 
     
     
-   $request = new Curl();
-  // $request->setUrl('https://icechatbot-a7be.restdb.io/rest/chatlog');
-  // $request->setMethod(HTTP_METH_GET);
-
-//$request->setHeaders(array(
-//  'cache-control' => 'no-cache',
-//  'x-apikey' => '0125cd923825abe857eac7066f134b0b10cfb',
- // 'content-type' => 'application/json'
-//));
-
-
-  //$response = $request->send();
+  
 
     
     
