@@ -17,7 +17,7 @@ $(function(){
       // Display the message.
       $('#messages').append('<p>'+$("input").val()+'</p>');
       //Keep log
-      keeplog($("input").val());
+      //keeplog($("input").val());
     }
   })
 })
@@ -48,6 +48,7 @@ function chatbot(message){
       $('#messages').append('<p>'+JSON.parse(response).output.text+'</p>');
       // Upodate the conversation state.
       context = JSON.stringify(JSON.parse(response).context);
+      keeplog(JSON.parse(response).context.conversation_id,JSON.parse(response).intents.intent,JSON.parse(response).intents.confidence,$("input").val());
     }
   }).fail(function () {
     // Display a error message.
@@ -56,8 +57,8 @@ function chatbot(message){
 }
 
 
-function keeplog(message2){
-var jsondata = {"usertext": message2};
+function keeplog(msgid,intent,confi,usertext){
+var jsondata = {"usertext": usertext,"converid":msgid,"intent":intent,"confidence":confi};
 var settings = {
   "async": true,
   "crossDomain": true,
