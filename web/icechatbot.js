@@ -61,11 +61,11 @@ var jsondata = {"field1": "xyz","field2": "abc"};
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://inventory-fac4.restdb.io/rest/motorbikes",
+  "url": "https://icechatbot-a7be.restdb.io/rest/chatlog",
   "method": "POST",
   "headers": {
     "content-type": "application/json",
-    "x-apikey": "560bd47058e7ab1b2648f4e7",
+    "x-apikey": "<your CORS apikey here>",
     "cache-control": "no-cache"
   },
   "processData": false,
