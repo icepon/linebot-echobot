@@ -57,7 +57,7 @@ function chatbot(message){
 
 
 function keeplog(message2){
-var jsondata = {"intent": message2};
+var jsondata = {"usertext": message2};
 var settings = {
   "async": true,
   "crossDomain": true,
