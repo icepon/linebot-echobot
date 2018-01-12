@@ -49,7 +49,7 @@ function chatbot(message){
       $('#messages').append('<p>'+JSON.parse(response).output.text+'</p>');
       // Upodate the conversation state.
       context = JSON.stringify(JSON.parse(response).context);
-      intent_ = JSON.parse(response);
+      intent_ = JSON.parse(response.intents);
       console.log(intent_);
       keeplog(JSON.parse(response).context.conversation_id,"1","2",JSON.parse(response).input.text);
     }
