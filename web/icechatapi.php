@@ -51,24 +51,22 @@ $segment = new Segment();
     $result = trim( curl_exec( $ch ) );
     curl_close($ch);
 
-    setUrl('https://icechatbot-a7be.restdb.io/rest/chatlog');
-    $request->setMethod(HTTP_METH_POST);
+   setUrl('https://icechatbot-a7be.restdb.io/rest/chatlog');
+$request->setMethod(HTTP_METH_GET);
 
-    $request->setHeaders(array(
-      'cache-control' => 'no-cache',
-      'x-apikey' => '0125cd923825abe857eac7066f134b0b10cfb',
-      'content-type' => 'application/json'
-    ));
+$request->setHeaders(array(
+  'cache-control' => 'no-cache',
+  'x-apikey' => '0125cd923825abe857eac7066f134b0b10cfb',
+  'content-type' => 'application/json'
+));
 
-    $request->setBody('{"converid":"123","intent":"abc"}');
+try {
+  $response = $request->send();
 
-    try {
-      $response = $request->send();
-
-      echo $response->getBody();
-    } catch (HttpException $ex) {
-      echo $ex;
-    }
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
+}
     
     
     // Responce the result.
