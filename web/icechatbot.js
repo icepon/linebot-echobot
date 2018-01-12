@@ -57,7 +57,7 @@ function chatbot(message){
 
 
 function keeplog(message){
-var jsondata = {"field1": "xyz","field2": "abc"};
+var jsondata = {"intent": "xyz"};
 var settings = {
   "async": true,
   "crossDomain": true,
@@ -65,7 +65,7 @@ var settings = {
   "method": "POST",
   "headers": {
     "content-type": "application/json",
-    "x-apikey": "<your CORS apikey here>",
+    "x-apikey": "5a5873c47d7ef24c5cf08c12",
     "cache-control": "no-cache"
   },
   "processData": false,
