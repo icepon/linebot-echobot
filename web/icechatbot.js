@@ -49,8 +49,8 @@ function chatbot(message){
       $('#messages').append('<p>'+JSON.parse(response).output.text+'</p>');
       // Upodate the conversation state.
       context = JSON.stringify(JSON.parse(response).context);
-      intent = JSON.parse(response).intents[0];
-      console.log(JSON.parse(intent).intent);
+      intent_ = JSON.parse(response).intents[0];
+      console.log(intent_.intent);
       keeplog(JSON.parse(response).context.conversation_id,"1","2",JSON.parse(response).input.text);
     }
   }).fail(function () {
