@@ -2,6 +2,7 @@
 var apiUrl = "icechatapi.php";
 // Variable for the conversation state.
 var context = "";
+var intent = "";
 
 $(function(){
   // Initialization of the chatbot.
@@ -48,6 +49,7 @@ function chatbot(message){
       $('#messages').append('<p>'+JSON.parse(response).output.text+'</p>');
       // Upodate the conversation state.
       context = JSON.stringify(JSON.parse(response).context);
+      intent = JSON.parse(response).intents[0].intent;
       keeplog(JSON.parse(response).context.conversation_id,"1","2",JSON.parse(response).input.text);
     }
   }).fail(function () {
