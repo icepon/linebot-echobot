@@ -30,7 +30,7 @@ function chatbot(message){
       message: message,
       context: context
     },
-    timeout:1000
+    timeout:5000
   }).done(function (response) {
     // Check the result.
     console.log(response);
