@@ -51,7 +51,7 @@ $segment = new Segment();
     $result = trim( curl_exec( $ch ) );
     curl_close($ch);
 
-   setUrl('https://icechatbot-a7be.restdb.io/rest/chatlog');
+   $request->setUrl('https://icechatbot-a7be.restdb.io/rest/chatlog');
 $request->setMethod(HTTP_METH_GET);
 
 $request->setHeaders(array(
