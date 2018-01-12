@@ -48,7 +48,7 @@ function chatbot(message){
       $('#messages').append('<p>'+JSON.parse(response).output.text+'</p>');
       // Upodate the conversation state.
       context = JSON.stringify(JSON.parse(response).context);
-      keeplog(JSON.parse(response).context.conversation_id,JSON.parse(response).intents[0].intent,JSON.parse(response).intents[0].confidence,JSON.parse(response).input.text);
+      keeplog(JSON.parse(response).context.conversation_id,"1",JSON.parse(response).intents[0].confidence,JSON.parse(response).input.text);
     }
   }).fail(function () {
     // Display a error message.
