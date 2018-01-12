@@ -63,9 +63,9 @@ $request->setHeaders(array(
 try {
   $response = $request->send();
 
-  echo $response->getBody();
+  //echo $response->getBody();
 } catch (HttpException $ex) {
-  echo $ex;
+  //echo $ex;
 }
     
     
