@@ -50,8 +50,8 @@ function chatbot(message){
       // Upodate the conversation state.
       context = JSON.stringify(JSON.parse(response).context);
       intent_ = JSON.parse(response).intents;
-      console.log(intent_.intent);
-      keeplog(JSON.parse(response).context.conversation_id,"1","2",JSON.parse(response).input.text);
+      //console.log(intent_.intent);
+      keeplog(JSON.parse(response).context.conversation_id,intent_.intent,intent_.confidence,JSON.parse(response).input.text);
     }
   }).fail(function () {
     // Display a error message.
