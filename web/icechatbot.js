@@ -52,7 +52,7 @@ function chatbot(message){
       intent_ = JSON.parse(response).intents;
       obj = JSON.parse(response);
       //console.log(intent_.intent);
-      keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,JSON.parse(response).input.text);
+      keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,JSON.parse(response).input.text,'Y');
     }
   }).fail(function () {
     // Display a error message.
@@ -61,8 +61,8 @@ function chatbot(message){
 }
 
 
-function keeplog(msgid,intentt,confi,usertext){
-var jsondata = {"usertext": usertext,"converid":msgid,"intent":intentt,"confidence":confi};
+function keeplog(msgid,intentt,confi,usertext,is_correct){
+var jsondata = {"usertext": usertext,"converid":msgid,"intent":intentt,"confidence":confi,"is_corrct":is_correct};
 var settings = {
   "async": true,
   "crossDomain": true,
