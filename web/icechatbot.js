@@ -3,7 +3,7 @@ var apiUrl = "icechatapi.php";
 // Variable for the conversation state.
 var context = "";
 var intent = "";
-
+var msgid = "";
 $(function(){
   // Initialization of the chatbot.
   chatbot("");
@@ -99,5 +99,6 @@ var settings = {
 
 $.ajax(settings).done(function (response) {
   console.log(response);
+  console.log(response._id);
 });
 }
