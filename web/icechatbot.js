@@ -62,7 +62,7 @@ function chatbot(message){
 
 
 function keeplog(msgid,intentt,confi,usertext,is_correct){
-var jsondata = {"usertext": usertext,"converid":msgid,"intent":intentt,"confidence":confi,"is_corrct":is_correct};
+var jsondata = {"usertext": usertext,"converid":msgid,"intent":intentt,"confidence":confi,"is_correct":is_correct};
 var settings = {
   "async": true,
   "crossDomain": true,
