@@ -65,7 +65,7 @@ function markfalse(){
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://icechatbot-a7be.restdb.io/rest/chatlog/5a65c2ea20ff88360001886f",
+  "url": "https://icechatbot-a7be.restdb.io/rest/chatlog/"+msgid,
   "method": "PUT",
   "headers": {
     "content-type": "application/json",
@@ -99,6 +99,6 @@ var settings = {
 
 $.ajax(settings).done(function (response) {
   console.log(response);
-  console.log(response._id);
+  msgid = response._id;
 });
 }
