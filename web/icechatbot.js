@@ -60,6 +60,26 @@ function chatbot(message){
   });
 }
 
+function markfalse(){
+  var jsondata = {"is_correct": 'N'};
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://icechatbot-a7be.restdb.io/rest/chatlog/5a65c2ea20ff88360001886f",
+  "method": "PUT",
+  "headers": {
+    "content-type": "application/json",
+    "x-apikey": "5a5873c47d7ef24c5cf08c12",
+    "cache-control": "no-cache"
+  },
+  "processData": false,
+  "data": JSON.stringify(jsondata)
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+}
 
 function keeplog(msgid,intentt,confi,usertext,is_correct){
 var jsondata = {"usertext": usertext,"converid":msgid,"intent":intentt,"confidence":confi,"is_correct":is_correct};
