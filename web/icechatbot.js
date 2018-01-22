@@ -62,10 +62,11 @@ function chatbot(message){
 
 function markfalse(){
   var jsondata = {"is_correct": 'N'};
+  var url = str1.concat("https://icechatbot-a7be.restdb.io/rest/chatlog/",msgid);
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://icechatbot-a7be.restdb.io/rest/chatlog/"+msgid,
+  "url":url ,
   "method": "PUT",
   "headers": {
     "content-type": "application/json",
