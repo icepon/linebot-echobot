@@ -105,5 +105,7 @@ var settings = {
 $.ajax(settings).done(function (response) {
   console.log(response);
    $('#txtmsgid').text(response._id);
+  $('#txtmsgid').hide();
+  $('#wrongbtn').prop('disabled', true);
 });
 }
