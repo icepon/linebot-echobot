@@ -25,6 +25,7 @@ $(function(){
 
 // A function for sending message to the backend and getting result.
 function chatbot(message){
+   $('#wrongbtn').prop('disabled', true);
   $.ajax({
     url: apiUrl,
     type: 'post',
@@ -106,6 +107,6 @@ $.ajax(settings).done(function (response) {
   console.log(response);
    $('#txtmsgid').text(response._id);
   $('#txtmsgid').hide();
-  $('#wrongbtn').prop('disabled', true);
+  $('#wrongbtn').prop('disabled', false);
 });
 }
