@@ -64,7 +64,7 @@ function markfalse(){
   var jsondata = {"is_correct": 'N'};
   var str1 = "https://icechatbot-a7be.restdb.io/rest/chatlog/";
   var url = str1.concat(msgid);
-  console.log(url);
+  console.log(msgid);
 var settings = {
   "async": true,
   "crossDomain": true,
