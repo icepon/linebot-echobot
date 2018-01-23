@@ -64,7 +64,7 @@ function markfalse(){
   var jsondata = {"is_correct": 'N'};
   var str1 = "https://icechatbot-a7be.restdb.io/rest/chatlog/";
   var url = str1.concat(msgid);
-  var msgid2 = document.getElementById('txtmsgid').value;
+  var msgid2 = document.getElementById('txtmsgid').innerText;
   console.log(msgid2);
 var settings = {
   "async": true,
@@ -103,6 +103,6 @@ var settings = {
 
 $.ajax(settings).done(function (response) {
   console.log(response);
-  msgid = response._id;
+   $('#txtmsgid').text(response._id);
 });
 }
