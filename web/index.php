@@ -799,7 +799,7 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			
 			else if (strtolower($text) == "cl2i") {
-			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim2.PNG";
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim3.PNG";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
 			$nb21 = "กธ. T123456789";
@@ -808,7 +808,7 @@ if (!is_null($events['events'])) {
 			$action1 = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581"),
 				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อ Call center", "tel:1581")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("รายละเอียดเพิ่มเติม", "https://awa.aia.co.th/login/")
 			);
 			
 			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
