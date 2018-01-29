@@ -876,7 +876,7 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			else if (strtolower($text) == "cl5i") {
-			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim5.PNG";
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim5.png";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
 			$nb21 = "กธ. T123456789";
