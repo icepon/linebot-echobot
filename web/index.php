@@ -825,7 +825,7 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			
 			else if (strtolower($text) == "cl3i") {
-			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim3.PNG";
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim5.png";
 			$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/more.PNG";	
 			
 			$nb21 = "กธ. T123456789";
