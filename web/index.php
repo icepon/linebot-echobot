@@ -117,6 +117,9 @@ if (!is_null($events['events'])) {
 			if ($text == "สวัสดี"){
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("สวัสดีจ้าาาา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			else if ($text == "คุยกับบอท"){
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("สวัสดีครับ วันนี้มีอะไรให้บอทช่วยเหลือดีครับ");	
+			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "ทำไรอยู่") {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ไม่บอก อิอิ");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
