@@ -30,7 +30,7 @@ $(function(){
                             <div class="chat-body clearfix">\
                                 <div class="header">\
                                     <small class=" text-muted"></small>\
-                                    <strong class="primary-font">You said</strong> <small class="pull-right text-muted">
+                                    <strong class="primary-font">You said</strong> <small class="pull-right text-muted">\
                                 </div>\
                                 <p style="text-align: right">'+$("input").val()+'</p>\
                             </div>\
