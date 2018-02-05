@@ -71,7 +71,7 @@ function chatbot(message){
                                     dolor, quis ullamcorper ligula sodales.\
                                 </p>\
                             </div>\
-                        </li>\';
+                        </li>';
     document.getElementById('panelbody').appendChild(div);
       
       //console.log(intent_.intent);
