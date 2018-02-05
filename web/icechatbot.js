@@ -88,7 +88,7 @@ function chatbot(message){
     div.innerHTML =
         '<ul class="chat">\
         <li class="left clearfix"><span class="chat-img pull-left">\
-                            <img src="http://placehold.it/50/55C1E7/fff&text=BOT" alt="User Avatar" class="img-circle" />\
+                            <img src="https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/robot2.png" alt="User Avatar" class="img-circle" />\
                         </span>\
                             <div class="chat-body clearfix">\
                                 <div class="header">\
