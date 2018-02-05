@@ -76,7 +76,6 @@ function chatbot(message){
       intent_ = JSON.parse(response).intents;
       obj = JSON.parse(response);
       
-      keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,JSON.parse(response).input.text,'Y');
        var msgid2 = document.getElementById('txtmsgid').innerText;
       //add row in chatbox
       var div = document.createElement('div');
@@ -101,6 +100,7 @@ function chatbot(message){
       var chatHistory = document.getElementById("panelbody");
     chatHistory.scrollTop = chatHistory.scrollHeight;
       //console.log(intent_.intent);
+      keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,JSON.parse(response).input.text,'Y');
       
     }
   }).fail(function () {
