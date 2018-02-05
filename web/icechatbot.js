@@ -49,6 +49,8 @@ $(function(){
 // A function for sending message to the backend and getting result.
 function chatbot(message){
    $('#wrongbtn').attr('disabled', true);
+  var e = document.getElementById("wrongbtn");
+  e.id = "oldbtn";
   $.ajax({
     url: apiUrl,
     type: 'post',
