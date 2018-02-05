@@ -93,7 +93,7 @@ function chatbot(message){
                                         </small>\
                                 </div>\
                                 <p>'+JSON.parse(response).output.text+'</p>\
-                          <button type="button" onclick="markfalse2();" id="wrongbtn" > wrong </button>\
+                          <button type="button" onclick="markfalse();" id="wrongbtn" > wrong </button>\
                             </div>\
                         </li>\
                         </ul>';
