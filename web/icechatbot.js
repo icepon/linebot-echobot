@@ -16,7 +16,7 @@ $(function(){
       // Send the message.
       chatbot($("input").val());
       // Display the message.
-      $('#messages').append('<p>'+$("input").val()+'</p>');
+      //$('#messages').append('<p>'+$("input").val()+'</p>');
       
       //Insert text in chatbox
       var div = document.createElement('div');
@@ -62,13 +62,13 @@ function chatbot(message){
     if(response.error){
       // Failed at getting result.
       // Display a error message.
-      $('#messages').append('<p>A communication error occurred.</p>');
+      //$('#messages').append('<p>A communication error occurred.</p>');
     }else{
       // Succeeded at getting result.
       // Clear the input element.
       $("input").val("");
       // Display the message.
-      $('#messages').append('<p>'+JSON.parse(response).output.text+'</p>');
+      //$('#messages').append('<p>'+JSON.parse(response).output.text+'</p>');
       // Upodate the conversation state.
       context = JSON.stringify(JSON.parse(response).context);
       intent_ = JSON.parse(response).intents;
