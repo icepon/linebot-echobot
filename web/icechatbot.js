@@ -52,6 +52,28 @@ function chatbot(message){
       context = JSON.stringify(JSON.parse(response).context);
       intent_ = JSON.parse(response).intents;
       obj = JSON.parse(response);
+      
+      //add row in chatbox
+      var div = document.createElement('div');
+
+    div.className = 'row';
+    div.innerHTML =
+        '<li class="right clearfix"><span class="chat-img pull-right">\
+                            <img src="http://placehold.it/50/FA6F57/fff&text=YOU" alt="User Avatar" class="img-circle" />\
+                        </span>\
+                            <div class="chat-body clearfix">\
+                                <div class="header">\
+                                    <small class=" text-muted"></small>\
+                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>\
+                                </div>\
+                                <p>\
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare\
+                                    dolor, quis ullamcorper ligula sodales.\
+                                </p>\
+                            </div>\
+                        </li>\';
+    document.getElementById('panelbody').appendChild(div);
+      
       //console.log(intent_.intent);
       keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,JSON.parse(response).input.text,'Y');
     }
@@ -60,6 +82,21 @@ function chatbot(message){
     $('#messages').append('<p>A communication error occurred.</p>');
   });
 }
+
+function addRow() {
+    var div = document.createElement('div');
+
+    div.className = 'row';
+
+    div.innerHTML =
+        '<input type="text" name="name" value="" />\
+        <input type="text" name="value" value="" />\
+        <label> <input type="checkbox" name="check" value="1" /> Checked? </label>\
+        <input type="button" value="-" onclick="removeRow(this)">';
+
+    document.getElementById('content').appendChild(div);
+}
+
 
 function markfalse(){
   var jsondata = {"is_correct": 'N'};
