@@ -58,7 +58,8 @@ function chatbot(message){
 
     div.className = 'row';
     div.innerHTML =
-        '<li class="right clearfix"><span class="chat-img pull-right">\
+        '<ul class="chat">\
+        <li class="right clearfix"><span class="chat-img pull-right">\
                             <img src="http://placehold.it/50/FA6F57/fff&text=YOU" alt="User Avatar" class="img-circle" />\
                         </span>\
                             <div class="chat-body clearfix">\
@@ -71,7 +72,8 @@ function chatbot(message){
                                     dolor, quis ullamcorper ligula sodales.\
                                 </p>\
                             </div>\
-                        </li>';
+                        </li>\
+                        </ul>';
     document.getElementById('panelbody').appendChild(div);
       
       //console.log(intent_.intent);
