@@ -19,6 +19,7 @@ $(function(){
       $('#messages').append('<p>'+$("input").val()+'</p>');
       
       //Insert text in chatbox
+      var div = document.createElement('div');
       div.className = 'row';
     div.innerHTML =
         '<ul class="chat">\
