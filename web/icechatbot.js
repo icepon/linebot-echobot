@@ -88,10 +88,7 @@ function chatbot(message){
                                     <strong class="primary-font">Bot said</strong> <small class="pull-right text-muted">\
                                         </small>\
                                 </div>\
-                                <p>\
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare\
-                                    dolor, quis ullamcorper ligula sodales.\
-                                </p>\
+                                <p>'+JSON.parse(response).output.text+'</p>\
                             </div>\
                         </li>\
                         </ul>';
