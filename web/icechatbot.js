@@ -50,7 +50,9 @@ $(function(){
 function chatbot(message){
    $('#wrongbtn').attr('disabled', true);
   var e = document.getElementById("wrongbtn");
+  if (e !== null) {
   e.id = "oldbtn";
+    }
   $.ajax({
     url: apiUrl,
     type: 'post',
