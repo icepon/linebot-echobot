@@ -136,6 +136,26 @@ var settings = {
   "data": JSON.stringify(jsondata)
 }
 
+  var div = document.createElement('div');
+
+    div.className = 'row';
+    div.innerHTML =
+        '<ul class="chat">\
+        <li class="left clearfix"><span class="chat-img pull-left">\
+                            <img src="https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/robot2.png" alt="User Avatar" class="img-circle" />\
+                        </span>\
+                            <div class="chat-body clearfix">\
+                                <div class="header">\
+                                    <strong class="primary-font">Bot said</strong> <small class="pull-right text-muted">\
+                                        </small>\
+                                </div>\
+                                <p>ขอบคุณสำหรับ Feedback ค่ะ</p>\
+                            </div>\
+                        </li>\
+                        </ul>';
+    document.getElementById('panelbody').appendChild(div);
+    $('#wrongbtn').attr('disabled', true);
+
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
