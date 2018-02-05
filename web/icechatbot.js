@@ -157,6 +157,10 @@ var settings = {
   var chatHistory = document.getElementById("panelbody");
     chatHistory.scrollTop = chatHistory.scrollHeight;
     $('#wrongbtn').attr('disabled', true);
+  var e = document.getElementById("wrongbtn");
+  if (e !== null) {
+  e.id = "oldbtn";
+    }
 
 $.ajax(settings).done(function (response) {
   console.log(response);
