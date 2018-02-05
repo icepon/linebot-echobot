@@ -149,11 +149,13 @@ var settings = {
                                     <strong class="primary-font">Bot said</strong> <small class="pull-right text-muted">\
                                         </small>\
                                 </div>\
-                                <p>ขอบคุณสำหรับ Feedback ค่ะ</p>\
+                                <p>Thank you</p>\
                             </div>\
                         </li>\
                         </ul>';
     document.getElementById('panelbody').appendChild(div);
+  var chatHistory = document.getElementById("panelbody");
+    chatHistory.scrollTop = chatHistory.scrollHeight;
     $('#wrongbtn').attr('disabled', true);
 
 $.ajax(settings).done(function (response) {
