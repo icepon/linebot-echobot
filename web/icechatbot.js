@@ -36,7 +36,8 @@ $(function(){
                         </li>\
                         </ul>';
       div.className = 'row';
-    div.innerHTML = txt1.concat(txt2, txt3);
+    //div.innerHTML = txt1.concat(txt2, txt3);
+      div.innerHTML = '';
     document.getElementById('panelbody').appendChild(div);
       
       //Keep log
