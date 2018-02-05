@@ -30,7 +30,7 @@ $(function(){
                                     <!--<strong class="pull-right primary-font">Bhaumik Patel</strong>-->\
                                 </div>\
                                 <p>\';
-      var txt2 = $("input").val();
+      var txt2 = '';
       var txt3 = '</p>\
                             </div>\
                         </li>\
