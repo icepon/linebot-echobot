@@ -23,7 +23,19 @@ $(function(){
       
       div.className = 'row';
     //div.innerHTML = txt1.concat(txt2, txt3);
-      div.innerHTML = '<p>'+$("input").val()+'</p>';
+      div.innerHTML = '<ul class="chat">\
+                        <li class="right clearfix"><span class="chat-img pull-right">\
+                            <img src="http://placehold.it/50/FA6F57/fff&text=YOU" alt="User Avatar" class="img-circle" />\
+                        </span>\
+                            <div class="chat-body clearfix">\
+                                <div class="header">\
+                                    <small class=" text-muted"></small>\
+                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>\
+                                </div>\
+                                <p>'+$("input").val()+'</p>\
+                            </div>\
+                        </li>\
+      </ul>';
     document.getElementById('panelbody').appendChild(div);
       
       //Keep log
