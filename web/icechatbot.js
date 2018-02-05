@@ -38,6 +38,8 @@ $(function(){
       </ul>';
     document.getElementById('panelbody').appendChild(div);
       
+      var chatHistory = document.getElementById("panelbody");
+    chatHistory.scrollTop = chatHistory.scrollHeight;
       //Keep log
       //keeplog($("input").val());
     }
@@ -93,7 +95,8 @@ function chatbot(message){
                         </li>\
                         </ul>';
     document.getElementById('panelbody').appendChild(div);
-      
+      var chatHistory = document.getElementById("panelbody");
+    chatHistory.scrollTop = chatHistory.scrollHeight;
       //console.log(intent_.intent);
       keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,JSON.parse(response).input.text,'Y');
     }
