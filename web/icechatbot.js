@@ -29,12 +29,13 @@ $(function(){
                             <div class="chat-body clearfix">\
                                 <div class="header">\
                                     <small class=" text-muted"></small>\
-                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>\
+                                    <!--<strong class="pull-right primary-font">Bhaumik Patel</strong>-->\
                                 </div>\
-                                <p>\
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare\
-                                    dolor, quis ullamcorper ligula sodales.\
-                                </p>\
+                                <p>\'+$("input").val()+
+                                    //Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare\
+                                    //dolor, quis ullamcorper ligula sodales.\
+                                    
+                                '</p>\
                             </div>\
                         </li>\
                         </ul>';
