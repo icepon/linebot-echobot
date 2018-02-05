@@ -31,7 +31,7 @@ $(function(){
                                 </div>\
                                 <p>\';
       var txt2 = $("input").val();
-      var txt3 = </p>\
+      var txt3 = '</p>\
                             </div>\
                         </li>\
                         </ul>';
