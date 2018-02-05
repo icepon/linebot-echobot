@@ -23,7 +23,7 @@ $(function(){
       
       div.className = 'row';
     //div.innerHTML = txt1.concat(txt2, txt3);
-      div.innerHTML = '';
+      div.innerHTML = '<p>'+$("input").val()+'</p>';
     document.getElementById('panelbody').appendChild(div);
       
       //Keep log
