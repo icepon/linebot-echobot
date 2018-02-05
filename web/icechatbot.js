@@ -28,7 +28,7 @@ $(function(){
                             <img src="http://placehold.it/50/FA6F57/fff&text=YOU" alt="User Avatar" class="img-circle" />\
                         </span>\
                             <div class="chat-body clearfix">\
-                                <div class="header">\
+                                <div class="header" style="text-align: right">\
                                     <small class=" text-muted"></small>\
                                     <strong class="primary-font">You said</strong> <small class="pull-right text-muted">\
                                 </div>\
