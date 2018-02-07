@@ -878,7 +878,7 @@ if (!is_null($events['events'])) {
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
 			
-			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+			my $multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
 			$multipleMessageBuilder->add($outputText)
                        ->add(new TextMessageBuilder("ผลอนุมัติ", "ยอดเรียกร้อง 100,000 บ.\nยอดอนุมัติ 50,000 บ.\nค่าชดเชย 20,000 บ."));
 				
