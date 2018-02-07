@@ -880,7 +880,7 @@ if (!is_null($events['events'])) {
 			
 			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
 			$multipleMessageBuilder->add($outputText)
-                       ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ยอดเรียกร้อง 100,000 บ.\nยอดอนุมัติ 50,000 บ.\nค่าชดเชย 20,000 บ."));
+                       ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ยอดเรียกร้อง 100,000 บ.\nยอดอนุมัติ 50,000 บ.\nค่าชดเชย 20,000 บ.\n*สามารถดูรายละเอียดได้ในวันทำการถัดไป"));
 				
 			$response = $bot->replyMessage($replyToken, $multipleMessageBuilder);	}
 			else if (strtolower($text) == "cl4ia") {
