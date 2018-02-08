@@ -958,6 +958,10 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			
+			else if (strtolower($text) == "testimg") {
+			
+				
+			}
 			else {
 			$messages = [ 'type'=>'text','text'=>"อิอิ"];
 			}
