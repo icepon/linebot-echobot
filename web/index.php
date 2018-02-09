@@ -800,18 +800,18 @@ if (!is_null($events['events'])) {
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
-			
-			else if (strtolower($text) == "cl2i") {
-			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim3.PNG";
+			//Normal claim submit
+			else if (strtolower($text) == "ncl1i") {
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim1.PNG";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
 			$nb21 = "กธ. T123456789";
 			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
 			
 			$action1 = array (
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581"),
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
 				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("รายละเอียดเพิ่มเติม", "https://awa.aia.co.th/login/")
+				//,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ข้อมูลเพิ่มเติม", "https://awa.aia.co.th/login/")
 			);
 			
 			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
@@ -826,7 +826,84 @@ if (!is_null($events['events'])) {
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
+			//Normal claim pending
+			else if (strtolower($text) == "ncl2i") {
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim2.PNG";
+			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
+			$nb21 = "กธ. T123456789";
+			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
+			
+			$action1 = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
+				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
+				//,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ข้อมูลเพิ่มเติม", "https://awa.aia.co.th/login/")
+			);
+			
+			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
+  			//$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb23, $nb24,$imgurl2, $action2);
+  			
+			$columns = array();	
+				
+			$columns[] = $column1;
+			//$columns[] = $column2;
+				
+			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+					
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
+			$response = $bot->replyMessage($replyToken, $outputText);	}
+			//Normal claim reject
+			else if (strtolower($text) == "ncl3i") {
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim3.PNG";
+			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
+			
+			$nb21 = "กธ. T123456789";
+			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
+			
+			$action1 = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
+				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
+				,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ข้อมูลเพิ่มเติม", "https://awa.aia.co.th/login/")
+			);
+			
+			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
+  			//$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb23, $nb24,$imgurl2, $action2);
+  			
+			$columns = array();	
+				
+			$columns[] = $column1;
+			//$columns[] = $column2;
+				
+			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+					
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
+			$response = $bot->replyMessage($replyToken, $outputText);	}
+			//Normal claim approve
+			else if (strtolower($text) == "ncl4i") {
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim4.PNG";
+			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
+			
+			$nb21 = "กธ. T123456789";
+			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
+			
+			$action1 = array (
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
+				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
+				,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ข้อมูลเพิ่มเติม", "https://awa.aia.co.th/login/")
+			);
+			
+			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
+  			//$column2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb23, $nb24,$imgurl2, $action2);
+  			
+			$columns = array();	
+				
+			$columns[] = $column1;
+			//$columns[] = $column2;
+				
+			$carousel = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns);
+					
+			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("การเรียกร้องสินไหม", $carousel);
+			$response = $bot->replyMessage($replyToken, $outputText);	}
 			else if (strtolower($text) == "cl3i") {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim5.png";
 			$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/more.PNG";	
