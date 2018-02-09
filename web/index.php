@@ -805,9 +805,11 @@ if (!is_null($events['events'])) {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim1.PNG";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
-			$nb21 = "กธ. T123456789";
-			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
-			
+			//$nb21 = "กธ. T123456789";
+			//$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
+			$nb21 = "ผู้เอาประกันคุณ พงศธร ทับทิมไทย";
+			$nb22 = "วันที่ 31/10/2561\n เวลา 15:50 น.";
+				
 			$action1 = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
 				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
@@ -831,13 +833,13 @@ if (!is_null($events['events'])) {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim2.PNG";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
-			$nb21 = "กธ. T123456789";
+			$nb21 = "เลขที่การเรียกร้องฯ 123456789";
 			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
 			
 			$action1 = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
 				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
-				//,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ข้อมูลเพิ่มเติม", "https://awa.aia.co.th/login/")
+				,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ข้อมูลเพิ่มเติม", "https://awa.aia.co.th/login/")
 			);
 			
 			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder($nb21, $nb22,$imgurl, $action1);
@@ -857,7 +859,7 @@ if (!is_null($events['events'])) {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim3.png";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
-			$nb21 = "กธ. T123456789";
+			$nb21 = "เลขที่การเรียกร้องฯ 123456789";
 			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
 			
 			$action1 = array (
@@ -883,8 +885,8 @@ if (!is_null($events['events'])) {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim4.PNG";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
-			$nb21 = "กธ. T123456789 ยอดอนุมัติรวม 2,000 บาท";
-			$nb22 = "คุณ พงศธร ทับทิมไทย\nวันที่ 31/10/2561";
+			$nb21 = "เลขที่การเรียกร้องฯ 123456789";
+			$nb22 = "คุณ พงศธร ทับทิมไทย\nยอดอนุมัติรวม 2,000 บาท\nวันที่ 31/10/2561";
 			
 			$action1 = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
@@ -957,7 +959,7 @@ if (!is_null($events['events'])) {
 			
 			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
 			$multipleMessageBuilder->add($outputText)
-                       ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("💵 ยอดเรียกร้อง 100,000 บ.\n💵 ยอดอนุมัติรวม 50,000 บ.\n💵 ค่าชดเชย 20,000 บ.\n\n📌 สามารถดูรายละเอียดเพิ่มเติมในระบบ ได้ในวันทำการถัดไป"));
+                       ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เลขที่การเรียกร้องฯ 123456789\n💵 ยอดเรียกร้อง    100,000 บ.\n💵 ยอดอนุมัติค่ารักษา    50,000 บ.\n💵 ยอดอนุมัติค่าชดเชย    20,000 บ.\n\n📌 สามารถดูรายละเอียดเพิ่มเติมในระบบ ได้ในวันทำการถัดไป"));
 				
 			$response = $bot->replyMessage($replyToken, $multipleMessageBuilder);	}
 			else if (strtolower($text) == "cl4ia") {
