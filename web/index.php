@@ -854,7 +854,7 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			//Normal claim reject
 			else if (strtolower($text) == "ncl3i") {
-			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim3.PNG";
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/nclaim3.png";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
 			$nb21 = "กธ. T123456789";
