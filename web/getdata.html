@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Get data</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+	function getdata(){
+	var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://icechatbot-a7be.restdb.io/rest/chatlog",
+  "method": "GET",
+  "headers": {
+    "content-type": "application/json",
+    "x-apikey": "5a5873c47d7ef24c5cf08c12",
+    "cache-control": "no-cache"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  
+	jQuery.each(response, function(index, value){
+        console.log(value.chat_id,value.intent,value.usertext,value.confidence,value.is_correct );
+		$('#txtmsg').append(value.chat_id+','+value.intent+','+value.usertext+','+value.confidence+','+value.is_correct+'<br/>');
+    });
+});
+}
+	</script>
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	  </head>
+  <body>
+  <div id="txtmsg" />
+  <button type="button" onclick="getdata();" id="get_data" > get data </button><br/>
+  </body>
+  </html>
