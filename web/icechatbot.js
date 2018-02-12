@@ -104,8 +104,8 @@ function chatbot(message){
       var chatHistory = document.getElementById("panelbody");
     chatHistory.scrollTop = chatHistory.scrollHeight;
       //console.log(intent_.intent);
-      keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,JSON.parse(response).input.text,'Y');
-      
+      //keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,JSON.parse(response).input.text,'Y');
+      keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,message,'Y');
     }
   }).fail(function () {
     // Display a error message.
