@@ -48,7 +48,7 @@ $(function(){
 
 // A function for sending message to the backend and getting result.
 function chatbot(message){
-  console.log(message);
+ 
    $('#wrongbtn').attr('disabled', true);
   var e = document.getElementById("wrongbtn");
   if (e !== null) {
@@ -107,6 +107,7 @@ function chatbot(message){
       //console.log(intent_.intent);
       //keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,JSON.parse(response).input.text,'Y');
       keeplog(JSON.parse(response).context.conversation_id,obj.intents[0].intent,obj.intents[0].confidence,message,'Y');
+       console.log(message);
     }
   }).fail(function () {
     // Display a error message.
