@@ -1048,7 +1048,9 @@ if (!is_null($events['events'])) {
 			$hbd1 = "🎁 วันเกิดลูกค้าคุณ เทสระบบ ดีกัน";
 			$hbd2 = "🎁 วันเกิดลูกค้าคุณ กสิกร รักไทย";
 			$hbd3 = "🎁 วันเกิดลูกค้าคุณ เทสระบบ ดีกัน";
-			
+			$response = $bot->getProfile($event['replyToken']['source']['userId']);
+			if ($response->isSucceeded()) {
+    			$profile = $response->getJSONDecodedBody();}
 			$action1 = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
 				//,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B9%8C%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88+%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%9E%E0%B8%87%E0%B8%A8%E0%B8%98%E0%B8%A3+%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%97%E0%B8%A2+T123456789+%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD+31%2F01%2F60")
@@ -1068,8 +1070,8 @@ if (!is_null($events['events'])) {
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Your day", $carousel);
 			
-			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
-			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("My day ของคุณ วันนี้ครับ"))
+			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder(); //$profile['displayName']
+			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("My day ของคุณ".$profile['displayName']. "วันนี้ครับ"))
 			->add($outputText)
                        ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("💵 ยอดขายตอนนี้ 10,000 บาท 💥 อีกนิด พิชิต เป้า บวก บวก บวก🌈"));
 				
