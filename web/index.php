@@ -1041,9 +1041,7 @@ if (!is_null($events['events'])) {
 			
 				
 			}
-			else if{
-			$messages = [ 'type'=>'text','text'=>"อิอิ"];
-			}
+			
 			else if (strtolower($text) == "myday") {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim4.PNG";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
@@ -1076,6 +1074,9 @@ if (!is_null($events['events'])) {
                       // ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("ยอดขายตอนนี้ 10,000 บาท อีกนิด พิชิต เป้า บวก บวก บวก"));
 				
 			$response = $bot->replyMessage($replyToken, $outputText);	}
+			else {
+			$messages = [ 'type'=>'text','text'=>"อิอิ"];
+			}
 			/*
 			$actions = array (
 				// general message action
