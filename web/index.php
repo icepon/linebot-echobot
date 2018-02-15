@@ -1041,7 +1041,7 @@ if (!is_null($events['events'])) {
 			
 				
 			}
-			else {
+			else if{
 			$messages = [ 'type'=>'text','text'=>"อิอิ"];
 			}
 			else if (strtolower($text) == "myday") {
