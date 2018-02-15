@@ -85,6 +85,18 @@ if (!is_null($events['events'])) {
 				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
+			else if(strpos( $data , "paymentdue" ) !== false){
+				//$pol_no = substr($data,10);
+				$reply = "กรมธรรม์ T123456789 💰เบี้ยที่ต้องชำระ 4,500 บาท\nกรมธรรม์ T012327777 💰เบี้ยที่ต้องชำระ 1,500 บาท\nกรมธรรม์ T99999990 💰เบี้ยที่ต้องชำระ 900 บาท";
+				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
+			$response = $bot->replyMessage($replyToken, $outputText);
+			}
+			else if(strpos( $data , "pendingnb" ) !== false){
+				//$pol_no = substr($data,10);
+				$reply = "กรมธรรม์ T123456789 เอกสารตรวจสุขภาพ\nกรมธรรม์ T012327777 เอกสารมอบอำนาจจากบิดามารดา";
+				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
+			$response = $bot->replyMessage($replyToken, $outputText);
+			}
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Check policy : ".$data);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 		}
@@ -1092,7 +1104,7 @@ if (!is_null($events['events'])) {
 			$outputText2 = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Your day", $carousel2);
 				
 			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder(); //$profile['displayName']
-			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("My day ของคุณ ".$profile['displayName']. " วันนี้ครับ"))
+			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("วันนี้ของคุณ ".$profile['displayName']. " มีอะไรบ้างมาดูกันครับ"))
 			->add($outputText)
 			->add($outputText2)
                        ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("💵 ยอดขายตอนนี้ 10,000 บาท 💥 อีกนิด พิชิต เป้า บวก บวก บวก🌈"));
