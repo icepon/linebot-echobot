@@ -1069,11 +1069,11 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Your day", $carousel);
 			
 			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
-			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("My day ของคุณ วันนี้ครับ")
+			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("My day ของคุณ วันนี้ครับ"))
 			->add($outputText)
                        ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("💵 ยอดขายตอนนี้ 10,000 บาท 💥 อีกนิด พิชิต เป้า บวก บวก บวก🌈"));
 				
-			$response = $bot->replyMessage($replyToken, $outputText);	}
+			$response = $bot->replyMessage($replyToken, $multipleMessageBuilder);	}
 			else {
 			$messages = [ 'type'=>'text','text'=>"อิอิ"];
 			}
