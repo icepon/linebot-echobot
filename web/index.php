@@ -1070,9 +1070,31 @@ if (!is_null($events['events'])) {
 					
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Your day", $carousel);
 			
+			
+			$nb21 = "มีกรมธรรม์ครบกำหนดชำระวันนี้ทั้งหมด 5 รายการ กรุณาติดต่อลูกค้าเพื่อชำระเบี้ยความคุ้มครองนะครับ";
+			$nb22 = "มี 3 กรมธรรม์ใหม่ ขอเอกสารเพิ่มเติม อย่าลืมจัดส่งเอกสาร เพื่อความคุ้มครองที่ทันใจของลูกค้านะครับ";
+			$action12 = array (
+				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("กรมธรรม์ครบกำหนด", "paymentdue")
+			);
+			$action22 = array (
+				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Pending NB", "pendingnb")
+			);
+			
+			$column12 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $nb21,null, $action1);
+  			$column22 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $nb22,null, $action2);
+  			
+			$columns2 = array();	
+				
+			$columns2[] = $column12;
+			$columns2[] = $column22;
+			$carousel2 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder($columns2);
+					
+			$outputText2 = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Your day", $carousel2);
+				
 			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder(); //$profile['displayName']
-			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("My day ของคุณ".$profile['displayName']. "วันนี้ครับ"))
+			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("My day ของคุณ ".$profile['displayName']. " วันนี้ครับ"))
 			->add($outputText)
+			->add($outputText2)
                        ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("💵 ยอดขายตอนนี้ 10,000 บาท 💥 อีกนิด พิชิต เป้า บวก บวก บวก🌈"));
 				
 			$response = $bot->replyMessage($replyToken, $multipleMessageBuilder);	}
