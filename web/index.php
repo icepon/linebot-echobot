@@ -1080,8 +1080,8 @@ if (!is_null($events['events'])) {
 				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("Pending NB", "pendingnb")
 			);
 			
-			$column12 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $nb21,null, $action1);
-  			$column22 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $nb22,null, $action2);
+			$column12 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $nb21,null, $action12);
+  			$column22 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null, $nb22,null, $action22);
   			
 			$columns2 = array();	
 				
