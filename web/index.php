@@ -1105,7 +1105,7 @@ if (!is_null($events['events'])) {
 				
 			$multipleMessageBuilder = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder(); //$profile['displayName']
 			$multipleMessageBuilder->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("วันนี้ของคุณ ".$profile['displayName']. " มีอะไรบ้างมาดูกันครับ"))
-			->add($outputText)
+			//->add($outputText)
 			->add($outputText2)
                        ->add(new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("💵 ยอดขายตอนนี้ 10,000 บาท 💥 อีกนิด พิชิต เป้า บวก บวก บวก🌈"));
 				
