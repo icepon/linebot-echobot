@@ -29,7 +29,18 @@ if (strtolower($m_type) == "bill1") {
 			$response = $bot->pushMessage($_GET["userId"], $outputText);	}
 else
 {
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
-$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+//$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
+//$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+	 $sh = <<< EOF
+  curl \
+  -H 'Authorization: Bearer $channelAccessToken' \
+  https://api.line.me/v2/bot/user/$userId/richmenu
+EOF;
+  $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
+  if(isset($result['richMenuId'])) {
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($result['richMenuId']);
+    $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+  }
+	
 }
 
