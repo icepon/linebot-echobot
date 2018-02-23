@@ -85,7 +85,8 @@ function uploadRandomImageToRichmenu($channelAccessToken, $richmenuId) {
     return 'invalid richmenu id';
   }
   $randomImageIndex = rand(1, 5);
-  $imagePath = 'controller_01.png';
+  //$imagePath = 'controller_01.png';
+  $imagePath = 	realpath('') . '/' . 'controller_01.png';
   $sh = <<< EOF
   curl -X POST \
   -H 'Authorization: Bearer $channelAccessToken' \
