@@ -39,7 +39,10 @@ else
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu($access_token));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Map rich menu
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-b098de523f9ac25bd70446981bf833ae'));
+    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-b098de523f9ac25bd70446981bf833ae'));
+    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+	//Upload rich menu image
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu($access_token,'richmenu-b098de523f9ac25bd70446981bf833ae'));
     $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	
 }
@@ -72,6 +75,29 @@ EOF;
   }
   else {
     return $result['message'];
+  }
+}
+
+function uploadRandomImageToRichmenu($channelAccessToken, $richmenuId) {
+  if(!isRichmenuIdValid($richmenuId)) {
+    return 'invalid richmenu id';
+  }
+  $randomImageIndex = rand(1, 5);
+  $imagePath = 'https://raw.githubusercontent.com/line/demo-rich-menu-bot/master/controller_01.png';
+  $sh = <<< EOF
+  curl -X POST \
+  -H 'Authorization: Bearer $channelAccessToken' \
+  -H 'Content-Type: image/png' \
+  -H 'Expect:' \
+  -T $imagePath \
+  https://api.line.me/v2/bot/richmenu/$richmenuId/content
+EOF;
+  $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
+  if(isset($result['message'])) {
+    return $result['message'];
+  }
+  else {
+    return 'success. Image #0' . $randomImageIndex . ' has uploaded onto ' . $richmenuId;
   }
 }
 
