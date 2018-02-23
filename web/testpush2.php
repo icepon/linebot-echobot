@@ -42,11 +42,11 @@ else
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-5e04b2636060156c7bec324b1397c199'));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Upload rich menu image
-    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu($access_token,'richmenu-5e04b2636060156c7bec324b1397c199'));
-    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
-	//Get rich menu
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(getListOfRichmenu($access_token));
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu($access_token,'richmenu-5e04b2636060156c7bec324b1397c199'));
     $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+	//Get rich menu
+    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(getListOfRichmenu($access_token));
+    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 }
 
 function checkRichmenuOfUser($channelAccessToken, $userId) {
@@ -85,7 +85,7 @@ function uploadRandomImageToRichmenu($channelAccessToken, $richmenuId) {
     return 'invalid richmenu id';
   }
   $randomImageIndex = rand(1, 5);
-  $imagePath = 'https://raw.githubusercontent.com/line/demo-rich-menu-bot/master/controller_01.png';
+  $imagePath = 'controller_01.png';
   $sh = <<< EOF
   curl -X POST \
   -H 'Authorization: Bearer $channelAccessToken' \
