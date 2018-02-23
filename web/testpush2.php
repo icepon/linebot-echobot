@@ -42,11 +42,11 @@ else
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-b098de523f9ac25bd70446981bf833ae'));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Upload rich menu image
-    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu($access_token,'richmenu-b098de523f9ac25bd70446981bf833ae'));
-    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
-	//Get rich menu
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(getListOfRichmenu($access_token));
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu($access_token,'richmenu-b098de523f9ac25bd70446981bf833ae'));
     $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+	//Get rich menu
+    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(getListOfRichmenu($access_token));
+    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 }
 
 function checkRichmenuOfUser($channelAccessToken, $userId) {
