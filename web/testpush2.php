@@ -32,12 +32,15 @@ else
 //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
 //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	 
-	//Map rich menu
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser($access_token, $_GET["userId"]));
-    $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+	//Check rich menu
+    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser($access_token, $_GET["userId"]));
+    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Create Rich menu
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu($access_token));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+	//Map rich menu
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'65e627cedfff38f7b53676039c0370e1'));
+    $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	
 }
 
@@ -69,5 +72,24 @@ EOF;
   }
   else {
     return $result['message'];
+  }
+}
+
+function linkToUser($channelAccessToken, $userId, $richmenuId) {
+  if(!isRichmenuIdValid($richmenuId)) {
+    return 'invalid richmenu id';
+  }
+  $sh = <<< EOF
+  curl -X POST \
+  -H 'Authorization: Bearer $channelAccessToken' \
+  -H 'Content-Length: 0' \
+  https://api.line.me/v2/bot/user/$userId/richmenu/$richmenuId
+EOF;
+  $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
+  if(isset($result['message'])) {
+    return $result['message'];
+  }
+  else {
+    return 'success';
   }
 }
