@@ -33,14 +33,14 @@ else
 //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	 
 	//Check rich menu
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser($access_token, $_GET["userId"]));
-    $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser($access_token, $_GET["userId"]));
+    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Create Rich menu
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu($access_token));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Map rich menu
-    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-65e627cedfff38f7b53676039c0370e1'));
-    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-65e627cedfff38f7b53676039c0370e1'));
+    $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	
 }
 
@@ -91,5 +91,13 @@ EOF;
   }
   else {
     return 'success';
+  }
+}
+
+function isRichmenuIdValid($string) {
+  if(preg_match('/^[a-zA-Z0-9-]+$/', $string)) {
+    return true;
+  } else {
+    return false;
   }
 }
