@@ -33,8 +33,8 @@ else
 //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	 $sh = <<< EOF
   curl \
-  -H 'Authorization: Bearer $channelAccessToken' \
-  https://api.line.me/v2/bot/user/$userId/richmenu
+  -H 'Authorization: Bearer $access_token' \
+  https://api.line.me/v2/bot/user/$_GET["userId"]/richmenu
 EOF;
   $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
   if(isset($result['richMenuId'])) {
