@@ -6,7 +6,7 @@ require_once '../vendor/autoload.php';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3B31gVTyIwIMhyO4g1XWptfVyFJ7kmUGdDrfB4Pd/UspZp0iIMrLeVq+YJIV0ZY0arNIDv4eVmwLOCm2yns5ezewdB04t89/1O/w1cDnyilFU=');
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '1efe3c53bbd84320ce616b832c262094']);
 
-$access_token = 'b+X18LM7MI9l2fgwWm9z/Y1cPqRPvP8zqOcHdE4dgQRxcWWYg084kquxoshlg5JCX12eBoyy+ycOEF6299yOkajoKMO2F2GovYgK815HDuA5PVLqOzghQi0CuEGSBDLoVj+oeI+fLnnfBxsK+VDbdQdB04t89/1O/w1cDnyilFU=';
+$access_token = 'AdlGlZFCmua0+/PYr/y/iI7dF2c7DeVXkhG/FKp9K4Pp8qAuEWTv7yAx7vDX1t3B31gVTyIwIMhyO4g1XWptfVyFJ7kmUGdDrfB4Pd/UspZp0iIMrLeVq+YJIV0ZY0arNIDv4eVmwLOCm2yns5ezewdB04t89/1O/w1cDnyilFU=';
 
 echo  $_GET["userId"];
 echo  $_GET["m_type"];
@@ -36,11 +36,11 @@ else
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser($access_token, $_GET["userId"]));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Create Rich menu
-    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu($access_token));
-    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
-	//Map rich menu
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-b098de523f9ac25bd70446981bf833ae'));
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu($access_token));
     $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+	//Map rich menu
+    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-b098de523f9ac25bd70446981bf833ae'));
+    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Upload rich menu image
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu($access_token,'richmenu-b098de523f9ac25bd70446981bf833ae'));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
