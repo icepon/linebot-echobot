@@ -36,14 +36,14 @@ else
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser($access_token, $_GET["userId"]));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Create Rich menu
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu($access_token));
-    $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu($access_token));
+    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Map rich menu
-    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-b098de523f9ac25bd70446981bf833ae'));
+    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(linkToUser($access_token,$_GET["userId"],'richmenu-5e04b2636060156c7bec324b1397c199'));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Upload rich menu image
-    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu($access_token,'richmenu-b098de523f9ac25bd70446981bf833ae'));
-    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(uploadRandomImageToRichmenu($access_token,'richmenu-5e04b2636060156c7bec324b1397c199'));
+    $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	//Get rich menu
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(getListOfRichmenu($access_token));
     //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
