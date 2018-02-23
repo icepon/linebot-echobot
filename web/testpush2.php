@@ -33,11 +33,11 @@ else
 //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	 
 	//Map rich menu
-    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser($access_token, $_GET["userId"]));
-    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
-	//Create Rich menu
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu($access_token));
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser($access_token, $_GET["userId"]));
     $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+	//Create Rich menu
+    //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(createNewRichmenu($access_token));
+    //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
 	
 }
 
