@@ -31,16 +31,25 @@ else
 {
 //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
 //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
-	 $sh = <<< EOF
+	 
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder(checkRichmenuOfUser($access_token, $_GET["userId"]));
+    $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+
+	
+}
+
+function checkRichmenuOfUser($channelAccessToken, $userId) {
+  $sh = <<< EOF
   curl \
-  -H 'Authorization: Bearer $access_token' \
-  https://api.line.me/v2/bot/user/$_GET["userId"]/richmenu
+  -H 'Authorization: Bearer $channelAccessToken' \
+  https://api.line.me/v2/bot/user/$userId/richmenu
 EOF;
   $result = json_decode(shell_exec(str_replace('\\', '', str_replace(PHP_EOL, '', $sh))), true);
   if(isset($result['richMenuId'])) {
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($result['richMenuId']);
-    $response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
+    return $result['richMenuId'];
   }
-	
+  else {
+    return $result['message'];
+  }
 }
 
