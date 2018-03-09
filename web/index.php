@@ -1060,8 +1060,8 @@ if (!is_null($events['events'])) {
 			$hbd1 = "🎁 วันเกิดลูกค้าคุณ เทสระบบ ดีกัน";
 			$hbd2 = "🎁 วันเกิดลูกค้าคุณ กสิกร รักไทย";
 			$hbd3 = "🎁 วันเกิดลูกค้าคุณ เทสระบบ ดีกัน";
-			$response = $bot->getProfile($event['source']['userId']);
-				
+			//$response = $bot->getProfile($event['source']['userId']);
+				$response = $bot->getProfile($event['source']['pictureUrl']);
 			if ($response->isSucceeded()) {
     			$profile = $response->getJSONDecodedBody();}
 			$action1 = array (
@@ -1069,9 +1069,9 @@ if (!is_null($events['events'])) {
 				//,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1%E0%B9%8C%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88+%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%9E%E0%B8%87%E0%B8%A8%E0%B8%98%E0%B8%A3+%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%97%E0%B8%A2+T123456789+%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%A1%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD+31%2F01%2F60")
 			);
 			
-			$response_url = $bot->getProfile($event['source']['pictureUrl']);
-			if ($response_url->isSucceeded()) {
-    			$profile_pic = $response_url->getJSONDecodedBody();}
+			//$response_url = $bot->getProfile($event['source']['pictureUrl']);
+			//if ($response_url->isSucceeded()) {
+    			//$profile_pic = $response_url->getJSONDecodedBody();}
 			
 				
 			$column1 = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder(null,$hbd1,null, $action1);
@@ -1089,8 +1089,8 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("Your day", $carousel);
 			
 			
-			//$nb21 = "มีกรมธรรม์ครบกำหนดชำระวันนี้ทั้งหมด 5 รายการ กรุณาติดต่อลูกค้าเพื่อชำระเบี้ยความคุ้มครองนะครับ";
-			$nb21 = $profile_pic;
+			$nb21 = "มีกรมธรรม์ครบกำหนดชำระวันนี้ทั้งหมด 5 รายการ กรุณาติดต่อลูกค้าเพื่อชำระเบี้ยความคุ้มครองนะครับ";
+			
 			$nb22 = "มี 3 กรมธรรม์ใหม่ ขอเอกสารเพิ่มเติม อย่าลืมจัดส่งเอกสาร เพื่อความคุ้มครองที่ทันใจของลูกค้านะครับ";
 			$action12 = array (
 				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("กรมธรรม์ครบกำหนด", "paymentdue")
