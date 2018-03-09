@@ -1060,8 +1060,8 @@ if (!is_null($events['events'])) {
 			$hbd1 = "🎁 วันเกิดลูกค้าคุณ เทสระบบ ดีกัน";
 			$hbd2 = "🎁 วันเกิดลูกค้าคุณ กสิกร รักไทย";
 			$hbd3 = "🎁 วันเกิดลูกค้าคุณ เทสระบบ ดีกัน";
-			//$response = $bot->getProfile($event['source']['userId']);
-				$response = $bot->getProfile($event['source']['pictureUrl']);
+			
+			$response = $bot->getProfile($event['source']['userId']);
 			if ($response->isSucceeded()) {
     			$profile = $response->getJSONDecodedBody();}
 			$action1 = array (
