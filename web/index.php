@@ -842,7 +842,7 @@ if (!is_null($events['events'])) {
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
 			$nb21 = "กธ.T123456789 วันที่ 31/10/61 เวลา 15:50";
-			$nb22 = "คุณ เทสระบบ ดีกัน\nรพ. สมิติเวช ศรีนครินทร์";
+			$nb22 = "คุณ เทสระบบ ดีกัน";
 			
 			$action1 = array (
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
