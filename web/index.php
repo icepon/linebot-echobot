@@ -814,7 +814,7 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText);	}
 			//Claim settlement
 			else if (strtolower($text) == "cl6i") {
-			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim6.PNG";
+			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim6.png";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
 			$nb21 = "กธ.T123456789 วันที่ 31/10/61 เวลา 15:50";
