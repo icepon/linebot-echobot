@@ -68,9 +68,15 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
-		
+		//Beacon event
+		if ($event['type'] == 'beacon'){
+			$replyToken = $event['replyToken'];
+			$memo = "Beacon event";
+			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($memo);	
+			$response = $bot->replyMessage($replyToken, $outputText);
+		}
 		//POST BACK EVENT
-		if ($event['type'] == 'postback'){
+		else if ($event['type'] == 'postback'){
 			$replyToken = $event['replyToken'];
 			$data = $event['postback']['data'];
 			
