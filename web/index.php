@@ -877,7 +877,7 @@ if (!is_null($events['events'])) {
 			$nb22 = "วันที่ 31/10/2561\n เวลา 15:50 น.";
 				
 			$action1 = array (
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel: ")
 				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
 				//,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ข้อมูลเพิ่มเติม", "https://awa.aia.co.th/login/")
 			);
