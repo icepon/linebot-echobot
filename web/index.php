@@ -587,7 +587,7 @@ if (!is_null($events['events'])) {
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $bill5,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($bill5, $button);
 			$response = $bot->replyMessage($replyToken, $outputText);	}
-			//Conservation tofix
+			//Conservation 
 			else if (strtolower($text) == "apl") {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/apl.PNG";	
 			
@@ -877,7 +877,7 @@ if (!is_null($events['events'])) {
 			$nb22 = "วันที่ 31/10/2561\n เวลา 15:50 น.";
 				
 			$action1 = array (
-				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", "tel:1581")
+				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า", null)
 				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("โทรติดต่อโรงพยาบาล", "tel:1581"),
 				//,New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ข้อมูลเพิ่มเติม", "https://awa.aia.co.th/login/")
 			);
