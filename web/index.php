@@ -103,8 +103,8 @@ if (!is_null($events['events'])) {
 				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Check policy : ".$data);	
-			$response = $bot->replyMessage($replyToken, $outputText);
+			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Check policy : ".$data);	
+			//$response = $bot->replyMessage($replyToken, $outputText);
 		}
 		
 		// Reply only when message sent is in 'text' format
