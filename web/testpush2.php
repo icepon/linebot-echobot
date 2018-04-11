@@ -31,7 +31,7 @@ else if (strtolower($m_type) == "bill1") {
 			$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(null, $b_description,null,  $actions);
 			$outputText = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder($b_description, $button);
 			$response = $bot->pushMessage($_GET["userId"], $outputText);	}
-else (strtolower($m_type) == "richmenu")
+else 
 {
 //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_GET["m_text"]);
 //$response = $bot->pushMessage($_GET["userId"], $textMessageBuilder);
