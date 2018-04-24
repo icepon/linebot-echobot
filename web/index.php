@@ -595,7 +595,7 @@ if (!is_null($events['events'])) {
 			$nb22 = "คุณ พงศธร ทับทิมไทย\nสิ้นสุดความคุ้มครอง 31/10/2561";
 			$action1 = array (
 				//New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ติดต่อลูกค้า ✆", "tel:1581"),
-				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ไม่มีเบอร์ติดต่อ","nophone"),
+				New \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("ไม่มีเบอร์ติดต่อในกรมธรรม์","nophone"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("ส่งต่อข้อความ", "https://lineit.line.me/share/ui?url=%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%98%E0%B8%A7%E0%B8%B1%E0%B8%8A%E0%B8%8A%E0%B8%B1%E0%B8%A2+T123456789+%E0%B8%81%E0%B8%B3%E0%B8%AB%E0%B8%99%E0%B8%94%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0+12%2F01%2F61+%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%A1%E0%B8%B5%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%B0%E0%B8%81%E0%B8%B9%E0%B9%89%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B1%E0%B8%95%E0%B9%82%E0%B8%99%E0%B8%A1%E0%B8%B1%E0%B8%95%E0%B8%B4%C2%A0%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%93%E0%B8%B2%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B9%89%E0%B8%A2+%E0%B9%81%E0%B8%A5%E0%B8%B0%2F%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD+%E0%B8%8A%E0%B8%B3%E0%B8%A3%E0%B8%B0%E0%B8%84%E0%B8%B7%E0%B8%99%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%B9%E0%B9%89%E0%B8%AD%E0%B8%B1%E0%B8%95%E0%B9%82%E0%B8%99%E0%B8%A1%E0%B8%B1%E0%B8%95%E0%B8%B4"),
 				New \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder("สอบถามเบี้ย+เงื่อนไข", "tel:023538888")
 			);
