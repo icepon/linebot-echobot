@@ -205,30 +205,7 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			
 			
-			//Flex
-			else if ($text == "flex") {
-			$outputText = "{  
-  "type": "flex",
-  "altText": "this is a flex message",
-  "contents": {
-    "type": "bubble",
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-        {
-          "type": "text",
-          "text": "hello"
-        },
-        {
-          "type": "text",
-          "text": "world"
-        }
-      ]
-    }
-  }
-}" ;	
-			$response = $bot->replyMessage($replyToken, $outputText); }
+			
 			
 			
 			
