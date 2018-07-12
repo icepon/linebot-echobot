@@ -33,19 +33,38 @@ div {
 }
 </style>
 <title>iMO Smart</title>
-<body>
+<header>
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+
+ <script>
+    
+    
+	function myload() {
+  liff.init(function (data) {});
+   
+}
+  </script>
+
+<script>
+function foo() {
+   liff.closeWindow();
+   return true;
+}
+</script>
+</header>
+<body onload="myload()">
 
 <h3>Generate QR code</h3>
 
 <div>
-  <form action="/action_page.php">
+ 
     <label for="fname">Policy no.</label>
     <input type="text" id="fname" name="firstname" >
 
    
   
-    <input type="submit" value="Submit">
-  </form>
+    <input type="submit" value="Generate" onclick="liff.closeWindow()">
+ 
 </div>
 
 </body>
