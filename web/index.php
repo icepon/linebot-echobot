@@ -103,6 +103,12 @@ if (!is_null($events['events'])) {
 				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
+			else if(strpos( $data , "action" ) !== false){
+				//$pol_no = substr($data,10);
+				$reply = "Yeah";
+				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
+			$response = $bot->replyMessage($replyToken, $outputText);
+			}
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Check policy : ".$data);	
 			//$response = $bot->replyMessage($replyToken, $outputText);
 		}
