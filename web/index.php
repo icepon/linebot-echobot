@@ -233,7 +233,7 @@ if (!is_null($events['events'])) {
 			else if(strpos( $text , "Myday2" ) !== false){
 				$outputText = "testttt";
 			$messages = [
-				array (
+				
   'type' => 'flex',
   'altText' => 'Happy Birthday !',
   'contents' => 
@@ -832,8 +832,8 @@ if (!is_null($events['events'])) {
         ),
       ),
     ),
-  ),
-)
+  )
+
 				];
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
