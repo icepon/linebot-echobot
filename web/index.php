@@ -110,11 +110,10 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
 			else if(strpos( $data , "ecmaccept" ) !== false){
-			$url = 'https://api.line.me/v2/bot/message/push';
+			$url = 'https://api.line.me/v2/bot/message/reply';
 			
-			$post = '{  
-			  "to" : "U9f0c0e8e2ad753d0067fd7c3f9ab644e",
-			  "messages" :[
+			$post = '{"replyToken":"'.$replyToken.'",
+    "messages":[
 			  { "type": "flex",
 			  "altText": "Accept",
 			  "contents":
@@ -183,11 +182,10 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 			}
 			else if(strpos( $data , "ecmreject" ) !== false){
-			$url = 'https://api.line.me/v2/bot/message/push';
+			$url = 'https://api.line.me/v2/bot/message/reply';
 			
-			$post = '{  
-			  "to" : "U9f0c0e8e2ad753d0067fd7c3f9ab644e",
-			  "messages" :[
+			$post = '{"replyToken":"'.$replyToken.'",
+    "messages":[
 			  { "type": "flex",
 			  "altText": "Accept",
 			  "contents":
@@ -477,14 +475,13 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $outputText
 				];
-			$url = 'https://api.line.me/v2/bot/message/push';
+			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 			'replyToken' => $replyToken,
 			'messages' => [$messages],
 			];
-			$post = '{  
-  "to" : "U9f0c0e8e2ad753d0067fd7c3f9ab644e",
-  "messages" :[
+			$post = '{"replyToken":"'.$replyToken.'",
+    "messages":[
  
 { "type": "flex",
   "altText": "Happy Birthday !",
