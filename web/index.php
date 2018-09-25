@@ -449,7 +449,7 @@ if (!is_null($events['events'])) {
 			'replyToken' => $replyToken,
 			'messages' => [$messages],
 			];
-			$post = '{"replyToken":$replyToken,
+			$post = '{"replyToken":'.$replyToken.',
     "messages":[
         {
             "type":"text",
