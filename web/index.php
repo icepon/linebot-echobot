@@ -241,15 +241,7 @@ if (!is_null($events['events'])) {
 			'replyToken' => $replyToken,
 			'messages' => [$messages],
 			];
-			$post = '
-			{  
-  "to" : "U9f0c0e8e2ad753d0067fd7c3f9ab644e",
-  "messages" :[
-			{
-    "type": "text",
-    "text": "\uDBC0\uDC35 กรุณากด ติดต่อทันที / ไม่สนใจ เพื่อรับข้อมูลใหม่ในวันถัดไป \uDBC0\uDC35"
-}
-]}';
+			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
