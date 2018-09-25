@@ -449,7 +449,17 @@ if (!is_null($events['events'])) {
 			'replyToken' => $replyToken,
 			'messages' => [$messages],
 			];
-			$post = json_encode($data);
+			$post = '{"replyToken":$replyToken,
+    "messages":[
+        {
+            "type":"text",
+            "text":"Hello, user"
+        },
+        {
+            "type":"text",
+            "text":"May I help you?"
+        }
+    ]}';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
