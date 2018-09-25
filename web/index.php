@@ -262,7 +262,7 @@ if (!is_null($events['events'])) {
         "aspectMode": "cover",
         "action": {
           "type": "uri",
-          "uri": "http://linecorp.com/"
+          "uri": "https://smart.aia.co.th/contents?cid=3800"
         }
       }
     },
@@ -383,9 +383,9 @@ if (!is_null($events['events'])) {
                     "margin": "md",
                     "color": "#D31145",
                     "action": {
-                      "type": "uri",
-                      "label": "ติดต่อทันที",
-                      "uri": "tel:1588"
+                      "type":"postback",
+                       "label": "ติดต่อทันที",
+                      "data":"ecmaccept"
                     }
                   },
                   {
@@ -394,9 +394,9 @@ if (!is_null($events['events'])) {
                     "color": "#F6CCD7",
                     "margin": "md",
                     "action": {
-                      "type": "uri",
-                      "label": "ไม่สนใจ",
-                      "uri": "https://linecorp.com"
+                      "type":"postback",
+                       "label": "ไม่สนใจ",
+                      "data":"ecmreject"
                     }
                   }
                 ]
@@ -491,7 +491,7 @@ if (!is_null($events['events'])) {
                 "type": "box",
                 "layout": "horizontal",
                 "contents": [
-                 {
+                  {
                     "type": "text",
                     "text": "วันที่ซื้อล่าสุด",
                     "size": "sm",
@@ -535,15 +535,15 @@ if (!is_null($events['events'])) {
                 "type": "box",
                 "layout": "horizontal",
                 "contents": [
-                  {
+                   {
                     "type": "button",
                     "style": "primary",
                     "margin": "md",
                     "color": "#D31145",
                     "action": {
-                      "type": "uri",
-                      "label": "ติดต่อทันที",
-                      "uri": "tel:1588"
+                      "type":"postback",
+                       "label": "ติดต่อทันที",
+                      "data":"ecmaccept"
                     }
                   },
                   {
@@ -552,9 +552,9 @@ if (!is_null($events['events'])) {
                     "color": "#F6CCD7",
                     "margin": "md",
                     "action": {
-                      "type": "uri",
-                      "label": "ไม่สนใจ",
-                      "uri": "https://linecorp.com"
+                      "type":"postback",
+                       "label": "ไม่สนใจ",
+                      "data":"ecmreject"
                     }
                   }
                 ]
@@ -649,7 +649,7 @@ if (!is_null($events['events'])) {
                 "type": "box",
                 "layout": "horizontal",
                 "contents": [
-                 {
+                  {
                     "type": "text",
                     "text": "วันที่ซื้อล่าสุด",
                     "size": "sm",
@@ -693,15 +693,15 @@ if (!is_null($events['events'])) {
                 "type": "box",
                 "layout": "horizontal",
                 "contents": [
-                  {
+                   {
                     "type": "button",
                     "style": "primary",
                     "margin": "md",
                     "color": "#D31145",
                     "action": {
-                      "type": "postback",
-                      "label": "ติดต่อทันที",
-                      "data": "action"
+                      "type":"postback",
+                       "label": "ติดต่อทันที",
+                      "data":"ecmaccept"
                     }
                   },
                   {
@@ -710,9 +710,9 @@ if (!is_null($events['events'])) {
                     "color": "#F6CCD7",
                     "margin": "md",
                     "action": {
-                      "type": "uri",
-                      "label": "ไม่สนใจ",
-                      "uri": "https://linecorp.com"
+                      "type":"postback",
+                       "label": "ไม่สนใจ",
+                      "data":"ecmreject"
                     }
                   }
                 ]
@@ -742,12 +742,7 @@ if (!is_null($events['events'])) {
     }
   ]
 }
-  },
-  	{
-    "type": "text",
-    "text": "\uDBC0\uDC35 กรุณากด ติดต่อทันที / ไม่สนใจ เพื่อรับข้อมูลใหม่ในวันถัดไป \uDBC0\uDC35"
 }
-
   	]
 }';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
