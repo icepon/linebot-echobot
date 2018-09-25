@@ -209,7 +209,7 @@ if (!is_null($events['events'])) {
 			else if ($text == "สาธุ") {
 			curl -X POST \
 -H 'Content-Type:application/json' \
--H 'Authorization: Bearer {ENTER_ACCESS_TOKEN}' \
+-H 'Authorization: Bearer $access_token' \
 -d '{
      "replyToken":$replyToken,
      "messages":[
