@@ -230,7 +230,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 			}
 			
-			else if(strpos( $text , "Myday2" ) !== false){
+			else if(strpos( $text , "satu" ) !== false){
 				$outputText = "testttt";
 			$messages = [
 				'type' => 'text',
