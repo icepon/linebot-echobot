@@ -109,6 +109,18 @@ if (!is_null($events['events'])) {
 				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
+			else if(strpos( $data , "ecmaccept" ) !== false){
+				//$pol_no = substr($data,10);
+				$reply = "accept";
+				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
+			$response = $bot->replyMessage($replyToken, $outputText);
+			}
+			else if(strpos( $data , "ecmreject" ) !== false){
+				//$pol_no = substr($data,10);
+				$reply = "reject";
+				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
+			$response = $bot->replyMessage($replyToken, $outputText);
+			}
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Check policy : ".$data);	
 			//$response = $bot->replyMessage($replyToken, $outputText);
 		}
