@@ -207,7 +207,7 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เอ๋สวย");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			
-			else if(strpos( $text , "Myday" ) !== false){
+			else if(strpos( $text , "satu" ) !== false){
 			$outputText = "testttt";
 			$messages = [
 				'type' => 'text',
@@ -230,7 +230,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 			}
 			
-			else if(strpos( $text , "satu" ) !== false){
+			else if(strpos( $text , "Myday" ) !== false){
 				$outputText = "testttt";
 			$messages = [
 				'type' => 'text',
