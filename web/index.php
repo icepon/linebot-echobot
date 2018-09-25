@@ -110,16 +110,235 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText);
 			}
 			else if(strpos( $data , "ecmaccept" ) !== false){
-				//$pol_no = substr($data,10);
-				$reply = "accept";
-				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
-			$response = $bot->replyMessage($replyToken, $outputText);
+			$url = 'https://api.line.me/v2/bot/message/push';
+			
+			$post = '{  
+			  "to" : "U9f0c0e8e2ad753d0067fd7c3f9ab644e",
+			  "messages" :[
+			  { "type": "flex",
+			  "altText": "Accept",
+			  "contents":
+{
+  "type": "bubble",
+  "styles": {
+    "footer": {
+      "separator": true
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "align":"center",
+        "text": "ติดต่อลูกค้าเพื่อนำเสนอโครงการ",
+        "color": "#D31145",
+        "size": "xs",
+        "weight": "bold"
+      },
+      {
+        "type": "text",
+        "align":"center",
+        "text": "คุณ พงศธร ทับทิมไทย",
+        "weight": "bold",
+        "size": "lg",
+        "margin": "xs"
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "style": "primary",
+            "margin": "md",
+            "color": "#D31145",
+            "action": {
+              "type": "uri",
+              "label": "✆ ติดต่อลูกค้า",
+            
+              "uri": "tel:1588"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+			  }
+			  ]}';
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
 			}
 			else if(strpos( $data , "ecmreject" ) !== false){
-				//$pol_no = substr($data,10);
-				$reply = "reject";
-				$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($reply);	
-			$response = $bot->replyMessage($replyToken, $outputText);
+			$url = 'https://api.line.me/v2/bot/message/push';
+			
+			$post = '{  
+			  "to" : "U9f0c0e8e2ad753d0067fd7c3f9ab644e",
+			  "messages" :[
+			  { "type": "flex",
+			  "altText": "Accept",
+			  "contents":
+				{
+  "type": "bubble",
+  "styles": {
+    "footer": {
+      "separator": true
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "กรุณาบอกเหตุผล",
+        "color": "#D31145",
+        "size": "xs",
+        "weight": "bold"
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "md",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ไม่มีกำลังซื้อ",
+                "weight": "bold",
+                "size": "sm",
+                "color": "#555555",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": ">",
+                "size": "md",
+                "weight": "bold",
+                "color": "#E86487",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ไม่รู้จักลูกค้า",
+                "weight": "bold",
+                "size": "sm",
+                "color": "#555555",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": ">",
+                "size": "md",
+                "weight": "bold",
+                "color": "#E86487",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ลูกค้าอยู่ไกล",
+                "weight": "bold",
+                "size": "sm",
+                "color": "#555555",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": ">",
+                "size": "md",
+                "weight": "bold",
+                "color": "#E86487",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "สุขภาพไม่มาตรฐาน",
+                "weight": "bold",
+                "size": "sm",
+                "color": "#555555",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": ">",
+                "size": "md",
+                "weight": "bold",
+                "color": "#E86487",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          }
+        ]
+      }
+    ]
+  }
+}
+			  }
+			  ]}';
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
 			}
 			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Check policy : ".$data);	
 			//$response = $bot->replyMessage($replyToken, $outputText);
