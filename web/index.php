@@ -207,11 +207,633 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เอ๋สวย");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			
-			else if(strpos( $text , "สาธุ" ) !== false){
+			else if(strpos( $text , "Myday" ) !== false){
 			$outputText = "testttt";
 			$messages = [
-				'type' => 'text',
+				'type' => 'flex',
 				'text' => $outputText
+				];
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+			'replyToken' => $replyToken,
+			'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+			}
+			
+			else if(strpos( $text , "Myday2" ) !== false){
+				$outputText = "testttt";
+			$messages = [
+				array (
+  'type' => 'flex',
+  'altText' => 'Happy Birthday !',
+  'contents' => 
+  array (
+    'type' => 'carousel',
+    'contents' => 
+    array (
+      0 => 
+      array (
+        'type' => 'bubble',
+        'hero' => 
+        array (
+          'type' => 'image',
+          'url' => 'https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/5.jpg',
+          'size' => 'full',
+          'aspectRatio' => '1:1',
+          'aspectMode' => 'cover',
+          'action' => 
+          array (
+            'type' => 'uri',
+            'uri' => 'http://linecorp.com/',
+          ),
+        ),
+      ),
+      1 => 
+      array (
+        'type' => 'bubble',
+        'styles' => 
+        array (
+          'footer' => 
+          array (
+            'separator' => true,
+          ),
+        ),
+        'body' => 
+        array (
+          'type' => 'box',
+          'layout' => 'vertical',
+          'contents' => 
+          array (
+            0 => 
+            array (
+              'type' => 'text',
+              'text' => 'โครงการ SIO-AIA CI SuperCare',
+              'color' => '#D31145',
+              'size' => 'xs',
+              'weight' => 'bold',
+            ),
+            1 => 
+            array (
+              'type' => 'text',
+              'text' => 'คุณ พงศธร ทับทิมไทย',
+              'weight' => 'bold',
+              'size' => 'lg',
+              'margin' => 'xs',
+            ),
+            2 => 
+            array (
+              'type' => 'text',
+              'text' => 'สถานะลูกค้า : VIP',
+              'size' => 'xs',
+              'color' => '#aaaaaa',
+              'wrap' => true,
+            ),
+            3 => 
+            array (
+              'type' => 'separator',
+              'margin' => 'md',
+            ),
+            4 => 
+            array (
+              'type' => 'box',
+              'layout' => 'vertical',
+              'margin' => 'md',
+              'spacing' => 'sm',
+              'contents' => 
+              array (
+                0 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'อายุ',
+                      'weight' => 'bold',
+                      'size' => 'sm',
+                      'color' => '#555555',
+                      'flex' => 0,
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'text',
+                      'text' => '20 ปี',
+                      'size' => 'sm',
+                      'color' => '#111111',
+                      'align' => 'end',
+                    ),
+                  ),
+                ),
+                1 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'วันที่ซื้อล่าสุด',
+                      'size' => 'sm',
+                      'weight' => 'bold',
+                      'color' => '#555555',
+                      'flex' => 0,
+                      'wrap' => true,
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'text',
+                      'text' => '12 กันยายน 2561',
+                      'size' => 'sm',
+                      'color' => '#111111',
+                      'align' => 'end',
+                      'wrap' => true,
+                    ),
+                  ),
+                ),
+                2 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'สถานะตัวแทน',
+                      'size' => 'sm',
+                      'weight' => 'bold',
+                      'color' => '#555555',
+                      'flex' => 0,
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'Assigned',
+                      'size' => 'sm',
+                      'color' => '#111111',
+                      'align' => 'end',
+                    ),
+                  ),
+                ),
+                3 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'button',
+                      'style' => 'primary',
+                      'margin' => 'md',
+                      'color' => '#D31145',
+                      'action' => 
+                      array (
+                        'type' => 'uri',
+                        'label' => 'ติดต่อทันที',
+                        'uri' => 'tel:1588',
+                      ),
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'button',
+                      'style' => 'primary',
+                      'color' => '#F6CCD7',
+                      'margin' => 'md',
+                      'action' => 
+                      array (
+                        'type' => 'uri',
+                        'label' => 'ไม่สนใจ',
+                        'uri' => 'https://linecorp.com',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            5 => 
+            array (
+              'type' => 'separator',
+              'margin' => 'md',
+            ),
+            6 => 
+            array (
+              'type' => 'box',
+              'layout' => 'horizontal',
+              'margin' => 'md',
+              'contents' => 
+              array (
+                0 => 
+                array (
+                  'type' => 'text',
+                  'text' => '** กรุณากด สนใจ / ไม่สนใจ เพื่อรับ Lead ใหม่ในวันถัดไป',
+                  'size' => 'xs',
+                  'color' => '#C36418',
+                  'wrap' => true,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      2 => 
+      array (
+        'type' => 'bubble',
+        'styles' => 
+        array (
+          'footer' => 
+          array (
+            'separator' => true,
+          ),
+        ),
+        'body' => 
+        array (
+          'type' => 'box',
+          'layout' => 'vertical',
+          'contents' => 
+          array (
+            0 => 
+            array (
+              'type' => 'text',
+              'text' => 'โครงการ SIO-AIA CI SuperCare',
+              'color' => '#D31145',
+              'size' => 'xs',
+              'weight' => 'bold',
+            ),
+            1 => 
+            array (
+              'type' => 'text',
+              'text' => 'คุณ พงศธร ทับทิมไทย',
+              'weight' => 'bold',
+              'size' => 'lg',
+              'margin' => 'xs',
+            ),
+            2 => 
+            array (
+              'type' => 'text',
+              'text' => 'สถานะลูกค้า : VIP',
+              'size' => 'xs',
+              'color' => '#aaaaaa',
+              'wrap' => true,
+            ),
+            3 => 
+            array (
+              'type' => 'separator',
+              'margin' => 'md',
+            ),
+            4 => 
+            array (
+              'type' => 'box',
+              'layout' => 'vertical',
+              'margin' => 'md',
+              'spacing' => 'sm',
+              'contents' => 
+              array (
+                0 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'อายุ',
+                      'weight' => 'bold',
+                      'size' => 'sm',
+                      'color' => '#555555',
+                      'flex' => 0,
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'text',
+                      'text' => '20 ปี',
+                      'size' => 'sm',
+                      'color' => '#111111',
+                      'align' => 'end',
+                    ),
+                  ),
+                ),
+                1 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'วันที่ซื้อล่าสุด',
+                      'size' => 'sm',
+                      'weight' => 'bold',
+                      'color' => '#555555',
+                      'flex' => 0,
+                      'wrap' => true,
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'text',
+                      'text' => '12 กันยายน 2561',
+                      'size' => 'sm',
+                      'color' => '#111111',
+                      'align' => 'end',
+                      'wrap' => true,
+                    ),
+                  ),
+                ),
+                2 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'สถานะตัวแทน',
+                      'size' => 'sm',
+                      'weight' => 'bold',
+                      'color' => '#555555',
+                      'flex' => 0,
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'Assigned',
+                      'size' => 'sm',
+                      'color' => '#111111',
+                      'align' => 'end',
+                    ),
+                  ),
+                ),
+                3 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'button',
+                      'style' => 'primary',
+                      'margin' => 'md',
+                      'color' => '#D31145',
+                      'action' => 
+                      array (
+                        'type' => 'uri',
+                        'label' => 'ติดต่อทันที',
+                        'uri' => 'tel:1588',
+                      ),
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'button',
+                      'style' => 'primary',
+                      'color' => '#F6CCD7',
+                      'margin' => 'md',
+                      'action' => 
+                      array (
+                        'type' => 'uri',
+                        'label' => 'ไม่สนใจ',
+                        'uri' => 'https://linecorp.com',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            5 => 
+            array (
+              'type' => 'separator',
+              'margin' => 'md',
+            ),
+            6 => 
+            array (
+              'type' => 'box',
+              'layout' => 'horizontal',
+              'margin' => 'md',
+              'contents' => 
+              array (
+                0 => 
+                array (
+                  'type' => 'text',
+                  'text' => '** กรุณากด สนใจ / ไม่สนใจ เพื่อรับ Lead ใหม่ในวันถัดไป',
+                  'size' => 'xs',
+                  'color' => '#C36418',
+                  'wrap' => true,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+      3 => 
+      array (
+        'type' => 'bubble',
+        'styles' => 
+        array (
+          'footer' => 
+          array (
+            'separator' => true,
+          ),
+        ),
+        'body' => 
+        array (
+          'type' => 'box',
+          'layout' => 'vertical',
+          'contents' => 
+          array (
+            0 => 
+            array (
+              'type' => 'text',
+              'text' => 'โครงการ SIO-AIA CI SuperCare',
+              'color' => '#D31145',
+              'size' => 'xs',
+              'weight' => 'bold',
+            ),
+            1 => 
+            array (
+              'type' => 'text',
+              'text' => 'คุณ พงศธร ทับทิมไทย',
+              'weight' => 'bold',
+              'size' => 'lg',
+              'margin' => 'xs',
+            ),
+            2 => 
+            array (
+              'type' => 'text',
+              'text' => 'สถานะลูกค้า : VIP',
+              'size' => 'xs',
+              'color' => '#aaaaaa',
+              'wrap' => true,
+            ),
+            3 => 
+            array (
+              'type' => 'separator',
+              'margin' => 'md',
+            ),
+            4 => 
+            array (
+              'type' => 'box',
+              'layout' => 'vertical',
+              'margin' => 'md',
+              'spacing' => 'sm',
+              'contents' => 
+              array (
+                0 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'อายุ',
+                      'weight' => 'bold',
+                      'size' => 'sm',
+                      'color' => '#555555',
+                      'flex' => 0,
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'text',
+                      'text' => '20 ปี',
+                      'size' => 'sm',
+                      'color' => '#111111',
+                      'align' => 'end',
+                    ),
+                  ),
+                ),
+                1 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'วันที่ซื้อล่าสุด',
+                      'size' => 'sm',
+                      'weight' => 'bold',
+                      'color' => '#555555',
+                      'flex' => 0,
+                      'wrap' => true,
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'text',
+                      'text' => '12 กันยายน 2561',
+                      'size' => 'sm',
+                      'color' => '#111111',
+                      'align' => 'end',
+                      'wrap' => true,
+                    ),
+                  ),
+                ),
+                2 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'สถานะตัวแทน',
+                      'size' => 'sm',
+                      'weight' => 'bold',
+                      'color' => '#555555',
+                      'flex' => 0,
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'text',
+                      'text' => 'Assigned',
+                      'size' => 'sm',
+                      'color' => '#111111',
+                      'align' => 'end',
+                    ),
+                  ),
+                ),
+                3 => 
+                array (
+                  'type' => 'box',
+                  'layout' => 'horizontal',
+                  'contents' => 
+                  array (
+                    0 => 
+                    array (
+                      'type' => 'button',
+                      'style' => 'primary',
+                      'margin' => 'md',
+                      'color' => '#D31145',
+                      'action' => 
+                      array (
+                        'type' => 'postback',
+                        'label' => 'ติดต่อทันที',
+                        'data' => 'action',
+                      ),
+                    ),
+                    1 => 
+                    array (
+                      'type' => 'button',
+                      'style' => 'primary',
+                      'color' => '#F6CCD7',
+                      'margin' => 'md',
+                      'action' => 
+                      array (
+                        'type' => 'uri',
+                        'label' => 'ไม่สนใจ',
+                        'uri' => 'https://linecorp.com',
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            5 => 
+            array (
+              'type' => 'separator',
+              'margin' => 'md',
+            ),
+            6 => 
+            array (
+              'type' => 'box',
+              'layout' => 'horizontal',
+              'margin' => 'md',
+              'contents' => 
+              array (
+                0 => 
+                array (
+                  'type' => 'text',
+                  'text' => '** กรุณากด สนใจ / ไม่สนใจ เพื่อรับ Lead ใหม่ในวันถัดไป',
+                  'size' => 'xs',
+                  'color' => '#C36418',
+                  'wrap' => true,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+)
 				];
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
@@ -1159,7 +1781,7 @@ if (!is_null($events['events'])) {
 			
 				
 			}
-			else if (strtolower($text) == "myday") {
+			else if (strtolower($text) == "myday2") {
 			$imgurl = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/claim4.PNG";
 			//$imgurl2 = "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/memo.PNG";	
 			
