@@ -210,7 +210,7 @@ if (!is_null($events['events'])) {
 			else if(strpos( $text , "Myday" ) !== false){
 			$outputText = "testttt";
 			$messages = [
-				'type' => 'flex',
+				'type' => 'text',
 				'text' => $outputText
 				];
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -233,7 +233,7 @@ if (!is_null($events['events'])) {
 			else if(strpos( $text , "Myday2" ) !== false){
 				$outputText = "testttt";
 			$messages = [
-				'type' => 'flex',
+				'type' => 'text',
 				'text' => $outputText
 				];
 			$url = 'https://api.line.me/v2/bot/message/push';
@@ -241,7 +241,19 @@ if (!is_null($events['events'])) {
 			'replyToken' => $replyToken,
 			'messages' => [$messages],
 			];
-			$post = json_encode($data);
+			$post = '{
+    "to": "U9f0c0e8e2ad753d0067fd7c3f9ab644e",
+    "messages":[
+        {
+            "type":"text",
+            "text":"Hello, world1"
+        },
+        {
+            "type":"text",
+            "text":"Hello, world2"
+        }
+    ]
+}';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
