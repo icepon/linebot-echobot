@@ -241,18 +241,514 @@ if (!is_null($events['events'])) {
 			'replyToken' => $replyToken,
 			'messages' => [$messages],
 			];
-			$post = '{
-    "to": "U9f0c0e8e2ad753d0067fd7c3f9ab644e",
-    "messages":[
-        {
-            "type":"text",
-            "text":"Hello, world1"
-        },
-        {
-            "type":"text",
-            "text":"Hello, world2"
+			$post = '{  
+  "to" : "U9f0c0e8e2ad753d0067fd7c3f9ab644e",
+  "messages" :[
+ 
+{ "type": "flex",
+  "altText": "Happy Birthday !",
+  "contents": 
+  
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/5.jpg",
+        "size": "full",
+        "aspectRatio": "1:1",
+        "aspectMode": "cover",
+        "action": {
+          "type": "uri",
+          "uri": "http://linecorp.com/"
         }
-    ]
+      }
+    },
+    {
+      "type": "bubble",
+      "styles": {
+        "footer": {
+          "separator": true
+        }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "โครงการ SIO-AIA CI SuperCare",
+            "color": "#D31145",
+            "size": "xs",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "คุณ พงศธร ทับทิมไทย",
+            "weight": "bold",
+            "size": "lg",
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "สถานะลูกค้า : VIP",
+            "size": "xs",
+            "color": "#aaaaaa",
+            "wrap": true
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "md",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "อายุ",
+                    "weight": "bold",
+                    "size": "sm",
+                    "color": "#555555",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "20 ปี",
+                    "size": "sm",
+                    "color": "#111111",
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "วันที่ซื้อล่าสุด",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#555555",
+                    "flex": 0,
+                    "wrap": true
+                  },
+                  {
+                    "type": "text",
+                    "text": "12 กันยายน 2561",
+                    "size": "sm",
+                    "color": "#111111",
+                    "align": "end",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "สถานะตัวแทน",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#555555",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "Assigned",
+                    "size": "sm",
+                    "color": "#111111",
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "primary",
+                    "margin": "md",
+                    "color": "#D31145",
+                    "action": {
+                      "type": "uri",
+                      "label": "ติดต่อทันที",
+                      "uri": "tel:1588"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "style": "primary",
+                    "color": "#F6CCD7",
+                    "margin": "md",
+                    "action": {
+                      "type": "uri",
+                      "label": "ไม่สนใจ",
+                      "uri": "https://linecorp.com"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "margin": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "** กรุณากด สนใจ / ไม่สนใจ เพื่อรับ Lead ใหม่ในวันถัดไป",
+                "size": "xs",
+                "color": "#C36418",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "styles": {
+        "footer": {
+          "separator": true
+        }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "โครงการ SIO-AIA CI SuperCare",
+            "color": "#D31145",
+            "size": "xs",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "คุณ พงศธร ทับทิมไทย",
+            "weight": "bold",
+            "size": "lg",
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "สถานะลูกค้า : VIP",
+            "size": "xs",
+            "color": "#aaaaaa",
+            "wrap": true
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "md",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "อายุ",
+                    "weight": "bold",
+                    "size": "sm",
+                    "color": "#555555",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "20 ปี",
+                    "size": "sm",
+                    "color": "#111111",
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                 {
+                    "type": "text",
+                    "text": "วันที่ซื้อล่าสุด",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#555555",
+                    "flex": 0,
+                    "wrap": true
+                  },
+                  {
+                    "type": "text",
+                    "text": "12 กันยายน 2561",
+                    "size": "sm",
+                    "color": "#111111",
+                    "align": "end",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "สถานะตัวแทน",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#555555",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "Assigned",
+                    "size": "sm",
+                    "color": "#111111",
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "primary",
+                    "margin": "md",
+                    "color": "#D31145",
+                    "action": {
+                      "type": "uri",
+                      "label": "ติดต่อทันที",
+                      "uri": "tel:1588"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "style": "primary",
+                    "color": "#F6CCD7",
+                    "margin": "md",
+                    "action": {
+                      "type": "uri",
+                      "label": "ไม่สนใจ",
+                      "uri": "https://linecorp.com"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "margin": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "** กรุณากด สนใจ / ไม่สนใจ เพื่อรับ Lead ใหม่ในวันถัดไป",
+                "size": "xs",
+                "color": "#C36418",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "styles": {
+        "footer": {
+          "separator": true
+        }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "โครงการ SIO-AIA CI SuperCare",
+            "color": "#D31145",
+            "size": "xs",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "คุณ พงศธร ทับทิมไทย",
+            "weight": "bold",
+            "size": "lg",
+            "margin": "xs"
+          },
+          {
+            "type": "text",
+            "text": "สถานะลูกค้า : VIP",
+            "size": "xs",
+            "color": "#aaaaaa",
+            "wrap": true
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "md",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "อายุ",
+                    "weight": "bold",
+                    "size": "sm",
+                    "color": "#555555",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "20 ปี",
+                    "size": "sm",
+                    "color": "#111111",
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                 {
+                    "type": "text",
+                    "text": "วันที่ซื้อล่าสุด",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#555555",
+                    "flex": 0,
+                    "wrap": true
+                  },
+                  {
+                    "type": "text",
+                    "text": "12 กันยายน 2561",
+                    "size": "sm",
+                    "color": "#111111",
+                    "align": "end",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "สถานะตัวแทน",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#555555",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "Assigned",
+                    "size": "sm",
+                    "color": "#111111",
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "primary",
+                    "margin": "md",
+                    "color": "#D31145",
+                    "action": {
+                      "type": "postback",
+                      "label": "ติดต่อทันที",
+                      "data": "action"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "style": "primary",
+                    "color": "#F6CCD7",
+                    "margin": "md",
+                    "action": {
+                      "type": "uri",
+                      "label": "ไม่สนใจ",
+                      "uri": "https://linecorp.com"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "margin": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "** กรุณากด สนใจ / ไม่สนใจ เพื่อรับ Lead ใหม่ในวันถัดไป",
+                "size": "xs",
+                "color": "#C36418",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+  },
+  	{
+    "type": "text",
+    "text": "\uDBC0\uDC35 กรุณากด ติดต่อทันที / ไม่สนใจ เพื่อรับข้อมูลใหม่ในวันถัดไป \uDBC0\uDC35"
+}
+
+  	]
 }';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
