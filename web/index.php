@@ -207,8 +207,24 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เอ๋สวย");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			else if ($text == "สาธุ") {
-			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("เจริญพร");	
-			$response = $bot->replyMessage($replyToken, $outputText); }
+			curl -X POST \
+-H 'Content-Type:application/json' \
+-H 'Authorization: Bearer {ENTER_ACCESS_TOKEN}' \
+-d '{
+     "replyToken":$replyToken,
+     "messages":[
+          {
+               "type":"text",
+               "text":"Hello, user"
+          },
+          {
+               "type":"text",
+               "text":"May I help you?"
+          }
+      ]
+}' https://api.line.me/v2/bot/message/reply
+			
+			}
 			
 			
 			
