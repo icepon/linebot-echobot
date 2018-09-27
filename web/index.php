@@ -500,7 +500,7 @@ if (!is_null($events['events'])) {
         "aspectMode": "cover",
         "action": {
           "type": "uri",
-          "uri": "https://smart.aia.co.th/contents?cid=3800"
+          "uri": "https://smart-uat.aia.co.th/contents?cid=3800"
         }
       }
     },
