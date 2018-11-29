@@ -1,0 +1,22 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+
+  
+  <script>
+    window.convolabSettings = {
+        APP_ID : "1517802253"
+    };
+</script>
+<script src = "http://169.62.218.91/site/javascripts/webchats/convolab-webchat-1.1.0.js"></script>
+
+<!-- Your customer chat code -->
+
+<img src="Capture.PNG" style="width:1500px;height:600px;">
+</body>
+</html>
