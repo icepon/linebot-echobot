@@ -394,6 +394,903 @@ if (!is_null($events['events'])) {
 				
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จ๋าาาาาาา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
+			//My performance
+			else if ($text == "My performance") {
+			
+				$url = 'https://api.line.me/v2/bot/message/reply';
+			
+			$post = '{"replyToken":"'.$replyToken.'",
+    "messages":[
+			 { "type": "flex",
+  "altText": "PO",
+  "contents":
+
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "styles": {
+        "footer": {
+          "separator": true
+        }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "text",
+            "text": "รายได้เดือน ก.ย. 61",
+            "color": "#E86487",
+            "size": "lg",
+            "weight": "bold"
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xxl",
+            "spacing": "xxl",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xxl",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "รายได้รวม",
+                    "size": "sm",
+                    "color": "#554344",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "500,000",
+                    "size": "md",
+                    "weight": "bold",
+                    "color": "#D31145",
+                    "align": "end",
+                    "flex": 3
+                  },
+                  {
+                    "type": "text",
+                    "text": "บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 1
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xl",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "FYC",
+                    "size": "sm",
+                    "color": "#554344",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "200,000",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 3
+                  },
+                  {
+                    "type": "text",
+                    "text": "บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 1
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xl",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "RYC",
+                    "size": "sm",
+                    "color": "#554344",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "100,000",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 3
+                  },
+                  {
+                    "type": "text",
+                    "text": "บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 1
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xl",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "โบนัสความยั่งยืน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "flex": 3
+                  },
+                  {
+                    "type": "text",
+                    "text": "100,000",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 1
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xl",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "รายได้อื่นๆ",
+                    "size": "sm",
+                    "color": "#554344",
+                    "flex": 3
+                  },
+                  {
+                    "type": "text",
+                    "text": "100,000",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 1
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "color": "#22A8DA",
+                    "height": "sm",
+                    "margin": "md",
+                    "action": {
+                      "type": "postback",
+                      "label": "ดูรายละเอียด",
+                      "data": "ecmreject"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "xs"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xl",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
+                "size": "xxs",
+                "color": "#B3B1A8",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "จำนวนเงินนี้เป็นค่าประมาณการ สามารถเปลี่ยนแปลงได้ (เงื่อนไขตามประกาศบริษัท)",
+                "size": "xxs",
+                "color": "#B3B1A8",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "styles": {
+        "footer": {
+          "separator": true
+        }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "xs",
+        "contents": [
+          {
+            "type": "text",
+            "text": "เงินโบนัสพิเศษ",
+            "color": "#E86487",
+            "size": "lg",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "ไตรมาสที่ 3 (ก.ค. - ก.ย. 61)",
+            "color": "#E86487",
+            "size": "sm",
+            "weight": "bold"
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ต้องการ FYC อีก",
+                    "size": "sm",
+                    "color": "#554344",
+                    "flex": 0,
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "text": "10,100",
+                "size": "xxl",
+                "color": "#D31145",
+                "weight": "bold",
+                "flex": 0,
+                "wrap": true
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เพิ่มความยั่งยืนเป็น",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true
+                  },
+                  {
+                    "type": "text",
+                    "text": "จะเพิ่มโบนัสพิเศษเป็น",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "88%",
+                    "size": "xl",
+                    "color": "#D31145",
+                    "weight": "bold",
+                    "wrap": true
+                  },
+                  {
+                    "type": "text",
+                    "text": "30%",
+                    "size": "xl",
+                    "color": "#D31145",
+                    "weight": "bold",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "separator",
+                "margin": "md"
+              },
+              {
+                "type": "text",
+                "text": "ยอดปัจจุบัน",
+                "size": "md",
+                "color": "#554344",
+                "weight": "bold",
+                "margin": "lg",
+                "wrap": true
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "lg",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "FYC สะสม",
+                    "size": "sm",
+                    "color": "#554344",
+                    "flex": 0,
+                    "wrap": true
+                  },
+                  {
+                    "type": "text",
+                    "text": "190,990 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "อัตราความยั่งยืน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "75%",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold",
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "อัตราโบนัสพิเศษ",
+                    "size": "sm",
+                    "color": "#554344",
+                    "flex": 0
+                  },
+                  {
+                    "type": "text",
+                    "text": "26%",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold",
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "lg",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "color": "#22A8DA",
+                    "height": "sm",
+                    "action": {
+                      "type": "postback",
+                      "label": "ดูรายละเอียด",
+                      "data": "ecmreject"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "xs"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xl",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
+                "size": "xxs",
+                "color": "#B3B1A8",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "จำนวนเงินนี้เป็นค่าประมาณการ สามารถเปลี่ยนแปลงได้ (เงื่อนไขตามประกาศบริษัท)",
+                "size": "xxs",
+                "color": "#B3B1A8",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "คุณวุฒิ MDRT",
+            "weight": "bold",
+            "color": "#E86487",
+            "size": "lg",
+            "wrap": true
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "margin": "sm",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ปัจจุบัน:",
+                    "size": "xs",
+                    "color": "#554344",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "Regular",
+                    "size": "xs",
+                    "weight": "bold",
+                    "color": "#554344",
+                    "flex": 3
+                  }
+                ]
+             },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "คุณวุฒิถัดไป:",
+                    "size": "xs",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 5
+                  },
+                  {
+                    "type": "text",
+                    "text": "MDRT",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#D31145",
+                    "align": "end",
+                    "flex": 3
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "contents": [
+              {
+                "type": "text",
+                "text": "FYC",
+                "size": "md",
+                "color": "#554344",
+                "weight": "bold"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "flex": 1,
+                    "contents": [
+                      {
+                        "type": "image",
+                        "url": "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/green75-ring.png"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "margin": "xl",
+                    "flex": 4,
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "ต้องการอีก",
+                            "size": "sm",
+                            "color": "#554344",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "341,000",
+                            "size": "md",
+                            "weight": "bold",
+                            "color": "#D31145",
+                            "align": "end",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "บาท",
+                            "size": "md",
+                            "color": "#554344",
+                            "align": "end",
+                            "flex": 1
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "margin": "sm",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "ยอดสะสม",
+                            "size": "sm",
+                            "color": "#554344",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "800,000",
+                            "size": "sm",
+                            "weight": "bold",
+                            "color": "#554344",
+                            "align": "end",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "บาท",
+                            "size": "md",
+                            "color": "#554344",
+                            "align": "end",
+                            "flex": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "contents": [
+              {
+                "type": "text",
+                "text": "FYP",
+                "size": "md",
+                "color": "#554344",
+                "weight": "bold"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "flex": 1,
+                    "contents": [
+                      {
+                        "type": "image",
+                        "url": "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/green80-ring.png"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "margin": "xl",
+                    "flex": 4,
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "text",
+                           "text": "ต้องการอีก",
+                            "size": "sm",
+                            "color": "#554344",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "228,000",
+                            "size": "md",
+                            "weight": "bold",
+                            "color": "#D31145",
+                            "align": "end",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "บาท",
+                            "size": "md",
+                            "color": "#554344",
+                            "align": "end",
+                            "flex": 1
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "margin": "sm",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "ยอดสะสม",
+                            "size": "sm",
+                            "color": "#554344",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "2,000,000",
+                            "size": "sm",
+                            "weight": "bold",
+                            "color": "#554344",
+                            "align": "end",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "บาท",
+                            "size": "md",
+                            "color": "#554344",
+                            "align": "end",
+                            "flex": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "contents": [
+              {
+                "type": "text",
+                "text": "รายได้",
+                "size": "md",
+                "color": "#554344",
+                "weight": "bold"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "flex": 1,
+                    "contents": [
+                      {
+                        "type": "image",
+                        "url": "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/green66-ring.png"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "margin": "xl",
+                    "flex": 4,
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "ต้องการอีก",
+                            "size": "sm",
+                            "color": "#554344",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "627,000",
+                            "size": "md",
+                            "weight": "bold",
+                            "color": "#D31145",
+                            "align": "end",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "บาท",
+                            "size": "md",
+                            "color": "#554344",
+                            "align": "end",
+                            "flex": 1
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "margin": "sm",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "ยอดสะสม",
+                            "size": "sm",
+                            "color": "#554344",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "1,300,000",
+                            "size": "sm",
+                            "weight": "bold",
+                            "color": "#554344",
+                            "align": "end",
+                            "flex": 2
+                          },
+                          {
+                            "type": "text",
+                            "text": "บาท",
+                            "size": "md",
+                            "color": "#554344",
+                            "align": "end",
+                            "flex": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xl",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
+                "size": "xxs",
+                "color": "#aaaaaa"
+              },
+              {
+                "type": "text",
+                "text": "จำนวนเงินนี้เป็นค่าประมาณการ สามารถเปลี่ยนแปลงได้ (เงื่อนไขตามประกาศบริษัท)",
+                "color": "#aaaaaa",
+                "size": "xxs",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+
+}
+			]}';
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+			}
+			}
 			else if ($text == "userid") {
 				
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['source']['userId']);	
