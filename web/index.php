@@ -401,7 +401,7 @@ if (!is_null($events['events'])) {
 			
 			$post = '{"replyToken":"'.$replyToken.'",
     "messages":[
-			 { "type": "flex",
+			  { "type": "flex",
   "altText": "PO",
   "contents":
 
@@ -1464,7 +1464,7 @@ if (!is_null($events['events'])) {
   ]
 }
 
-  ] 
+
 }
 
 }
