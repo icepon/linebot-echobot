@@ -711,9 +711,9 @@ if (!is_null($events['events'])) {
                     "color": "#22A8DA",
                     "height": "sm",
                     "action": {
-                      "type": "postback",
+                      "type": "URI",
                       "label": "ดูรายละเอียด",
-                      "data": "ecmreject"
+                      "uri": "https://holy-bird-7902.animaapp.io/preview/dcZwJUq/ptcompen1"
                     }
                   },
                   {
@@ -1203,9 +1203,9 @@ if (!is_null($events['events'])) {
                 "color": "#22A8DA",
                 "height": "sm",
                 "action": {
-                  "type": "postback",
+                  "type": "URI",
                   "label": "ดูรายละเอียด",
-                  "data": "ecmreject"
+                  "uri": "https://holy-bird-7902.animaapp.io/preview/dcZwJUq/ptcompen1"
                 }
               },
               {
@@ -1789,9 +1789,9 @@ if (!is_null($events['events'])) {
                     "color": "#22A8DA",
                     "height": "sm",
                     "action": {
-                      "type": "postback",
+                      "type": "uri",
                       "label": "ดูรายละเอียด",
-                      "data": "ecmreject"
+                      "uri": "https://holy-bird-7902.animaapp.io/preview/dcZwJUq/ptcompen1"
                     }
                   },
                   {
@@ -2281,9 +2281,9 @@ if (!is_null($events['events'])) {
                 "color": "#22A8DA",
                 "height": "sm",
                 "action": {
-                  "type": "postback",
+                  "type": "uri",
                   "label": "ดูรายละเอียด",
-                  "data": "ecmreject"
+                  "uri": "https://holy-bird-7902.animaapp.io/preview/dcZwJUq/ptcompen1"
                 }
               },
               {
@@ -2924,9 +2924,9 @@ if (!is_null($events['events'])) {
                     "color": "#22A8DA",
                     "height": "sm",
                     "action": {
-                      "type": "postback",
+                      "type": "uri",
                       "label": "ดูรายละเอียด",
-                      "data": "myperformance1"
+                      "uri": "https://holy-bird-7902.animaapp.io/preview/dcZwJUq/ptcompen1"
                     }
                   },
                   {
@@ -3416,9 +3416,9 @@ if (!is_null($events['events'])) {
                 "color": "#22A8DA",
                 "height": "sm",
                 "action": {
-                  "type": "postback",
+                  "type": "uri",
                   "label": "ดูรายละเอียด",
-                  "data": "myperformance1"
+                  "uri": "https://holy-bird-7902.animaapp.io/preview/dcZwJUq/ptcompen1"
                 }
               },
               {
@@ -4005,9 +4005,9 @@ if (!is_null($events['events'])) {
                     "color": "#22A8DA",
                     "height": "sm",
                     "action": {
-                      "type": "postback",
+                      "type": "uri",
                       "label": "ดูรายละเอียด",
-                      "data": "ecmreject"
+                      "uri": "https://holy-bird-7902.animaapp.io/preview/dcZwJUq/ptcompen1"
                     }
                   },
                   {
@@ -4497,9 +4497,9 @@ if (!is_null($events['events'])) {
                 "color": "#22A8DA",
                 "height": "sm",
                 "action": {
-                  "type": "postback",
+                  "type": "uri",
                   "label": "ดูรายละเอียด",
-                  "data": "ecmreject"
+                  "uri": "https://holy-bird-7902.animaapp.io/preview/dcZwJUq/ptcompen1"
                 }
               },
               {
