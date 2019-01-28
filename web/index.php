@@ -4022,7 +4022,7 @@ if (!is_null($events['events'])) {
                     "action": {
                       "type": "postback",
                       "label": "ข้อมูลส่วนตัว",
-                      "data": "ecmreject"
+                      "data": "myperformance2"
                     }
                   }
                 ]
@@ -4514,7 +4514,7 @@ if (!is_null($events['events'])) {
                 "action": {
                   "type": "postback",
                   "label": "ข้อมูลส่วนตัว",
-                  "data": "ecmreject"
+                  "data": "myperformance2"
                 }
               }
             ]
