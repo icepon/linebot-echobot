@@ -395,7 +395,7 @@ if (!is_null($events['events'])) {
 			$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("จ๋าาาาาาา");	
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			//My performance
-			else if ($text == "My performance") {
+			else if ($text == "My performance1") {
 			
 				$url = 'https://api.line.me/v2/bot/message/reply';
 			
@@ -418,13 +418,13 @@ if (!is_null($events['events'])) {
       "body": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "xxl",
+        "spacing": "xs",
         "contents": [
           {
             "type": "text",
-            "text": "รายได้เดือน ก.ย. 61",
+            "text": "ค่าตอบแทน (ผลงานหน่วย)",
             "color": "#E86487",
-            "size": "lg",
+            "size": "md",
             "weight": "bold"
           },
           {
@@ -434,177 +434,516 @@ if (!is_null($events['events'])) {
           {
             "type": "box",
             "layout": "vertical",
-            "margin": "xxl",
-            "spacing": "xxl",
+            "margin": "md",
             "contents": [
               {
                 "type": "box",
                 "layout": "horizontal",
-                "margin": "xxl",
                 "contents": [
                   {
                     "type": "text",
-                    "text": "รายได้รวม",
-                    "size": "sm",
-                    "color": "#554344",
+                    "text": "aaaaaaaaaaa",
+                    "size": "xxs",
+                    "color": "#FFFFFF",
+                    "wrap": true,
                     "flex": 2
                   },
                   {
                     "type": "text",
-                    "text": "500,000",
-                    "size": "md",
-                    "weight": "bold",
-                    "color": "#D31145",
+                    "text": "ปัจจุบัน",
+                    "size": "xs",
+                    "color": "#6F6E68",
+                    "weight": "regular",
                     "align": "end",
-                    "flex": 3
+                    "wrap": true,
+                    "flex": 2
                   },
                   {
                     "type": "text",
-                    "text": "บาท",
-                    "size": "sm",
+                    "text": "ทำเพิ่มอีก",
+                    "size": "xs",
                     "color": "#554344",
+                    "weight": "bold",
                     "align": "end",
-                    "flex": 1
+                    "wrap": true,
+                    "flex": 2
                   }
                 ]
               },
               {
                 "type": "box",
                 "layout": "horizontal",
-                "margin": "xl",
+                "margin": "xs",
                 "contents": [
                   {
                     "type": "text",
-                    "text": "FYC",
-                    "size": "sm",
+                    "text": "รายเดือน ก.พ. 62",
+                    "size": "xs",
                     "color": "#554344",
-                    "flex": 2
-                  },
-                  {
-                    "type": "text",
-                    "text": "200,000",
-                    "size": "sm",
-                    "weight": "bold",
-                    "color": "#554344",
-                    "align": "end",
-                    "flex": 3
-                  },
-                  {
-                    "type": "text",
-                    "text": "บาท",
-                    "size": "sm",
-                    "color": "#554344",
-                    "align": "end",
-                    "flex": 1
+                    "weight": "bold"
                   }
                 ]
               },
               {
                 "type": "box",
                 "layout": "horizontal",
-                "margin": "xl",
+                "margin": "md",
                 "contents": [
                   {
                     "type": "text",
-                    "text": "RYC",
-                    "size": "sm",
+                    "text": "MO",
+                    "size": "xs",
                     "color": "#554344",
+                    "wrap": true,
                     "flex": 2
                   },
                   {
                     "type": "text",
-                    "text": "100,000",
-                    "size": "sm",
-                    "weight": "bold",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
                     "color": "#554344",
+                    "weight": "regular",
                     "align": "end",
-                    "flex": 3
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
                   },
                   {
                     "type": "text",
-                    "text": "บาท",
-                    "size": "sm",
-                    "color": "#554344",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
                     "align": "end",
-                    "flex": 1
+                    "wrap": true,
+                    "flex": 2
                   }
                 ]
               },
               {
                 "type": "box",
                 "layout": "horizontal",
-                "margin": "xl",
+                "margin": "sm",
                 "contents": [
                   {
                     "type": "text",
-                    "text": "โบนัสความยั่งยืน",
-                    "size": "sm",
+                    "text": "IO1",
+                    "size": "xs",
                     "color": "#554344",
-                    "flex": 3
-                  },
-                  {
-                    "type": "text",
-                    "text": "100,000",
-                    "size": "sm",
-                    "weight": "bold",
-                    "color": "#554344",
-                    "align": "end",
+                    "wrap": true,
                     "flex": 2
                   },
                   {
                     "type": "text",
-                    "text": "บาท",
-                    "size": "sm",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
                     "color": "#554344",
+                    "weight": "regular",
                     "align": "end",
-                    "flex": 1
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
                   }
                 ]
               },
               {
                 "type": "box",
                 "layout": "horizontal",
-                "margin": "xl",
+                "margin": "sm",
                 "contents": [
                   {
                     "type": "text",
-                    "text": "รายได้อื่นๆ",
-                    "size": "sm",
+                    "text": "IO2",
+                    "size": "xs",
                     "color": "#554344",
-                    "flex": 3
-                  },
-                  {
-                    "type": "text",
-                    "text": "100,000",
-                    "size": "sm",
-                    "weight": "bold",
-                    "color": "#554344",
-                    "align": "end",
+                    "wrap": true,
                     "flex": 2
                   },
                   {
                     "type": "text",
-                    "text": "บาท",
-                    "size": "sm",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
                     "color": "#554344",
+                    "weight": "regular",
                     "align": "end",
-                    "flex": 1
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
                   }
                 ]
               },
               {
                 "type": "box",
                 "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "NAPO",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "AAB",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "PB",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "separator",
+                "margin": "lg"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ค่าตอบแทน ไตรมาส",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "โบนัสหน่วย",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ADO",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "separator",
+                "margin": "lg"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ค่าตอบแทน รายปี",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "โบนัสหน่วย",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "LUMPSUM",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "IO รายปี",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "lg",
                 "contents": [
                   {
                     "type": "button",
                     "style": "link",
                     "color": "#22A8DA",
                     "height": "sm",
-                    "margin": "md",
                     "action": {
                       "type": "postback",
                       "label": "ดูรายละเอียด",
+                      "data": "ecmreject"
+                    }
+                  },
+                  {
+                    "type": "separator",
+                    "margin": "md"
+                  },
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "color": "#22A8DA",
+                    "height": "sm",
+                    "action": {
+                      "type": "postback",
+                      "label": "ข้อมูลส่วนตัว",
                       "data": "ecmreject"
                     }
                   }
@@ -614,7 +953,7 @@ if (!is_null($events['events'])) {
           },
           {
             "type": "separator",
-            "margin": "xs"
+            "margin": "md"
           },
           {
             "type": "box",
@@ -624,13 +963,6 @@ if (!is_null($events['events'])) {
               {
                 "type": "text",
                 "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
-                "size": "xxs",
-                "color": "#B3B1A8",
-                "wrap": true
-              },
-              {
-                "type": "text",
-                "text": "จำนวนเงินนี้เป็นค่าประมาณการ สามารถเปลี่ยนแปลงได้ (เงื่อนไขตามประกาศบริษัท)",
                 "size": "xxs",
                 "color": "#B3B1A8",
                 "wrap": true
@@ -650,20 +982,13 @@ if (!is_null($events['events'])) {
       "body": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "xs",
+        "spacing": "xxl",
         "contents": [
           {
             "type": "text",
-            "text": "เงินโบนัสพิเศษ",
+            "text": "ผลงานสะสม",
             "color": "#E86487",
-            "size": "lg",
-            "weight": "bold"
-          },
-          {
-            "type": "text",
-            "text": "ไตรมาสที่ 3 (ก.ค. - ก.ย. 61)",
-            "color": "#E86487",
-            "size": "sm",
+            "size": "md",
             "weight": "bold"
           },
           {
@@ -673,263 +998,446 @@ if (!is_null($events['events'])) {
           {
             "type": "box",
             "layout": "vertical",
-            "margin": "lg",
-            "spacing": "sm",
+            "margin": "xs",
             "contents": [
               {
                 "type": "box",
                 "layout": "horizontal",
+                "margin": "xs",
                 "contents": [
                   {
                     "type": "text",
-                    "text": "ต้องการ FYC อีก",
+                    "text": "อัตราความยั่งยืน 19 เดือน",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 4
+                  },
+                  {
+                    "type": "text",
+                    "text": "75%",
+                    "size": "xs",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 1
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เดือนที่มีผลงาน",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "9 เดือน",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "separator",
+                "margin": "xs"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ผลงานเดือน ก.พ. ",
                     "size": "sm",
                     "color": "#554344",
-                    "flex": 0,
-                    "wrap": true
-                  }
-                ]
-              },
-              {
-                "type": "text",
-                "text": "10,100",
-                "size": "xxl",
-                "color": "#D31145",
-                "weight": "bold",
-                "flex": 0,
-                "wrap": true
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "เพิ่มความยั่งยืนเป็น",
-                    "size": "xs",
-                    "color": "#554344",
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "จะเพิ่มโบนัสพิเศษเป็น",
-                    "size": "xs",
-                    "color": "#554344",
-                    "wrap": true
+                    "weight": "bold",
+                    "flex": 6
                   }
                 ]
               },
               {
                 "type": "box",
                 "layout": "horizontal",
+                "margin": "xs",
                 "contents": [
                   {
                     "type": "text",
-                    "text": "88%",
-                    "size": "xl",
-                    "color": "#D31145",
-                    "weight": "bold",
-                    "wrap": true
+                    "text": "คอมมิชชั่น",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
                   },
                   {
                     "type": "text",
-                    "text": "30%",
-                    "size": "xl",
-                    "color": "#D31145",
-                    "weight": "bold",
-                    "wrap": true
+                    "text": "200,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
                   }
                 ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เบี้ยประกัน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "100,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "จำนวนราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "100 ราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ตัวแทนที่มีผลงาน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "15 คน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xs",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ผลงานไตรมาส",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold",
+                    "flex": 6
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "คอมมิชชั่น",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "400,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เบี้ยประกัน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "800,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "จำนวนราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "150 ราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ตัวแทนที่มีผลงาน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "15 คน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xs",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ผลงานรายปี ",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold",
+                    "flex": 6
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "คอมมิชชั่น",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "800,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เบี้ยประกัน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "100,000,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "จำนวนราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "300 ราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 4,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ตัวแทนที่มีผลงาน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "35 คน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 4,
+                    "align": "end"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "margin": "lg",
+            "contents": [
+              {
+                "type": "button",
+                "style": "link",
+                "color": "#22A8DA",
+                "height": "sm",
+                "action": {
+                  "type": "postback",
+                  "label": "ดูรายละเอียด",
+                  "data": "ecmreject"
+                }
               },
               {
                 "type": "separator",
                 "margin": "md"
               },
               {
-                "type": "text",
-                "text": "ยอดปัจจุบัน",
-                "size": "md",
-                "color": "#554344",
-                "weight": "bold",
-                "margin": "lg",
-                "wrap": true
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "margin": "lg",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "FYC สะสม",
-                    "size": "sm",
-                    "color": "#554344",
-                    "flex": 0,
-                    "wrap": true
-                  },
-                  {
-                    "type": "text",
-                    "text": "190,990 บาท",
-                    "size": "sm",
-                    "color": "#554344",
-                    "weight": "bold",
-                    "align": "end",
-                    "wrap": true
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "อัตราความยั่งยืน",
-                    "size": "sm",
-                    "color": "#554344",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "75%",
-                    "size": "sm",
-                    "color": "#554344",
-                    "weight": "bold",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "อัตราโบนัสพิเศษ",
-                    "size": "sm",
-                    "color": "#554344",
-                    "flex": 0
-                  },
-                  {
-                    "type": "text",
-                    "text": "26%",
-                    "size": "sm",
-                    "color": "#554344",
-                    "weight": "bold",
-                    "align": "end"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "margin": "lg",
-                "contents": [
-                  {
-                    "type": "button",
-                    "style": "link",
-                    "color": "#22A8DA",
-                    "height": "sm",
-                    "action": {
-                      "type": "postback",
-                      "label": "ดูรายละเอียด",
-                      "data": "ecmreject"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "separator",
-            "margin": "xs"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "margin": "xl",
-            "contents": [
-              {
-                "type": "text",
-                "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
-                "size": "xxs",
-                "color": "#B3B1A8",
-                "wrap": true
-              },
-              {
-                "type": "text",
-                "text": "จำนวนเงินนี้เป็นค่าประมาณการ สามารถเปลี่ยนแปลงได้ (เงื่อนไขตามประกาศบริษัท)",
-                "size": "xxs",
-                "color": "#B3B1A8",
-                "wrap": true
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "type": "bubble",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "คุณวุฒิ MDRT",
-            "weight": "bold",
-            "color": "#E86487",
-            "size": "lg",
-            "wrap": true
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "margin": "sm",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "ปัจจุบัน:",
-                    "size": "xs",
-                    "color": "#554344",
-                    "flex": 2
-                  },
-                  {
-                    "type": "text",
-                    "text": "Regular",
-                    "size": "xs",
-                    "weight": "bold",
-                    "color": "#554344",
-                    "flex": 3
-                  }
-                ]
-             },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "คุณวุฒิถัดไป:",
-                    "size": "xs",
-                    "color": "#554344",
-                    "align": "end",
-                    "flex": 5
-                  },
-                  {
-                    "type": "text",
-                    "text": "MDRT",
-                    "size": "sm",
-                    "weight": "bold",
-                    "color": "#D31145",
-                    "align": "end",
-                    "flex": 3
-                  }
-                ]
+                "type": "button",
+                "style": "link",
+                "color": "#22A8DA",
+                "height": "sm",
+                "action": {
+                  "type": "postback",
+                  "label": "ข้อมูลส่วนตัว",
+                  "data": "ecmreject"
+                }
               }
             ]
           },
@@ -940,335 +1448,13 @@ if (!is_null($events['events'])) {
           {
             "type": "box",
             "layout": "vertical",
-            "margin": "lg",
-            "contents": [
-              {
-                "type": "text",
-                "text": "FYC",
-                "size": "md",
-                "color": "#554344",
-                "weight": "bold"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "margin": "sm",
-                "contents": [
-                  {
-                    "type": "box",
-                    "layout": "horizontal",
-                    "flex": 1,
-                    "contents": [
-                      {
-                        "type": "image",
-                        "url": "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/green75-ring.png"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "margin": "xl",
-                    "flex": 4,
-                    "contents": [
-                      {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "ต้องการอีก",
-                            "size": "sm",
-                            "color": "#554344",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "341,000",
-                            "size": "md",
-                            "weight": "bold",
-                            "color": "#D31145",
-                            "align": "end",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "บาท",
-                            "size": "md",
-                            "color": "#554344",
-                            "align": "end",
-                            "flex": 1
-                          }
-                        ]
-                      },
-                      {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "margin": "sm",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "ยอดสะสม",
-                            "size": "sm",
-                            "color": "#554344",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "800,000",
-                            "size": "sm",
-                            "weight": "bold",
-                            "color": "#554344",
-                            "align": "end",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "บาท",
-                            "size": "md",
-                            "color": "#554344",
-                            "align": "end",
-                            "flex": 1
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "separator",
-            "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "margin": "lg",
-            "contents": [
-              {
-                "type": "text",
-                "text": "FYP",
-                "size": "md",
-                "color": "#554344",
-                "weight": "bold"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "margin": "sm",
-                "contents": [
-                  {
-                    "type": "box",
-                    "layout": "horizontal",
-                    "flex": 1,
-                    "contents": [
-                      {
-                        "type": "image",
-                        "url": "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/green80-ring.png"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "margin": "xl",
-                    "flex": 4,
-                    "contents": [
-                      {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                          {
-                            "type": "text",
-                           "text": "ต้องการอีก",
-                            "size": "sm",
-                            "color": "#554344",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "228,000",
-                            "size": "md",
-                            "weight": "bold",
-                            "color": "#D31145",
-                            "align": "end",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "บาท",
-                            "size": "md",
-                            "color": "#554344",
-                            "align": "end",
-                            "flex": 1
-                          }
-                        ]
-                      },
-                      {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "margin": "sm",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "ยอดสะสม",
-                            "size": "sm",
-                            "color": "#554344",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "2,000,000",
-                            "size": "sm",
-                            "weight": "bold",
-                            "color": "#554344",
-                            "align": "end",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "บาท",
-                            "size": "md",
-                            "color": "#554344",
-                            "align": "end",
-                            "flex": 1
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "separator",
-            "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "margin": "lg",
-            "contents": [
-              {
-                "type": "text",
-                "text": "รายได้",
-                "size": "md",
-                "color": "#554344",
-                "weight": "bold"
-              },
-              {
-                "type": "box",
-                "layout": "horizontal",
-                "margin": "sm",
-                "contents": [
-                  {
-                    "type": "box",
-                    "layout": "horizontal",
-                    "flex": 1,
-                    "contents": [
-                      {
-                        "type": "image",
-                        "url": "https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/green66-ring.png"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "margin": "xl",
-                    "flex": 4,
-                    "contents": [
-                      {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "ต้องการอีก",
-                            "size": "sm",
-                            "color": "#554344",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "627,000",
-                            "size": "md",
-                            "weight": "bold",
-                            "color": "#D31145",
-                            "align": "end",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "บาท",
-                            "size": "md",
-                            "color": "#554344",
-                            "align": "end",
-                            "flex": 1
-                          }
-                        ]
-                      },
-                      {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "margin": "sm",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "ยอดสะสม",
-                            "size": "sm",
-                            "color": "#554344",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "1,300,000",
-                            "size": "sm",
-                            "weight": "bold",
-                            "color": "#554344",
-                            "align": "end",
-                            "flex": 2
-                          },
-                          {
-                            "type": "text",
-                            "text": "บาท",
-                            "size": "md",
-                            "color": "#554344",
-                            "align": "end",
-                            "flex": 1
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "separator",
-            "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "margin": "xl",
+            "margin": "md",
             "contents": [
               {
                 "type": "text",
                 "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
                 "size": "xxs",
                 "color": "#aaaaaa"
-              },
-              {
-                "type": "text",
-                "text": "จำนวนเงินนี้เป็นค่าประมาณการ สามารถเปลี่ยนแปลงได้ (เงื่อนไขตามประกาศบริษัท)",
-                "color": "#aaaaaa",
-                "size": "xxs",
-                "wrap": true
               }
             ]
           }
@@ -1276,6 +1462,9 @@ if (!is_null($events['events'])) {
       }
     }
   ]
+}
+
+  ] 
 }
 
 }
