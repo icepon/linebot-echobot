@@ -181,7 +181,8 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			}
-			else if(strpos( $data , "ecmreject" ) !== false){
+			
+			else if(strpos( $data , "myperformance1" ) !== false){
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			
 			$post = '{"replyToken":"'.$replyToken.'",
@@ -189,53 +190,549 @@ if (!is_null($events['events'])) {
 			  { "type": "flex",
 			  "altText": "Accept",
 			  "contents":
-				{
-  "type": "bubble",
-  "styles": {
-    "footer": {
-      "separator": true
-    }
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "กรุณาบอกเหตุผล",
-        "color": "#D31145",
-        "size": "xs",
-        "weight": "bold"
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "styles": {
+        "footer": {
+          "separator": true
+        }
       },
-      {
-        "type": "separator",
-        "margin": "md"
-      },
-      {
+      "body": {
         "type": "box",
         "layout": "vertical",
-        "margin": "md",
-        "spacing": "sm",
+        "spacing": "xs",
         "contents": [
           {
+            "type": "text",
+            "text": "ค่าตอบแทน (ผลงานส่วนตัว)",
+            "color": "#E86487",
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
+            "margin": "md",
             "contents": [
               {
-                "type": "text",
-                "text": "ไม่มีกำลังซื้อ",
-                "weight": "bold",
-                "size": "sm",
-                "color": "#555555",
-                "flex": 0
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "aaaaaaaaaaa",
+                    "size": "xxs",
+                    "color": "#FFFFFF",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "ยอดปัจจุบัน",
+                    "size": "xs",
+                    "color": "#6F6E68",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "ทำเพิ่มอีก",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
               },
               {
-                "type": "text",
-                "text": ">",
-                "size": "md",
-                "weight": "bold",
-                "color": "#E86487",
-                "align": "end"
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "รายเดือน ก.พ. 62",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "md",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "โบนัส ตท ใหม่",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เงินเดือน ตท",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "์NAPO",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "separator",
+                "margin": "lg"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "โบนัสตัวแทนรายไตรมาส",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "LGP",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "150K(26%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "5k(28%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "LGP Extra",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "150K(8%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "5k(10%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "RPA",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "50K(28%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "13k(30%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "RPA Extra",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "50K(10%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "13k(12%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "separator",
+                "margin": "lg"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "โบนัสตัวแทนรายปี",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "LGP",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "LGP Extra",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "RPA",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "sm",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "RPA Extra",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "3.19M(50%)",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "align": "end",
+                    "wrap": true,
+                    "margin": "sm",
+                    "flex": 2
+                  },
+                  {
+                    "type": "text",
+                    "text": "190k(60%)",
+                    "size": "xs",
+                    "color": "#292025",
+                    "weight": "bold",
+                    "align": "end",
+                    "wrap": true,
+                    "flex": 2
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "lg",
+                "contents": [
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "color": "#22A8DA",
+                    "height": "sm",
+                    "action": {
+                      "type": "postback",
+                      "label": "ดูรายละเอียด",
+                      "data": "ecmreject"
+                    }
+                  },
+                  {
+                    "type": "separator",
+                    "margin": "md"
+                  },
+                  {
+                    "type": "button",
+                    "style": "link",
+                    "color": "#22A8DA",
+                    "height": "sm",
+                    "action": {
+                      "type": "postback",
+                      "label": "ข้อมูล FA",
+                      "data": "ecmreject"
+                    }
+                  }
+                ]
               }
             ]
           },
@@ -245,86 +742,511 @@ if (!is_null($events['events'])) {
           },
           {
             "type": "box",
-            "layout": "horizontal",
+            "layout": "vertical",
+            "margin": "xl",
             "contents": [
               {
                 "type": "text",
-                "text": "ไม่รู้จักลูกค้า",
-                "weight": "bold",
-                "size": "sm",
-                "color": "#555555",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": ">",
-                "size": "md",
-                "weight": "bold",
-                "color": "#E86487",
-                "align": "end"
+                "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
+                "size": "xxs",
+                "color": "#B3B1A8",
+                "wrap": true
               }
             ]
-          },
-          {
-            "type": "separator",
-            "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "ลูกค้าอยู่ไกล",
-                "weight": "bold",
-                "size": "sm",
-                "color": "#555555",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": ">",
-                "size": "md",
-                "weight": "bold",
-                "color": "#E86487",
-                "align": "end"
-              }
-            ]
-          },
-          {
-            "type": "separator",
-            "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "สุขภาพไม่มาตรฐาน",
-                "weight": "bold",
-                "size": "sm",
-                "color": "#555555",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": ">",
-                "size": "md",
-                "weight": "bold",
-                "color": "#E86487",
-                "align": "end"
-              }
-            ]
-          },
-          {
-            "type": "separator",
-            "margin": "md"
           }
         ]
       }
-    ]
-  }
+    },
+    {
+      "type": "bubble",
+      "styles": {
+        "footer": {
+          "separator": true
+        }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "text",
+            "text": "ผลงานสะสม",
+            "color": "#E86487",
+            "size": "md",
+            "weight": "bold"
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xs",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "อัตราความยั่งยืน 19 เดือน",
+                    "size": "xs",
+                    "color": "#554344",
+                    "wrap": true,
+                    "flex": 4
+                  },
+                  {
+                    "type": "text",
+                    "text": "75%",
+                    "size": "xs",
+                    "color": "#554344",
+                    "align": "end",
+                    "flex": 1
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เดือนที่มีผลงาน",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "9 เดือน",
+                    "size": "xs",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "separator",
+                "margin": "xs"
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ผลงานเดือน ก.พ. ",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold",
+                    "flex": 6
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "คอมมิชชั่น",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "200,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เบี้ยประกัน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "100,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "จำนวนราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "100 ราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ตัวแทนที่มีผลงาน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "15 คน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xs",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ผลงานไตรมาส",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold",
+                    "flex": 6
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "คอมมิชชั่น",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "400,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เบี้ยประกัน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "800,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "จำนวนราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "150 ราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ตัวแทนที่มีผลงาน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "15 คน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xs",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ผลงานรายปี ",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "bold",
+                    "flex": 6
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "คอมมิชชั่น",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "800,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "เบี้ยประกัน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "100,000,000 บาท",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "จำนวนราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "300 ราย",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 4,
+                    "align": "end"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "margin": "xs",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ตัวแทนที่มีผลงาน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 6
+                  },
+                  {
+                    "type": "text",
+                    "text": "35 คน",
+                    "size": "sm",
+                    "color": "#554344",
+                    "weight": "regular",
+                    "flex": 4,
+                    "align": "end"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "margin": "lg",
+            "contents": [
+              {
+                "type": "button",
+                "style": "link",
+                "color": "#22A8DA",
+                "height": "sm",
+                "action": {
+                  "type": "postback",
+                  "label": "ดูรายละเอียด",
+                  "data": "ecmreject"
+                }
+              },
+              {
+                "type": "separator",
+                "margin": "md"
+              },
+              {
+                "type": "button",
+                "style": "link",
+                "color": "#22A8DA",
+                "height": "sm",
+                "action": {
+                  "type": "postback",
+                  "label": "ข้อมูล FA",
+                  "data": "ecmreject"
+                }
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
+                "size": "xxs",
+                "color": "#aaaaaa"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
 			  }
 			  ]}';
@@ -927,7 +1849,7 @@ if (!is_null($events['events'])) {
                     "action": {
                       "type": "postback",
                       "label": "ดูรายละเอียด",
-                      "data": "ecmreject"
+                      "data": "myperformance1"
                     }
                   },
                   {
@@ -1419,7 +2341,7 @@ if (!is_null($events['events'])) {
                 "action": {
                   "type": "postback",
                   "label": "ดูรายละเอียด",
-                  "data": "ecmreject"
+                  "data": "myperformance1"
                 }
               },
               {
