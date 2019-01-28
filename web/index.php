@@ -396,15 +396,13 @@ if (!is_null($events['events'])) {
 			$response = $bot->replyMessage($replyToken, $outputText); }
 			//My performance
 			else if ($text == "My performance1") {
-			
-				$url = 'https://api.line.me/v2/bot/message/reply';
+			$url = 'https://api.line.me/v2/bot/message/reply';
 			
 			$post = '{"replyToken":"'.$replyToken.'",
     "messages":[
 			  { "type": "flex",
-  "altText": "PO",
-  "contents":
-
+			  "altText": "Accept",
+			  "contents":
 {
   "type": "carousel",
   "contents": [
@@ -1463,12 +1461,8 @@ if (!is_null($events['events'])) {
     }
   ]
 }
-
-
-}
-
-}
-			]}';
+			  }
+			  ]}';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
@@ -1478,6 +1472,13 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
+			}
+			//$outputText = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("Check policy : ".$data);	
+			//$response = $bot->replyMessage($replyToken, $outputText);
+		
+				
+              
+     
 			
 			}
 			else if ($text == "userid") {
