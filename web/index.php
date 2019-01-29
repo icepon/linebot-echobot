@@ -2124,7 +2124,7 @@ if (!is_null($events['events'])) {
               },
               {
                 "type": "box",
-                "layout": "horizontal",
+                "layout": "horizontal", 
                 "margin": "xs",
                 "contents": [
                   {
