@@ -1322,7 +1322,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "ทำเพิ่มอีก",
+                    "text": "ยอดถัดไป",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "bold",
@@ -1339,7 +1339,7 @@ if (!is_null($events['events'])) {
                 "contents": [
                   {
                     "type": "text",
-                    "text": "รายเดือน ก.พ. 62",
+                    "text": "โบนัสรายเดือน ณ วันที่ 15 ก.ย. 2562",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "bold"
@@ -1361,7 +1361,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "3.19M(50%)",
+                    "text": "40K(17%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1372,7 +1372,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "190k(60%)",
+                    "text": "50K(19%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1397,7 +1397,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "3.19M(50%)",
+                    "text": "25K(32%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1408,7 +1408,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "190k(60%)",
+                    "text": "30(45%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1433,7 +1433,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "3.19M(50%)",
+                    "text": "39K(23%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1444,7 +1444,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "190k(60%)",
+                    "text": "45(26%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1487,7 +1487,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "150K(26%)",
+                    "text": "39K(26%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1498,7 +1498,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "5k(28%)",
+                    "text": "42k(28%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1523,7 +1523,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "150K(8%)",
+                    "text": "12K(8%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1534,7 +1534,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "5k(10%)",
+                    "text": "15k(10%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1559,7 +1559,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "50K(28%)",
+                    "text": "14K(28%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1570,7 +1570,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "13k(30%)",
+                    "text": "15k(30%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1595,7 +1595,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "50K(10%)",
+                    "text": "5K(10%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1606,7 +1606,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "13k(12%)",
+                    "text": "6k(12%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1649,7 +1649,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "3.19M(50%)",
+                    "text": "20K(15%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1660,7 +1660,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "190k(60%)",
+                    "text": "35K(19%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1685,7 +1685,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "3.19M(50%)",
+                    "text": "24K(12%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1696,7 +1696,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "190k(60%)",
+                    "text": "37K(15%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1721,7 +1721,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "3.19M(50%)",
+                    "text": "47.1K(32%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1732,7 +1732,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "190k(60%)",
+                    "text": "59.5K(41%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1757,7 +1757,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "3.19M(50%)",
+                    "text": "10K(5%)",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "regular",
@@ -1768,7 +1768,7 @@ if (!is_null($events['events'])) {
                   },
                   {
                     "type": "text",
-                    "text": "190k(60%)",
+                    "text": "20K(6%)",
                     "size": "xs",
                     "color": "#292025",
                     "weight": "bold",
@@ -1789,9 +1789,9 @@ if (!is_null($events['events'])) {
                     "color": "#22A8DA",
                     "height": "sm",
                     "action": {
-                      "type": "uri",
+                      "type": "postback",
                       "label": "ดูรายละเอียด",
-                      "uri": "https://holy-bird-7902.animaapp.io/preview/28tO7F5/ptcompen1"
+                      "data": "ecmreject"
                     }
                   },
                   {
@@ -2281,9 +2281,9 @@ if (!is_null($events['events'])) {
                 "color": "#22A8DA",
                 "height": "sm",
                 "action": {
-                  "type": "uri",
+                  "type": "postback",
                   "label": "ดูรายละเอียด",
-                  "uri": "https://holy-bird-7902.animaapp.io/preview/28tO7F5/ptcompen1"
+                  "data": "ecmreject"
                 }
               },
               {
