@@ -3556,7 +3556,7 @@ if (!is_null($events['events'])) {
                 "contents": [
                   {
                     "type": "text",
-                    "text": "รายเดือน ก.พ. 62",
+                    "text": "โบนัสรายเดือน ณ วันที่ 15 ก.ย. 2562",
                     "size": "xs",
                     "color": "#554344",
                     "weight": "bold"
@@ -4006,9 +4006,9 @@ if (!is_null($events['events'])) {
                     "color": "#22A8DA",
                     "height": "sm",
                     "action": {
-                      "type": "uri",
+                      "type": "postback",
                       "label": "ดูรายละเอียด",
-                      "uri": "https://holy-bird-7902.animaapp.io/preview/28tO7F5/ptcompen1"
+                      "data": "ecmreject"
                     }
                   },
                   {
@@ -4023,7 +4023,7 @@ if (!is_null($events['events'])) {
                     "action": {
                       "type": "postback",
                       "label": "ข้อมูลส่วนตัว",
-                      "data": "myperformance1"
+                      "data": "ecmreject"
                     }
                   }
                 ]
@@ -4041,7 +4041,7 @@ if (!is_null($events['events'])) {
             "contents": [
               {
                 "type": "text",
-                "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
+                "text": "ข้อมูล ณ วันที่ 15 ก.ย. 2561 จำนวนเงินนี้เป็นค่าประมาณการ สามารถเปลี่ยนแปลงได้ (เงื่อนไขตามประกาศบริษัท)",
                 "size": "xxs",
                 "color": "#B3B1A8",
                 "wrap": true
@@ -4137,7 +4137,7 @@ if (!is_null($events['events'])) {
                 "contents": [
                   {
                     "type": "text",
-                    "text": "ผลงานเดือน ก.พ. ",
+                    "text": "ผลงานรายเดือน ณ วันที่ 15 ก.ย. 2562",
                     "size": "sm",
                     "color": "#554344",
                     "weight": "bold",
@@ -4498,9 +4498,9 @@ if (!is_null($events['events'])) {
                 "color": "#22A8DA",
                 "height": "sm",
                 "action": {
-                  "type": "uri",
+                  "type": "postback",
                   "label": "ดูรายละเอียด",
-                  "uri": "https://holy-bird-7902.animaapp.io/preview/28tO7F5/ptcompen1"
+                  "data": "ecmreject"
                 }
               },
               {
@@ -4515,7 +4515,7 @@ if (!is_null($events['events'])) {
                 "action": {
                   "type": "postback",
                   "label": "ข้อมูลส่วนตัว",
-                  "data": "myperformance1"
+                  "data": "ecmreject"
                 }
               }
             ]
@@ -4531,8 +4531,9 @@ if (!is_null($events['events'])) {
             "contents": [
               {
                 "type": "text",
-                "text": "ข้อมูล ณ วันที่ 15 กันยายน 2561",
+                "text": "ข้อมูล ณ วันที่ 15 ก.ย. 2561 จำนวนเงินนี้เป็นค่าประมาณการ สามารถเปลี่ยนแปลงได้ (เงื่อนไขตามประกาศบริษัท)",
                 "size": "xxs",
+                "wrap":true,
                 "color": "#aaaaaa"
               }
             ]
