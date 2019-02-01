@@ -13,7 +13,496 @@
         APP_ID : "1517802253"
     };
 </script>
-<script src = "http://169.62.218.91/site/javascripts/webchats/convolab-webchat-1.1.0.js"></script>
+<script>
+  //import { settings } from "cluster";
+window.onload = function () {
+    if (SDKManager.initSetting()) {
+        SDKManager.initHtml();
+        $('#convolab-chatframe-iframe').load(() => {
+            setTimeout(SDKManager.initIframeApp, 2000);
+        });
+    }
+};
+class SDKManager {
+    static initSetting() {
+        SDKManager.setting = window.convolabSettings;
+        SDKManager.setting.PARENT_ORIGIN = window.location.origin;
+        console.log('Starting convolab extension...');
+        if (!window.jQuery) {
+            console.error('ConvoLab extension requires jQuery library');
+            return;
+        }
+        else if (!SDKManager.setting) {
+            console.error('Cannot find configuration variable. Please set your configuration on Setting object.');
+        }
+        const appId = this.setting.APP_ID;
+        SDKManager.setting.TITLE = SDKManager.setting.TITLE || 'Ice Chat';
+        SDKManager.setting.COLOR = SDKManager.setting.COLOR || '#E86487';
+        SDKManager.setting.ICON = SDKManager.setting.ICON || 'https://upload.convolab.ai/convolab/images/convolab-chaticon-2.svg';
+        if (!appId) {
+            console.error('APP_ID is not set');
+            return false;
+        }
+        else
+            return true;
+    }
+    static initHtml() {
+        const color = SDKManager.setting.COLOR;
+        let color2 = color;
+        if (SDKManager.setting.ONLY_IMG) {
+            color2 = 'transparent';
+        }
+        const width = SDKManager.setting.SIZE ? Number(SDKManager.setting.SIZE[0]) : 45;
+        const height = SDKManager.setting.SIZE ? Number(SDKManager.setting.SIZE[1]) : 45;
+        console.log('scripts are ', $('script'));
+        // Create IE + others compatible event handler
+        const eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        const eventer = window[eventMethod];
+        const messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+        // Listen to message from child window
+        eventer(messageEvent, function (e) {
+            receiveMessageFromIframe(e.data);
+        }, false);
+        let iframeUrl = getHostname() + '/site/chat.page?appId=' + SDKManager.setting.APP_ID;
+        if (SDKManager.setting.AVATAR)
+            iframeUrl += '&avatar=' + encodeURI(SDKManager.setting.AVATAR);
+        if (!SDKManager.setting.OPEN_ON_LOAD)
+            iframeUrl += '&initAsClose=1';
+        iframeUrl += '&location=' + encodeURI(window.location.href);
+        $('head').append('<link rel="stylesheet" href="' + getHostname() + '/site/assets/css/icons/fontawesome/styles.min.css" type="text/css" />');
+        $('body').append(`
+            <div id='convolab-chatframe' 
+            style = "
+                position: fixed;
+                right: 18pt;
+                z-index: 999999;
+                width: 370px!important;
+                min-height: 250px!important;
+                max-height: 590px!important;
+                height: calc(100% - 20px - 75px - 20px);
+                bottom: 75px;
+                border-radius: 15px;
+                box-shadow: rgba(0, 0, 0, 0.15) 0 3pt 12pt;
+                display:none;
+                max-width: 88vw;
+                overflow:hidden;
+                background:white;
+            ">
+                <div style = "
+                    background: ${color};
+                    height: 50px;
+                    width: 100%;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                ">
+                    <h4 style="
+                        text-align: center;
+                        line-height: 50px;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 16px;
+                        margin-top:0; margin-bottom: 0;
+                    ">${SDKManager.setting.TITLE}</h4>
+                </div>
+                <iframe 
+                id='convolab-chatframe-iframe'  
+                frameborder='0' 
+                scrolling='no' 
+                marginheight='0' 
+                marginwidth='0' 
+                src=${iframeUrl} 
+                style = "
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    overflow:hidden;
+                    height: calc(100% - 50px);
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                "
+                allow="geolocation *;" 
+                 ></iframe>
+            </div>`);
+        $('body').append(`
+        <button id='convolab-chatbtn' onclick="window.convolab.toggleChat()" style = "
+            outline-color: transparent;
+            position:fixed; bottom:18pt; right: 18pt; z-index:9999999;
+            width:${width + 'pt'}; height:${height + 'pt'}; padding: 10px;
+            border-radius: 45pt; border: none;
+            background-color: ${color2};
+            box-shadow: ${color2 === 'transparent' ? 'none' : '0 1px 4px rgba(0,0,0,0.3),0 2px 32px rgba(0,0,0,0.2)!important'};
+        ">
+            <div id="convolab-chatclose-icon" tabindex="0" role="button" style="
+                /*margin-top: 6px;*/
+                display: none; 
+            ">
+            <svg width="15px" height="15px" viewBox="0 0 14 14" style = "
+                top: 22px;
+                position: absolute;
+                left: 22px;
+            ">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-419.000000, -413.000000)">
+	                    <g transform="translate(164.000000, 396.000000)"><g>
+	                    <g transform="translate(250.000000, 12.000000)"><g>
+	                    <g><rect opacity="0.200000003" x="0" y="0" width="24" height="24"></rect><g transform="translate(4.000000, 4.000000)" fill="#ffffff">
+	                    <rect transform="translate(8.000000, 8.000000) rotate(45.000000) translate(-8.000000, -8.000000) " x="7" y="-1" width="2" height="18" rx="1"></rect>
+	                    <rect transform="translate(8.000000, 8.000000) rotate(135.000000) translate(-8.000000, -8.000000) " x="7" y="-1" width="2" height="18" rx="1"></rect>
+	                    </g></g></g></g></g></g></g></g></svg>
+	        </div>
+            <img id="convolab-chat-icon" src = '${SDKManager.setting.ICON}' style = "
+                    border-radius: 45pt;
+                    max-width: ${width + 'pt'};
+                    max-height: ${height + 'pt'};
+                    /*margin: 4px;*/
+                    /*position: absolute;*/
+                    /*top: 8px;*/
+                    /*left: 7px;*/
+             "/>
+        </button>
+        <div id = "convolab-preform" style = " display:none;
+            position:fixed; bottom:${(height + 10) + 'pt'}; right: 18pt; z-index:9999999; padding: 10px;
+            border: none; max-width: 90%;
+        ">
+        </div>
+        `);
+        if (SDKManager.setting.WELCOME_MESSAGE) {
+            $('#convolab-preform').append(`
+                <div class = "convolab-preform-dialog" style = "${getPreformStyle()} font-size:14px;">
+                    ${SDKManager.setting.WELCOME_MESSAGE}
+                </div>
+            `);
+        }
+        if (SDKManager.setting.PREFILL_NAME || SDKManager.setting.PREFILL_EMAIL || SDKManager.setting.PREFILL_PHONE) {
+            let isFirst = true;
+            $('#convolab-preform').append(`
+                <div id = 'convolab-preform-input' style = "${getPreformStyle()} padding-bottom:5pt">
+                </div>
+            `);
+            if (SDKManager.setting.PREFILL_NAME) {
+                $('#convolab-preform-input').append(`
+                    ${isFirst ? "" : "<br/>"}
+                    <label style="
+                        font-size: 20px;
+                        width: 8%;
+                        text-align: right;
+                        margin-right:6px;
+                    "><i class="fa fa-tag" /></label>
+                    <input placeholder="Enter your name" id="convolab-preform-input-name" style="${getFormInputStyle()}"/>
+                `);
+                isFirst = false;
+            }
+            if (SDKManager.setting.PREFILL_EMAIL) {
+                $('#convolab-preform-input').append(`
+                    ${isFirst ? "" : "<br/>"}
+                    <label style="
+                        font-size: 20px;
+                        width: 8%;
+                        text-align: right;
+                        margin-right:6px;
+                    "><i class="fa fa-envelope" /></label>
+                    <input placeholder="Enter your email" id="convolab-preform-input-email" style="${getFormInputStyle()}"/>
+                `);
+                isFirst = false;
+            }
+            if (SDKManager.setting.PREFILL_PHONE) {
+                $('#convolab-preform-input').append(`
+                    ${isFirst ? "" : "<br/>"}
+                    <label style="
+                        font-size: 20px;
+                        width: 8%;
+                        text-align: right;
+                        margin-right:6px;
+                    "><i class="fa fa-phone" /></label>
+                    <input placeholder="Enter your phone number" id="convolab-preform-input-phone" style="${getFormInputStyle()}"/>
+                `);
+                isFirst = false;
+            }
+            $('#convolab-preform-input').append(`
+                <button onclick="PrefillManager.submitPrefillInformation()" style="
+                    margin-left: 10px;
+                    width: 29px;
+                    height: 29px;
+                    border-radius: 5px;
+                "><i class="fa fa-chevron-right" style = 'margin-top: 6px;' ></i></button>
+                `);
+        }
+    }
+    static initIframeApp() {
+        console.log('initing iframe setting');
+        postToIframe({ topic: 'setting', payload: SDKManager.setting });
+        if (SDKManager.setting.OPEN_ON_LOAD)
+            ChatManager.toggleChat();
+    }
+}
+class PrefillManager {
+    // Verify whether the detected email belongs to a domain name defined in the entity configuration
+    static formatPhoneNumber(phone) {
+        phone = phone.replace(/[.\s\-()]/ig, '');
+        return phone;
+    }
+    static validatePrefillEmail() {
+        const dom = $('#convolab-preform-input-email');
+        dom.css('border-color', '#ccc');
+        const email = dom.val();
+        const passed = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+        if (!passed)
+            dom.css('border-color', 'red');
+        return passed ? email : null;
+    }
+    static validatePrefillPhone() {
+        const dom = $('#convolab-preform-input-phone');
+        dom.css('border-color', '#ccc');
+        const phone = dom.val();
+        const passed = this.PHONE_REGEX.test(phone);
+        if (!passed)
+            dom.css('border-color', 'red');
+        return passed ? this.formatPhoneNumber(phone) : null;
+    }
+    static validatePrefillName() {
+        const dom = $('#convolab-preform-input-name');
+        dom.css('border-color', '#ccc');
+        const name = dom.val() || null;
+        const passed = !!name;
+        if (!passed)
+            dom.css('border-color', 'red');
+        return passed ? name : null;
+    }
+    static submitPrefillInformation() {
+        const json = {};
+        const name = PrefillManager.validatePrefillName() || CookieManager.getUserName();
+        const email = PrefillManager.validatePrefillEmail() || CookieManager.getUserEmail();
+        const phone = PrefillManager.validatePrefillPhone() || CookieManager.getUserPhone();
+        if (SDKManager.setting.PREFILL_NAME)
+            if (name) {
+                json.name = name;
+                CookieManager.createCookie('convolab_user_name', name, 1000);
+            }
+            else
+                return;
+        if (SDKManager.setting.PREFILL_EMAIL)
+            if (email) {
+                json.email = email;
+                CookieManager.createCookie('convolab_user_email', email, 1000);
+            }
+            else
+                return;
+        if (SDKManager.setting.PREFILL_PHONE)
+            if (phone) {
+                json.phone = phone;
+                CookieManager.createCookie('convolab_user_phone', phone, 1000);
+            }
+            else
+                return;
+        // Send update info request to ChatApp.tsx and wait for message updateInfoComplete
+        postToIframe({ topic: 'updateInfo', payload: { info: json, appId: SDKManager.setting.APP_ID } });
+        $('#convolab-preform-input>button>i').attr('class', 'fa fa-spinner fa-spin');
+    }
+}
+PrefillManager.PHONE_REGEX = /(\+?(\d{1,3}))?[- (]*(\d{3})[- )]*(\d{3})[- ]*(\d{4})(?: *[x/#]{1}(\d+))?/ig;
+function getHostname() {
+    let ret = undefined;
+    $('script').each(function () {
+        const src = $(this).attr('src');
+        if (src && src.indexOf('convolab-webchat') > 0)
+            ret = src;
+    });
+    if (ret) {
+        if (ret.indexOf('/') === 0)
+            ret = window.location.origin + ret;
+        let protocol = 'https://';
+        if (ret.startsWith('http')) {
+            let retr = ret.split('//');
+            protocol = retr[0];
+            ret = retr[1];
+        }
+        ret = ret.split('/')[0];
+        ret = protocol + '//' + ret;
+    }
+    return ret;
+}
+function getFormInputStyle() {
+    return `
+        outline: none !important;font-size: 14px;border: 1px dashed #ccc;width: 72%;background: none;padding: 5px 8px;border-radius: 5px;
+        margin-bottom: 10pt;
+    `;
+}
+function getPreformStyle() {
+    return `
+        height: 100%;
+        border: none;
+        padding: 20px;
+        width: 250pt;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.3),0 1px 1px rgba(0,0,0,0.2) !important;
+        background-color: white !important;
+        border-radius: 7pt;
+        margin-bottom:10pt;
+        max-width: 100%;
+    `;
+}
+function postToIframe(json) {
+    document.getElementById('convolab-chatframe-iframe').contentWindow.postMessage(JSON.stringify(json), getHostname());
+}
+function receiveMessageFromIframe(json) {
+    // Update info has been completed, open the chat
+    if (json.topic == 'updateInfoComplete') {
+        ChatManager.openChat();
+    }
+}
+class CookieManager {
+    static getUserName() {
+        return CookieManager.readCookie('convolab_user_name');
+    }
+    static getUserPhone() {
+        return CookieManager.readCookie('convolab_user_phone');
+    }
+    static getUserEmail() {
+        return CookieManager.readCookie('convolab_user_email');
+    }
+    static renewCookie(name, days) {
+        const value = this.readCookie(name) || '';
+        this.createCookie(name, value, days);
+    }
+    static createCookie(name, value, days) {
+        let expires;
+        if (days) {
+            var date = new Date();
+            date.setDate(date.getDate() + days);
+            expires = "; expires=" + date.toUTCString();
+        }
+        else {
+            expires = "";
+        }
+        document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+    }
+    static readCookie(name) {
+        var nameEQ = encodeURIComponent(name) + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ')
+                c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0)
+                return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        }
+        return null;
+    }
+    static eraseCookie(name) {
+        this.createCookie(name, "", -1);
+    }
+}
+class ChatManager {
+    static prefillFormDone() {
+        return (!SDKManager.setting.PREFILL_NAME || CookieManager.getUserName()) &&
+            (!SDKManager.setting.PREFILL_PHONE || CookieManager.getUserPhone()) &&
+            (!SDKManager.setting.PREFILL_EMAIL || CookieManager.getUserEmail());
+    }
+    static openPrefillForm() {
+        if (ChatManager.chatOpened)
+            ChatManager.closeChat();
+        if (ChatManager.prefillFormOpened)
+            return;
+        ChatManager.prefillFormOpened = true;
+        $('#convolab-preform').fadeIn('fast').animate({
+            'bottom': ((SDKManager.setting.SIZE ? Number(SDKManager.setting.SIZE[1]) : 50) + 10) + 'pt'
+        }, { duration: 'fast', queue: false }, function () {
+            // Animation complete.
+        });
+    }
+    static closePrefillForm() {
+        if (!ChatManager.prefillFormOpened)
+            return;
+        ChatManager.prefillFormOpened = false;
+        $('#convolab-preform').fadeOut('fast').animate({
+            'bottom': '55pt'
+        }, { duration: 'fast', queue: false }, function () {
+            // Animation complete.
+        });
+    }
+    static openChat() {
+        if (!ChatManager.prefillFormDone())
+            ChatManager.openPrefillForm();
+        else {
+            if (ChatManager.prefillFormOpened)
+                ChatManager.closePrefillForm();
+            if (ChatManager.chatOpened)
+                return;
+            ChatManager.chatOpened = true;
+            postToIframe({ topic: 'open', payload: SDKManager.setting });
+            const name = CookieManager.getUserName();
+            const email = CookieManager.getUserEmail();
+            const phone = CookieManager.getUserPhone();
+            const json = { name, email, phone };
+            if (json.name) {
+                postToIframe({ topic: 'updateInfo', payload: { info: json, appId: SDKManager.setting.APP_ID } });
+            }
+            $('#convolab-chatframe').fadeIn('fast').animate({
+                'bottom': '95px'
+            }, { duration: 'fast', queue: false }, function () {
+                // Animation complete.
+            });
+            $('#convolab-chatbtn').animate({ rotation: 360 }, {
+                duration: 100,
+                step: function (now, fx) {
+                    $(this).css({ 'transform': 'rotate(' + now + 'deg)' });
+                }
+            });
+            const bg = SDKManager.setting.COLOR || '#FF9C23';
+            $('#convolab-chatbtn').css({ 'width': '45pt', 'height': '45pt', 'background-color': bg });
+            $('#convolab-chat-icon').fadeOut('fast');
+            $('#convolab-chatclose-icon').fadeIn('fast');
+        }
+    }
+    static closeChat() {
+        if (!ChatManager.chatOpened)
+            return;
+        ChatManager.chatOpened = false;
+        $('#convolab-chatframe').fadeOut('fast').animate({
+            'bottom': '75px'
+        }, { duration: 'fast', queue: false }, function () {
+            // Animation complete.
+        });
+        $('#convolab-chatbtn').animate({ rotation: 0 }, {
+            duration: 100,
+            step: function (now, fx) {
+                $(this).css({ 'transform': 'rotate(' + now + 'deg)' });
+            }
+        });
+        let bg = SDKManager.setting.COLOR || '#FF9C23';
+        if (SDKManager.setting.ONLY_IMG) {
+            bg = 'transparent';
+        }
+        const wd = SDKManager.setting.SIZE ? SDKManager.setting.SIZE[0] + 'pt' : '45pt';
+        const ht = SDKManager.setting.SIZE ? SDKManager.setting.SIZE[1] + 'pt' : '45pt';
+        $('#convolab-chatbtn').css({ 'width': wd, 'height': ht, 'background-color': bg });
+        $('#convolab-chatclose-icon').fadeOut('fast');
+        $('#convolab-chat-icon').fadeIn('fast');
+    }
+    static toggleChat() {
+        if (!ChatManager.prefillFormDone())
+            ChatManager.togglePrefillForm();
+        else if (ChatManager.chatOpened)
+            ChatManager.closeChat();
+        else
+            ChatManager.openChat();
+    }
+    static togglePrefillForm() {
+        if (ChatManager.prefillFormOpened)
+            ChatManager.closePrefillForm();
+        else
+            ChatManager.openPrefillForm();
+    }
+}
+ChatManager.chatOpened = false;
+ChatManager.prefillFormOpened = false;
+window.convolab = {
+    openChat: ChatManager.openChat,
+    closeChat: ChatManager.closeChat,
+    toggleChat: ChatManager.toggleChat
+};
+console.log('ConvoLab extension loaded');
+//# sourceMappingURL=convolab-webchat-1.1.0.js.map
+  </script>
 
 <!-- Your customer chat code -->
 
