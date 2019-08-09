@@ -23,10 +23,10 @@ function GetURLParameter()
 	var selectRider = document.getElementById("qqRider").value;
 	var selectPlan = document.getElementById("qqPlan").value;
 	var selectSum = document.getElementById("qqSum").value;
-	
 	var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('previous=');
-    var str = sURLVariables[1]; 
+var test = decodeURIComponent(sPageURL);
+    var sURLVariables = test.split('previous=');
+    var str = sURLVariables[1];
   
     
     var replyText = str.concat('&',selectRider,'/',selectPlan,'/ความคุ้มครอง:',selectSum);
