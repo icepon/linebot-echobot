@@ -24,8 +24,7 @@ function GetURLParameter()
 	var selectPlan = document.getElementById("qqPlan").value;
 	var selectSum = document.getElementById("qqSum").value;
 	var sPageURL = window.location.search.substring(1);
-var test = decodeURIComponent(sPageURL);
-    var sURLVariables = test.split('previous=');
+    var sURLVariables = sPageURL.split('previous=');
     var str = sURLVariables[1];
   
     
