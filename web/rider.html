@@ -23,8 +23,8 @@ function GetURLParameter()
 	var selectRider = document.getElementById("qqRider").value;
 	var selectPlan = document.getElementById("qqPlan").value;
 	var selectSum = document.getElementById("qqSum").value;
-	var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('previous=');
+	var sPageURL = decodeURI(window.location);
+	var sURLVariables = sPageURL.split('previous=');
     var str = sURLVariables[1];
   
     
