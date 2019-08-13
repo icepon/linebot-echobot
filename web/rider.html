@@ -27,7 +27,7 @@ function GetURLParameter()
 	var sPageURL = decodeURIComponent(window.location);
 	var sURLVariables = sPageURL.split('previous=');
     var _str = sURLVariables[1].split('#');
-		var str = str[0];
+		var str = _str[0];
   	
     
     var replyText = str.concat('&',selectRider,'/',selectPlan,'/ความคุ้มครอง:',selectSum);
