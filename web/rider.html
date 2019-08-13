@@ -10,8 +10,8 @@ function GetURLParameter()
 {
     var sPageURL = decodeURI(window.location);
 	var sURLVariables = sPageURL.split('previous=');
-    var str = sURLVariables[1];
-    alert(str);
+    var str = sURLVariables[1].split('#');
+    alert(str[0]);
 }
   $(window).on('load', function(){
      
