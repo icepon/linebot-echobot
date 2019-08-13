@@ -8,7 +8,7 @@
 
 function GetURLParameter()
 {
-    var sPageURL = decodeURI(window.location);
+    var sPageURL = decodeURIComponent(window.location);
 	var sURLVariables = sPageURL.split('previous=');
     var str = sURLVariables[1].split('#');
     alert(str[0]);
