@@ -60,13 +60,13 @@ function GetURLParameter()
 		var str = _str[0];
   	
     if(selectRider=="HS"){
-		selectPlan = document.getElementById("HSplanOption").value;
+		selectPlan = document.getElementById("qqPlanHS").value;
 	}
 	else if(selectRider=="HSX"){
-		selectPlan = document.getElementById("HSXplanOption").value;
+		selectPlan = document.getElementById("qqPlanHSX").value;
 	}
 	else if(selectRider=="HSPG"){
-		selectPlan = document.getElementById("HSPGplanOption").value;
+		selectPlan = document.getElementById("qqPlanHSPG").value;
 	}
 	else{
 		selectPlan = "na";
@@ -117,7 +117,7 @@ liff.sendMessages([
 
 <tr>
 <th>แผน:  </th>
-			<select id="qqPlan">
+			<select id="qqPlanHS">
   <option value="plan1">HS1000</option>
   <option value="plan2">HS1600</option>
   <option value="plan3">HS2200</option>
@@ -133,7 +133,7 @@ liff.sendMessages([
 
 <tr>
 <th>แผน:  </th>
-			<select id="qqPlan">
+			<select id="qqPlanHSX">
   <option value="plan1">HSX1500</option>
   <option value="plan2">HSX2000</option>
   <option value="plan3">HSX2500</option>
@@ -149,7 +149,7 @@ liff.sendMessages([
 
 <tr>
 <th>แผน:  </th>
-			<select id="qqPlan">
+			<select id="qqPlanHSPG">
   <option value="plan1">แผน 1</option>
   <option value="plan2">แผน 2</option>
   <option value="plan3">แผน 3</option>
