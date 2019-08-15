@@ -7,6 +7,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
 
+function displayOption()
+{
+    var selectRider = document.getElementById("qqRider").value;
+	if(selectRider=="HS"){
+		document.getElementById("HSplanOption").hidden = false;
+		document.getElementById("HSXplanOption").hidden = true;
+		document.getElementById("HSPGplanOption").hidden = true;
+		document.getElementById("sumAssure").hidden = true;
+	}
+	else if(selectRider=="HSX"){
+		document.getElementById("HSplanOption").hidden = true;
+		document.getElementById("HSXplanOption").hidden = false;
+		document.getElementById("HSPGplanOption").hidden = true;
+		document.getElementById("sumAssure").hidden = true;
+	}
+	else if(selectRider=="HSPG"){
+		document.getElementById("HSXplanOption").hidden = true;
+		document.getElementById("HSplanOption").hidden = true;
+		document.getElementById("HSPGplanOption").hidden = false;
+		document.getElementById("sumAssure").hidden = true;
+	}
+	else{
+	document.getElementById("HSXplanOption").hidden = true;
+		document.getElementById("HSplanOption").hidden = true;
+		document.getElementById("HSPGplanOption").hidden = true;
+		document.getElementById("sumAssure").hidden = false;
+	}
+}
+
 function GetURLParameter()
 {
     var sPageURL = decodeURIComponent(window.location);
@@ -23,14 +52,25 @@ function GetURLParameter()
 	function performClose() {
 	
 	var selectRider = document.getElementById("qqRider").value;
-	var selectPlan = document.getElementById("qqPlan").value;
+	//var selectPlan = document.getElementById("qqPlan").value;
 	var selectSum = document.getElementById("qqSum").value;
 	var sPageURL = decodeURIComponent(window.location);
 	var sURLVariables = sPageURL.split('previous=');
     var _str = sURLVariables[1].split('#');
 		var str = _str[0];
   	
-    
+    if(selectRider=="HS"){
+		selectPlan = document.getElementById("HSplanOption").value;
+	}
+	else if(selectRider=="HSX"){
+		selectPlan = document.getElementById("HSXplanOption").value;
+	}
+	else if(selectRider=="HSPG"){
+		selectPlan = document.getElementById("HSPGplanOption").value;
+	}
+	else{
+		selectPlan = "na";
+	}
     var replyText = str.concat('&',selectRider,'/',selectPlan,'/ความคุ้มครอง:',selectSum);
 	
 	
@@ -61,31 +101,71 @@ liff.sendMessages([
             </tr>
 			<br/></br>
 			<tr>
-			<select id="qqRider">
-  <option value="AI">AI</option>
-  <option value="HSX">HSX</option>
-  <option value="HSPG">HSPG</option>
-  <option value="CIP">CIP</option>
+			<select id="qqRider" onchange="displayOption()">
+  <option value="HB">HB</option>
+  <option value="HBX">HB Extra</option>
+  <option value="HS">H&S </option>
+  <option value="HSX">H&S Extra </option>
+  <option value="HSPG">H&S Plus Gold </option>
+  <option value="CIP">CI Plus</option>
+  <option value="CIP">CI Care</option>
 </select>
 </tr>
+
+<div id=HSplanOption hidden>
 </br></br>
 
 <tr>
+<th>แผน:  </th>
 			<select id="qqPlan">
-  <option value="plan1">รายปี</option>
-  <option value="plan2">ราย 6 เดือน</option>
-  <option value="plan3">ราย 3 เดือน</option>
-  <option value="plan4">ราย 1 เดือน</option>
+  <option value="plan1">HS1000</option>
+  <option value="plan2">HS1600</option>
+  <option value="plan3">HS2200</option>
+  <option value="plan4">HS2800</option>
+  <option value="plan5">HS3400</option>
+  <option value="plan6">HS4000</option>
+  <option value="plan7">HS5000</option>
 </select>
 </tr>
+</div>
+<div id=HSXplanOption hidden>
+</br></br>
 
+<tr>
+<th>แผน:  </th>
+			<select id="qqPlan">
+  <option value="plan1">HSX1500</option>
+  <option value="plan2">HSX2000</option>
+  <option value="plan3">HSX2500</option>
+  <option value="plan4">HSX3500</option>
+  <option value="plan5">HSX4500</option>
+  <option value="plan6">HSX5500</option>
+  <option value="plan7">HSX6500</option>
+</select>
+</tr>
+</div>
+<div id=HSPGplanOption hidden>
+</br></br>
 
+<tr>
+<th>แผน:  </th>
+			<select id="qqPlan">
+  <option value="plan1">แผน 1</option>
+  <option value="plan2">แผน 2</option>
+  <option value="plan3">แผน 3</option>
+  <option value="plan4">แผน 4</option>
+  <option value="plan5">แผน 5</option>
+</select>
+</tr>
+</div>
 
+<div id=sumAssure >
 </br></br>
 <tr>
 <th>ความคุ้มครอง </th>
 <input type="number" id="qqSum" name="qqSum" min="1" max="10000000">
 </tr>
+</div>
 
 </br></br>
 			<input id = "btnSubmit" type="submit" value="คำนวณ" onclick="performClose()"/>
