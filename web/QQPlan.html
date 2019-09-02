@@ -20,7 +20,7 @@
 	
 	function performClose() {
 	
-	var selectGender = document.getElementById("qqGender").value;
+	var selectGender = $("#qqGender .btn-selected").text();
 	var selectAge = document.getElementById("qqAge").value;
 	//var selectSmoke = document.getElementById("qqSmoke").value;
 	var selectSmoke = "ไม่สูบบุหรี่";
@@ -30,10 +30,10 @@
 	var selectSum = document.getElementById("qqSum").value;
 	
 	
-    var str = 'คำนวณเบี้ย '; 
+   var str = 'คำนวณเบี้ย'; 
   
     
-    var replyText = str.concat('เพศ:',selectGender,'|อายุ:',selectAge,'|',selectSmoke,'|',selectJob,'|',selectProduct,'|ความคุ้มครอง:',selectSum);
+    var replyText = str.concat('เพศ:',selectGender,'/อายุ:',selectAge,'/',selectProduct,'/ความคุ้มครอง:',selectSum);
 	
 	
 		
