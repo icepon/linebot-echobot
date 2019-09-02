@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta charset="UTF-8">
+	<title>Quick Quotation</title>
+	<!-- <link rel="stylesheet" type="text/css" href="aia/styles/font.css"> -->
+	<link rel="stylesheet" type="text/css" href="site.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+	<!-- <script type="text/javascript" src="aia/js/main.js"></script> -->
+	<!-- <script src="//assets.adobedtm.com/90c58d4aa8a1b33beefab4bf8138774c1a1a4147/satelliteLib-68e944eaf5eb2bcab597f6ad1404058285b30649.js"></script> -->
+<script>
+
+  $(window).on('load', function(){
+     
+      liff.init(function (data) {});
+    });
+	
+	function performClose() {
+	
+	var selectGender = document.getElementById("qqGender").value;
+	var selectAge = document.getElementById("qqAge").value;
+	//var selectSmoke = document.getElementById("qqSmoke").value;
+	var selectSmoke = "ไม่สูบบุหรี่";
+	//var selectJob = document.getElementById("qqJob").value;
+	var selectJob = "ขั้นอาชีพ1";
+	var selectProduct = document.getElementById("qqProduct").value;
+	var selectSum = document.getElementById("qqSum").value;
+	
+	
+    var str = 'คำนวณเบี้ย '; 
+  
+    
+    var replyText = str.concat('เพศ:',selectGender,'|อายุ:',selectAge,'|',selectSmoke,'|',selectJob,'|',selectProduct,'|ความคุ้มครอง:',selectSum);
+	
+	
+		
+liff.sendMessages([
+  {
+    type:'text',
+    text:replyText
+  }
+])
+.then(() => {
+  liff.closeWindow();
+})
+.catch((err) => {
+  console.log('error', err);
+});		
+		}
+		
+
+		
+</script>
+	
+	</head>
+<body>
+	<div class="main-wrapper">
+		<form id="planSubmit">
+			<div class="input-div center">
+				<div>
+					<label>ชื่อ-สกุล</label>
+					<input id="qqName" type="text" placeholder="ชื่อ-สกุล">
+				</div>
+				<label>เพศ</label>
+				<div class="btn-toggle-group" id="qqGender">
+					<button type="button" class="btn-toggle btn-selected">ชาย</button>
+					<button type="button" class="btn-toggle">หญิง</button>
+				</div>
+				<div>
+					<label>อายุ</label>
+					<input id="qqAge" type="number" class="validate" placeholder="อายุ">
+				</div>
+				<label>แบบประกัน</label>
+				<select id="qqProduct">
+					<option value="20PLPA">AIA 20 PAY LIFE (Par)</option>
+					<option value="20PLANB">AIA 20 PAY LIFE (Non Par)</option>
+					<option value="10P80PB">AIA 10For80 (Par)</option>
+					<option value="25ES15PB">AIA 15PAY25 Special (Par)</option>
+					<option value="30E15PB">AIA 15PAY30 (Par)</option>
+					<option value="20EEXCPB">AIA Excellent (Par)</option>
+					<option value="P21EUPB">E445 (Par)</option>
+					<option value="10PLACIB">AIA CI SuperCare (10/99)</option>
+					<option value="20PLACIB">AIA CI SuperCare (20/99)</option>
+					<option value="5PWLHNB">AIA Legacy Prestige (5/99)</option>
+					<option value="10PWLHNB">AIA Legacy Prestige (10/99)</option>
+					<option value="15PWLHNB">AIA Legacy Prestige (15/99)</option>
+					<option value="5PWLLD">AIA 5Pay Life (Non Par)</option>
+					<option value="10PWLLD">AIA 10Pay Life (Non Par)</option>
+					<option value="15PWLLD">AIA 15Pay Life (Non Par)</option>
+					<option value="10PACHAD">AIA CI SuperCare Prestige (10/99)</option>
+					<option value="20PACHAD">AIA CI SuperCare Prestige (20/99)</option>
+				</select>
+				<div>
+					<label>ความคุ้มครอง</label>
+					<input id="qqSum" type="number" class="validate" placeholder="ความคุ้มครอง">
+				</div>
+				<div class="btn btn-red" onclick="submit()" id="confirmBtn">คำนวณ</div>
+				<input id="btnSubmit" class="hidden" type="submit"/>
+			</div>
+		</form>
+	</div>
+	
+	<script>
+		$(document).ready(function() {
+			bindToggleButton();
+			bindForm();
+		});
+
+		function bindToggleButton() {
+			var toggleButtons = $('.btn-toggle-group').find(".btn-toggle");
+			$(toggleButtons).on('click', function() {
+				var currentToggleIndex = $(toggleButtons).index(this);
+				$(toggleButtons).removeClass("btn-selected");
+				$(toggleButtons).eq(currentToggleIndex).addClass("btn-selected");
+			});
+		}
+
+		function bindForm() {
+			$("#planSubmit").on("submit", function(e) {
+				e.preventDefault();
+				submit();
+			});
+
+			$(".validate").on("keyup", function() {
+				removeInlineWarning($(this));
+			});
+		}
+
+		function validateInput() {
+			var valid = true;
+			$(".validate").each(function() {
+				if(this.value == "" || this.value == 0) {
+					addInlineWarning($(this), "กรอกข้อมูล");
+					valid = false;
+				} else {
+					if(this.id == "qqAge") {
+						if(this.value > 70) {
+							addInlineWarning($(this), "ต้องไม่เกิน 70");
+							valid = false;
+						}
+					}
+					if(this.id == "qqSum") {
+						if(this.value > 10000000) {
+							addInlineWarning($(this), "ต้องไม่เกิน 10,000,000");
+							valid = false;
+						}
+					}
+				}
+			});
+			return valid;
+		}
+
+		function submit() {
+			if(validateInput()) {
+				// do something
+				performClose();
+			}
+		}
+	</script>
+	<!-- <script type="text/javascript">_satellite.pageBottom();</script> -->
+</body>
+</html>

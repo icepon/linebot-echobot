@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'AIA Bold';
+  src: url('../fonts/AIA-Body Bold/AIA-BodyBold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AIA-Body Bold/AIA-BodyBold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/AIA-Body Bold/AIA-BodyBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AIA-Body Bold/AIA-BodyBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'AIA Bold Italic';
+  src: url('../fonts/AIA-Body Bold Italic/AIA-BodyBoldItalic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AIA-Body Bold Italic/AIA-BodyBoldItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/AIA-Body Bold Italic/AIA-BodyBoldItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AIA-Body Bold Italic/AIA-BodyBoldItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'AIA Italic';
+  src: url('../fonts/AIA-Body Italic/AIA-BodyItalic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AIA-Body Italic/AIA-BodyItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/AIA-Body Italic/AIA-BodyItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AIA-Body Italic/AIA-BodyItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'AIA Regular';
+  src: url('../fonts/AIA-Body Regular/AIA-Body.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AIA-Body Regular/AIA-Body.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/AIA-Body Regular/AIA-Body.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AIA-Body Regular/AIA-Body.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'AIA Heading Italic';
+  src: url('../fonts/AIA-Heading Italic/AIA-HeadingItalic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AIA-Heading Italic/AIA-HeadingItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/AIA-Heading Italic/AIA-HeadingItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AIA-Heading Italic/AIA-HeadingItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'AIA Heading Regular';
+  src: url('../fonts/AIA-Heading Regular/AIA-Heading.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AIA-Heading Regular/AIA-Heading.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/AIA-Heading Regular/AIA-Heading.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AIA-Heading Regular/AIA-Heading.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'dotsfont';
+  src: url('../fonts/dotsfont/dotsfont.eot');
+  src: url('../fonts/dotsfont/dotsfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/dotsfont/dotsfont.woff') format('woff'),
+       url('../fonts/dotsfont/dotsfont.ttf') format('truetype'),
+       url('../fonts/dotsfont/dotsfont.svg#dotsfontregular') format('svg');
+}
