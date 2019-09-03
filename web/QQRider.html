@@ -149,40 +149,40 @@ liff.sendMessages([
 						'<option value="HSX">H&S Extra </option>' +
 						'<option value="HSPG">H&S Plus Gold </option>' +
 						'<option value="CIP">CI Plus</option>' +
-						'<option value="CIC">CI Care</option>' +
+						'<option value="CICARE">CI Care</option>' +
 					'</select>' +
 					'<div id="HSplanOption' + i + '" hidden>' +
 						'<label>แผน</label>' +
 						'<select id="qqPlanHS' + i + '">' +
-							'<option value="plan1">HS1000</option>' +
-							'<option value="plan2">HS1600</option>' +
-							'<option value="plan3">HS2200</option>' +
-							'<option value="plan4">HS2800</option>' +
-							'<option value="plan5">HS3400</option>' +
-							'<option value="plan6">HS4000</option>' +
-							'<option value="plan7">HS5000</option>' +
+							'<option value="HS1000">HS1000</option>' +
+							'<option value="HS1600">HS1600</option>' +
+							'<option value="HS2200">HS2200</option>' +
+							'<option value="HS2800">HS2800</option>' +
+							'<option value="HS3400">HS3400</option>' +
+							'<option value="HS4000">HS4000</option>' +
+							'<option value="HS5000">HS5000</option>' +
 						'</select>' +
 					'</div>' +
 					'<div id="HSXplanOption' + i + '" hidden>' +
 						'<label>แผน</label>' +
 						'<select id="qqPlanHSX' + i + '">' +
-							'<option value="plan1">HSX1500</option>' +
-							'<option value="plan2">HSX2000</option>' +
-							'<option value="plan3">HSX2500</option>' +
-							'<option value="plan4">HSX3500</option>' +
-							'<option value="plan5">HSX4500</option>' +
-							'<option value="plan6">HSX5500</option>' +
-							'<option value="plan7">HSX6500</option>' +
+							'<option value="HSX1500">HSX1500</option>' +
+							'<option value="HSX2000">HSX2000</option>' +
+							'<option value="HSX2500">HSX2500</option>' +
+							'<option value="HSX3500">HSX3500</option>' +
+							'<option value="HSX4500">HSX4500</option>' +
+							'<option value="HSX5500">HSX5500</option>' +
+							'<option value="HSX6500">HSX6500</option>' +
 						'</select>' +
 					'</div>' +
 					'<div id="HSPGplanOption' + i + '" hidden>' +
 						'<label>แผน</label>' +
 						'<select id="qqPlanHSPG' + i + '">' +
-							'<option value="plan1">แผน 1</option>' +
-							'<option value="plan2">แผน 2</option>' +
-							'<option value="plan3">แผน 3</option>' +
-							'<option value="plan4">แผน 4</option>' +
-							'<option value="plan5">แผน 5</option>' +
+							'<option value="แผน1">แผน 1</option>' +
+							'<option value="แผน2">แผน 2</option>' +
+							'<option value="แผน3">แผน 3</option>' +
+							'<option value="แผน4">แผน 4</option>' +
+							'<option value="แผน5">แผน 5</option>' +
 						'</select>' +
 					'</div>' +
 					'<div id="sumAssure' + i + '" hidden>' +
@@ -269,7 +269,7 @@ liff.sendMessages([
 		function customerInfoDisplay() {
 			var showCustomInfo = false;
 			$(".rider-option").each(function() {
-				if(this.value == "HB" || this.value == "HBX" || this.value == "HS" || this.value == "CIP" || this.value == "CIC") {
+				if(this.value == "HB" || this.value == "HBX" || this.value == "HS" || this.value == "CIP" || this.value == "CICARE") {
 					showCustomInfo = true;
 				}
 			});
