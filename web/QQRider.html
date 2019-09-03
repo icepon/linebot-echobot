@@ -11,7 +11,75 @@
 	<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 	<!-- <script type="text/javascript" src="aia/js/main.js"></script> -->
 	<!-- <script src="//assets.adobedtm.com/90c58d4aa8a1b33beefab4bf8138774c1a1a4147/satelliteLib-68e944eaf5eb2bcab597f6ad1404058285b30649.js"></script> -->
-</head>
+<script>
+	function GetURLParameter()
+{
+    var sPageURL = decodeURIComponent(window.location);
+	var sURLVariables = sPageURL.split('previous=');
+    var str = sURLVariables[1].split('#');
+    alert(str[0]);
+}
+  $(window).on('load', function(){
+     
+      liff.init(function (data) {});
+	  //GetURLParameter();
+    });
+	
+	function performClose() {
+
+	var sPageURL = decodeURIComponent(window.location);
+	var sURLVariables = sPageURL.split('previous=');
+    var _str = sURLVariables[1].split('#');
+	var str = _str[0];
+	
+  	str = str.concat('/',document.getElementById("qqJob").value);
+    var riders = $("#riderWrapper .input-div").length;
+	for(var i=0;i<riders;i++)
+	{
+		//console.log($("#riderWrapper .input-div")[0]);
+		var selectRider = document.getElementById("qqRider"+(i+1)).value;
+		var selectPlan = '';
+		var selectSum ;
+		var replyText = '';
+		if(selectRider=="HS"){
+			selectPlan = document.getElementById("qqPlanHS"+(i+1)).value;
+		}
+		else if(selectRider=="HSX"){
+			selectPlan = document.getElementById("qqPlanHSX"+(i+1)).value;
+		}
+		else if(selectRider=="HSPG"){
+			selectPlan = document.getElementById("qqPlanHSPG"+(i+1)).value;
+		}
+		else{
+			selectPlan = "na";
+			var selectSum = document.getElementById("qqSum"+(i+1)).value;
+		}
+		
+		str = str.concat('&',selectRider,'/',selectPlan,'/ความคุ้มครอง:',selectSum);
+		console.log(str);
+	}
+	
+   var replyText = str;
+	
+	
+		
+liff.sendMessages([
+  {
+    type:'text',
+    text:replyText
+  }
+])
+.then(() => {
+  liff.closeWindow();
+})
+.catch((err) => {
+  console.log('error', err);
+});		
+		}
+
+</script>
+	
+	</head>
 <body>
 	<div class="main-wrapper">
 		<form id="riderSubmit">
@@ -156,7 +224,7 @@
 		function submit() {
 			if(validateInput()) {
 				// do something
-				//performClose();
+				performClose();
 			}
 		}
 
