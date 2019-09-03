@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta charset="UTF-8">
+	<title>Quick Quotation</title>
+	<!-- <link rel="stylesheet" type="text/css" href="aia/styles/font.css"> -->
+	<link rel="stylesheet" type="text/css" href="site.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+	<!-- <script type="text/javascript" src="aia/js/main.js"></script> -->
+	<!-- <script src="//assets.adobedtm.com/90c58d4aa8a1b33beefab4bf8138774c1a1a4147/satelliteLib-68e944eaf5eb2bcab597f6ad1404058285b30649.js"></script> -->
+</head>
+<body>
+	<div class="main-wrapper">
+		<form id="riderSubmit">
+			<div id="riderWrapper"></div>
+			<div class="input-div center" id="customInfo" hidden>
+				<div id="jobOption">
+					<label>ขั้นอาชีพ</label>
+					<select id="qqJob">
+						<option value="ขั้นอาชีพ1">ขั้นอาชีพ 1</option>
+						<option value="ขั้นอาชีพ2">ขั้นอาชีพ 2</option>
+						<option value="ขั้นอาชีพ3">ขั้นอาชีพ 3</option>
+						<option value="ขั้นอาชีพ4">ขั้นอาชีพ 4</option>
+					</select>
+				</div>
+				<!-- <div id="smokeOption">
+					<label>สูบบุหรี่</label>
+					<div class="btn-toggle-group" id="qqSmoke">
+						<button type="button" class="btn-toggle btn-selected">ไม่สูบ</button>
+						<button type="button" class="btn-toggle">สูบ</button>
+					</div>
+				</div> -->
+				<hr class="margin-top-20"/>
+			</div>
+			<div class="input-div center">
+				<div class="rider-option center-text no-padding">
+					<a onclick="removeRider()">ลบ</a><a onclick="addRider()">เพิ่ม</a>
+				</div>
+				<div class="btn btn-red margin-top-40" onclick="submit()" id="confirmBtn">คำนวณ</div>
+				<input id="btnSubmit" class="hidden" type="submit"/>
+			</div>
+		</form>
+	</div>
+	
+	<script>
+		$(document).ready(function() {
+			bindForm();
+			bindToggleButton();
+			addRider();
+		});
+
+		function bindForm() {
+			$("#riderSubmit").on("submit", function(e) {
+				e.preventDefault();
+				submit();
+			});
+		}
+
+		function bindToggleButton() {
+			var toggleButtons = $('.btn-toggle-group').find(".btn-toggle");
+			$(toggleButtons).on('click', function() {
+				var currentToggleIndex = $(toggleButtons).index(this);
+				$(toggleButtons).removeClass("btn-selected");
+				$(toggleButtons).eq(currentToggleIndex).addClass("btn-selected");
+			});
+		}
+
+		function addRider() {
+			var i = $("#riderWrapper .input-div").length + 1;
+			$("#riderWrapper").append(
+				'<div class="input-div center">' +
+					'<label>สัญญาเพิ่มเติม</label>' +
+					'<select id="qqRider' + i + '" class="rider-option" onchange="displayOption(' + i + ')">' +
+						'<option value=""></option>' +
+						'<option value="HB">HB</option>' +
+						'<option value="HBX">HB Extra</option>' +
+						'<option value="HS">H&S </option>' +
+						'<option value="HSX">H&S Extra </option>' +
+						'<option value="HSPG">H&S Plus Gold </option>' +
+						'<option value="CIP">CI Plus</option>' +
+						'<option value="CIC">CI Care</option>' +
+					'</select>' +
+					'<div id="HSplanOption' + i + '" hidden>' +
+						'<label>แผน</label>' +
+						'<select id="qqPlanHS' + i + '">' +
+							'<option value="plan1">HS1000</option>' +
+							'<option value="plan2">HS1600</option>' +
+							'<option value="plan3">HS2200</option>' +
+							'<option value="plan4">HS2800</option>' +
+							'<option value="plan5">HS3400</option>' +
+							'<option value="plan6">HS4000</option>' +
+							'<option value="plan7">HS5000</option>' +
+						'</select>' +
+					'</div>' +
+					'<div id="HSXplanOption' + i + '" hidden>' +
+						'<label>แผน</label>' +
+						'<select id="qqPlanHSX' + i + '">' +
+							'<option value="plan1">HSX1500</option>' +
+							'<option value="plan2">HSX2000</option>' +
+							'<option value="plan3">HSX2500</option>' +
+							'<option value="plan4">HSX3500</option>' +
+							'<option value="plan5">HSX4500</option>' +
+							'<option value="plan6">HSX5500</option>' +
+							'<option value="plan7">HSX6500</option>' +
+						'</select>' +
+					'</div>' +
+					'<div id="HSPGplanOption' + i + '" hidden>' +
+						'<label>แผน</label>' +
+						'<select id="qqPlanHSPG' + i + '">' +
+							'<option value="plan1">แผน 1</option>' +
+							'<option value="plan2">แผน 2</option>' +
+							'<option value="plan3">แผน 3</option>' +
+							'<option value="plan4">แผน 4</option>' +
+							'<option value="plan5">แผน 5</option>' +
+						'</select>' +
+					'</div>' +
+					'<div id="sumAssure' + i + '" hidden>' +
+						'<label>ความคุ้มครอง</label>' +
+						'<input id="qqSum' + i + '" type="number" class="validate" placeholder="ความคุ้มครอง">' +
+					'</div>' +
+					'<hr class="margin-top-20"/>' +
+				'</div>'
+			);
+
+			bindKeyup(i);
+		}
+
+		function bindKeyup(i) {
+			$("#qqSum" + i).on("keyup", function() {
+				removeInlineWarning($(this));
+			});
+		}
+
+		function removeRider() {
+			$("#riderWrapper .input-div:last-child").remove();
+			customerInfoDisplay();
+		}
+
+		function validateInput() {
+			var valid = true;
+			$(".validate").each(function() {
+				if(this.value == "" || this.value == 0) {
+					addInlineWarning($(this), "กรอกข้อมูล");
+					valid = false;
+				} else if(this.value > 10000000) {
+					addInlineWarning($(this), "ต้องไม่เกิน 10,000,000");
+					valid = false;
+				}
+			});
+			return valid;
+		}
+
+		function submit() {
+			if(validateInput()) {
+				// do something
+				//performClose();
+			}
+		}
+
+		function displayOption(i) {
+		    var selectRider = document.getElementById("qqRider" + i).value;
+			if(selectRider == "HS") {
+				document.getElementById("HSplanOption" + i).hidden = false;
+				document.getElementById("HSXplanOption" + i).hidden = true;
+				document.getElementById("HSPGplanOption" + i).hidden = true;
+				document.getElementById("sumAssure" + i).hidden = true;
+				$("#sumAssure" + i + " input").removeClass("validate");
+				
+			} else if(selectRider == "HSX") {
+				document.getElementById("HSplanOption" + i).hidden = true;
+				document.getElementById("HSXplanOption" + i).hidden = false;
+				document.getElementById("HSPGplanOption" + i).hidden = true;
+				document.getElementById("sumAssure" + i).hidden = true;
+				$("#sumAssure" + i + " input").removeClass("validate");
+				
+			} else if(selectRider == "HSPG") {
+				document.getElementById("HSXplanOption" + i).hidden = true;
+				document.getElementById("HSplanOption" + i).hidden = true;
+				document.getElementById("HSPGplanOption" + i).hidden = false;
+				document.getElementById("sumAssure" + i).hidden = true;
+				$("#sumAssure" + i + " input").removeClass("validate");
+				
+			} else {
+				if(selectRider != "") {
+					document.getElementById("HSXplanOption" + i).hidden = true;
+					document.getElementById("HSplanOption" + i).hidden = true;
+					document.getElementById("HSPGplanOption" + i).hidden = true;
+					document.getElementById("sumAssure" + i).hidden = false;
+					$("#sumAssure" + i + " input").addClass("validate");
+				} else {
+					document.getElementById("sumAssure" + i).hidden = true;
+				}
+			}
+
+			customerInfoDisplay();
+		}
+
+		function customerInfoDisplay() {
+			var showCustomInfo = false;
+			$(".rider-option").each(function() {
+				if(this.value == "HB" || this.value == "HBX" || this.value == "HS" || this.value == "CIP" || this.value == "CIC") {
+					showCustomInfo = true;
+				}
+			});
+			if(showCustomInfo) document.getElementById("customInfo").hidden = false;
+			else document.getElementById("customInfo").hidden = true;
+		}
+	</script>
+	<!-- <script type="text/javascript">_satellite.pageBottom();</script> -->
+</body>
+</html>
