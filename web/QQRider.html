@@ -148,7 +148,7 @@ liff.sendMessages([
 						'<option value="HS">H&S </option>' +
 						'<option value="HSX">H&S Extra </option>' +
 						'<option value="HSPG">H&S Plus Gold </option>' +
-						'<option value="CIP">CI Plus</option>' +
+						'<option value="CIPLUS">CI Plus</option>' +
 						'<option value="CICARE">CI Care</option>' +
 					'</select>' +
 					'<div id="HSplanOption' + i + '" hidden>' +
@@ -269,7 +269,7 @@ liff.sendMessages([
 		function customerInfoDisplay() {
 			var showCustomInfo = false;
 			$(".rider-option").each(function() {
-				if(this.value == "HB" || this.value == "HBX" || this.value == "HS" || this.value == "CIP" || this.value == "CICARE") {
+				if(this.value == "HB" || this.value == "HBX" || this.value == "HS" || this.value == "CIPLUS" || this.value == "CICARE") {
 					showCustomInfo = true;
 				}
 			});
