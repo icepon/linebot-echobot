@@ -77,7 +77,7 @@ liff.sendMessages([
 })
 .catch((err) => {
   //console.log('error', err);
-	alert('err');
+	liff.closeWindow();
 });		
 		}
 
@@ -230,7 +230,7 @@ liff.sendMessages([
 		function submit() {
 			if(validateInput()) {
 				// do something
-				alert('submitok');
+				
 				performClose();
 			}
 		}
