@@ -71,13 +71,13 @@ liff.sendMessages([
   }
 ])
 .then(() => {
-	alert('closeok');
+	
   liff.closeWindow();
 	
 })
 .catch((err) => {
   //console.log('error', err);
-	alert('error');
+	alert('err');
 });		
 		}
 
@@ -111,7 +111,7 @@ liff.sendMessages([
 				<div class="rider-option center-text no-padding">
 					<a onclick="removeRider()">ลบ</a><a onclick="addRider()">เพิ่ม</a>
 				</div>
-				<div class="btn btn-red margin-top-40"  id="confirmBtn">คำนวณ</div>
+				<div class="btn btn-red margin-top-40" onclick="submit()" id="confirmBtn">คำนวณ</div>
 				<input id="btnSubmit" onclick="submit()"  type="submit"/>
 			</div>
 		</form>
@@ -212,7 +212,7 @@ liff.sendMessages([
 		}
 
 		function validateInput() {
-			alert('validateok');
+			
 			var valid = true;
 			$(".validate").each(function() {
 				if(this.value == "" || this.value == 0) {
@@ -223,7 +223,7 @@ liff.sendMessages([
 					valid = false;
 				}
 			});
-			alert('validateok2');
+			
 			return valid;
 		}
 
