@@ -212,6 +212,7 @@ liff.sendMessages([
 		}
 
 		function validateInput() {
+			alert('validateok');
 			var valid = true;
 			$(".validate").each(function() {
 				if(this.value == "" || this.value == 0) {
@@ -222,6 +223,7 @@ liff.sendMessages([
 					valid = false;
 				}
 			});
+			alert('validateok2');
 			return valid;
 		}
 
