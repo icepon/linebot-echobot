@@ -23,7 +23,7 @@
      
       liff.init(function (data) {});
 	  //GetURLParameter();
-	  alert('ok');
+	  
     });
 	
 	function performClose() {
@@ -71,7 +71,9 @@ liff.sendMessages([
   }
 ])
 .then(() => {
+	alert('closeok');
   liff.closeWindow();
+	
 })
 .catch((err) => {
   //console.log('error', err);
