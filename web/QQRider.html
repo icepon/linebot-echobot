@@ -44,12 +44,15 @@
 		var replyText = '';
 		if(selectRider=="HS"){
 			selectPlan = document.getElementById("qqPlanHS"+(i+1)).value;
+			var selectSum = "undefined";
 		}
 		else if(selectRider=="HSX"){
 			selectPlan = document.getElementById("qqPlanHSX"+(i+1)).value;
+			var selectSum = "undefined";
 		}
 		else if(selectRider=="HSPG"){
 			selectPlan = document.getElementById("qqPlanHSPG"+(i+1)).value;
+			var selectSum = "undefined";
 		}
 		else{
 			selectPlan = "na";
@@ -276,8 +279,9 @@ liff.sendMessages([
 		function customerInfoDisplay() {
 			var showCustomInfo = false;
 			$(".rider-option").each(function() {
-				if(this.value == "HB" || this.value == "HBX" || this.value == "HS" || this.value == "CIPLUS" || this.value == "CICARE") {
-					showCustomInfo = true;
+				//if(this.value == "HB" || this.value == "HBX" || this.value == "HS" || this.value == "CIPLUS" || this.value == "CICARE") {
+				if(this.value == "HB" || this.value == "HS" ) {
+				    showCustomInfo = true;
 				}
 			});
 			if(showCustomInfo) document.getElementById("customInfo").hidden = false;
