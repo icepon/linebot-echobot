@@ -35,7 +35,7 @@
     
     var replyText = str.concat('ลูกค้า:',selectName,'/เพศ:',selectGender,'/อายุ:',selectAge,'/',selectProduct,'/ความคุ้มครอง:',selectSum);
 	
-	
+	alert('3');
 		
 liff.sendMessages([
   {
@@ -155,9 +155,11 @@ liff.sendMessages([
 		}
 
 		function submit() {
+			alert('1');
 			if(validateInput()) {
 				// do something
 				performClose();
+				alert('2');
 			}
 		}
 	</script>
