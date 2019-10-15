@@ -6,17 +6,40 @@
 
   $(window).on('load', function(){
      
-     window.open("https://iservice.aia.co.th/th/my-aia/my-aia-login.html","_system");
+      liff.init(function (data) {});
 	 
 	
     });
+function perform() {
+liff.openWindow({
+            url: 'https://www.aia.co.th/th/index.html',
+            external: true
+        });
+}
 
 </script>
+<style>
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
 
+.block:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
 
 
 </head>
 <body>
-
+<button class="block" onclick="perform()"> Go to external browser</button>
 </body>
 </html>
