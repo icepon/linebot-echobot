@@ -7,13 +7,15 @@
   $(window).on('load', function(){
      
       liff.init(function (data) {});
-	  liff.openWindow({
+	 
+	
+    });
+function performClose() {
+liff.openWindow({
             url: 'https://www.aia.co.th/th/index.html',
             external: true
         });
-	
-    });
-
+}
 
 </script>
 
@@ -21,6 +23,6 @@
 
 </head>
 <body>
-
+<button onclick="performClose()"> test</button>
 </body>
 </html>
