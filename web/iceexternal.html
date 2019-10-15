@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<script>
+
+  $(window).on('load', function(){
+     try{
+      liff.init(function (data) {});
+	  liff.openWindow({
+            url: 'https://www.aia.co.th/th/index.html',
+            external: true
+        });
+	 }
+	 catch{
+	 window.location = "https://www.aia.co.th/th/index.html";
+	 }
+    });
+
+
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
