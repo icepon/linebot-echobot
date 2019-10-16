@@ -7,10 +7,15 @@
 
  function liffOpen()
 {
+	try{
 	liff.openWindow({
-            url: 'https://www.aia.co.th/th/index.html',
+            url: 'https://iserviceuat2.aia.co.th/th/my-aia/my-aia-login.html',
             external: true
         });
+	}
+	catch{
+		window.location = "https://www.aia.co.th/th/index.html";
+	}
 }
 
 </script>
@@ -22,9 +27,7 @@
 
   $(window).on('load', function(){
      
-	 setTimeout(function() {
-		liffOpen();
-	}, 1000);
+	 liffOpen();
 	 
     });
 
