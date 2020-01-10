@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+
+
+
+
+</head>
+<body>
+
+<script>
+	try{
+	liff.openWindow({
+            url: 'https://iserviceuat2.aia.co.th/th/pcer-portal/Registration.html?wcmmode=enabled',
+            external: true
+        });
+		liff.closeWindow();
+	}
+	catch(e){
+		console.log("not line");
+	}
+</script>
+</body>
+</html>
