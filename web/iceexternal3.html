@@ -1,25 +1,29 @@
 <html>
 <head>
 <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-
-
-
-
-</head>
-<body>
-
+ <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+      
 <script>
-	liff.init();
-	try{
-	liff.openWindow({
+ liff
+        .init({
+            liffId: '1517802253-MgnqN6vv'
+        })
+        .then(() => {
+            // start to use LIFF's api
+            liff.openWindow({
             url: 'https://iserviceuat2.aia.co.th/th/pcer-portal/Registration.html?wcmmode=enabled',
             external: true
         });
 		liff.closeWindow();
-	}
-	catch(e){
-		console.log("not line");
-	}
+        })
+        .catch((err) => {
+            console.log("not line");
+        });
 </script>
+
+</head>
+<body>
+
+
 </body>
 </html>
