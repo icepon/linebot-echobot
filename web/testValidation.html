@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+var url = 'http://icechatbot.herokuapp.com/ddpCampaign.json';
+var j = [];
+$.ajax({
+  type: 'GET',
+  url: url,
+  dataType: 'json',
+  success: function(data) { j = data;},
+  async: false
+});
+
+console.log(j);
+    </script>
+</head>
+<body>
+    <div id="json"></div>
+</body>
+</html>
