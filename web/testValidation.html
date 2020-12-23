@@ -5,13 +5,9 @@
     <title>JSON</title>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>
-    $.ajax({
-  url: "http://icechatbot.herokuapp.com/ddpCampaign.json",
-  dataType: "json",
-  success: function(response) {
-    console.log(response);
-  }
-});
+     $.getJSON("/data.json", function(data) {
+                console.log(data);
+            });
     </script>
 </head>
 <body>
