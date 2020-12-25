@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>JSON</title>
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script>
-     $.getJSON("/data.json", function(data) {
-                console.log(data);
-            });
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+<script type="text/javascript" language="javascript" src="https://www.aia.co.th/content/dam/th/ddpCampaign.json"></script> 
+
+<script type="text/javascript">
+   $(document).ready(function(e) {
+         console.log(ddpCampaigns);
+   });
+</script>
+	
     </script>
 </head>
 <body>
