@@ -1,4 +1,4 @@
-var jsonObject = {
+var ddpCampaigns = {
 	"campaignList" : [
 	{
 		"campaignId":"c0001",
