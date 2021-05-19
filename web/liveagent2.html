@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+</head>
+<body>
+<!-- COMMON TAGS -->
+
+<meta property="og:title"              content="AIA" />
+<meta property="og:description"        content="Livechat" />
+<meta property="og:image"              content="https://raw.githubusercontent.com/icepon/linebot-echobot/master/web/fbog.png" />
+
+  
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+
+  
+  <script>
+    window.convolabSettings = {
+        APP_ID : "1234567"
+    };
+</script>
+<script src = "https://aichatbot-uat.au-syd.containers.appdomain.cloud/site/javascripts/webchats/convolab-webchat-1.1.0.js"></script>
+<script>
+
+setTimeout(function(){
+
+document.getElementById("convolab-chatbtn").style.backgroundColor = "#D31145";
+
+document.getElementById("convolab-chattitle").style.background = "#D31145";
+ document.getElementById("convolab-chat-icon").src = "https://www.aia.co.th/content/dam/th/th/icons/aiawhite-logo1.png";
+}, 100);
+
+</script>
+<!-- Your customer chat code -->
+
+
+</body>
+</html>
